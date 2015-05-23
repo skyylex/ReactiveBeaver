@@ -20,6 +20,8 @@
 @property (nonatomic, readonly) NSString *sourceEpubPath;
 @property (nonatomic, readonly) NSString *destinationEpubPath;
 
-- (void)initWithSourcePath:(NSString *)epubSource destinationPath:(NSString *)destination error:(NSError *__autoreleasing*)error;
+- (void)initWithSourcePath:(NSString *)epubSource
+           destinationPath:(NSString *)destination
+                     error:(NSError *__autoreleasing*)error;
 
 @end

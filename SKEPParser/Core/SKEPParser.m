@@ -10,6 +10,8 @@
 #import "SKFileSystemSupport.h"
 #import <zipzap.h>
 
+NSString *const SKEPParserErrorDomain = @"SKEPParserErrorDomain";
+
 @implementation SKEPParser
 
 #pragma marl - RACCommand
@@ -62,22 +64,22 @@
                         [subscriber sendCompleted];
                     }
                     else if (destinationPathExist == NO) {
-                        error = [NSError errorWithDomain:@"destination path doesn't exist" code:0 userInfo:nil];
+                        error = [NSError errorWithDomain:SKEPParserErrorDomain code:SKEPParserErrorCodeNoDestinationPath userInfo:nil];
                     }
                     else if (destinationPathExist == YES && destinationPathIsDirectory == NO) {
-                        error = [NSError errorWithDomain:@"destination path cannot be a file" code:0 userInfo:nil];
+                        error = [NSError errorWithDomain:SKEPParserErrorDomain code:SKEPParserErrorCodeDestinationPathIsFile userInfo:nil];
                     }
                 }
                 else {
-                    error = [NSError errorWithDomain:@"source path doesn't exist or isn't a file" code:0 userInfo:nil];
+                    error = [NSError errorWithDomain:SKEPParserErrorDomain code:SKEPParserErrorCodeNoSourceFilePath userInfo:nil];
                 }
             }
             else {
-                error = [NSError errorWithDomain:@"start parsing tuple must contain NSString paths" code:0 userInfo:nil];
+                error = [NSError errorWithDomain:SKEPParserErrorDomain code:SKEPParserErrorCodeInputParamsValidation userInfo:nil];
             }
         }
         else {
-            error = [NSError errorWithDomain:@"Start parsing input need to be RACTuple class" code:0 userInfo:nil];
+            error = [NSError errorWithDomain:SKEPParserErrorDomain code:SKEPParserErrorCodeUnexpectedClass userInfo:nil];
         }
         
         if (error != nil) {

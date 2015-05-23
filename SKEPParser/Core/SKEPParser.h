@@ -9,6 +9,16 @@
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
+extern NSString *const SKEPParserErrorDomain;
+
+typedef NS_ENUM(NSUInteger, SKEPParserErrorCode) {
+    SKEPParserErrorCodeNoDestinationPath = -100,
+    SKEPParserErrorCodeDestinationPathIsFile = -101,
+    SKEPParserErrorCodeNoSourceFilePath = -102,
+    SKEPParserErrorCodeInputParamsValidation = -103,
+    SKEPParserErrorCodeUnexpectedClass = -104
+};
+
 @interface SKEPParser : NSObject
 
 /// input value needs to get RACTuple(sourcePath, destinationPath)
