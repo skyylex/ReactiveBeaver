@@ -1,9 +1,13 @@
 #import "Kiwi.h"
 #import "SKEPParser.h"
+#import "SKFileSystemSupport.h"
+
+
+static NSString *const SKEPParserTestBookSource1 = @"moby-dick";
 
 @interface SKEPParser()
 
-- (RACSignal *)validateStartParsingTuple:(RACTuple *)startParsingInput;
+- (RACSignal *)validateInputForStartParsing:(RACTuple *)startParsingInput;
 
 @end
 
@@ -15,8 +19,8 @@ describe(@"Validation", ^{
     });
     
     context(@"validateStartParsingTuple method", ^{
-        it(@"validateStartParsingTuple:", ^{
-            RACSignal *validationSignal = [parser validateStartParsingTuple:RACTuplePack([NSObject new])];
+        it(@"incorrect class instead of tuple", ^{
+            RACSignal *validationSignal = [parser validateInputForStartParsing:(RACTuple *)[NSObject new]];
             __block NSError *error = nil;
             __block BOOL validationFinished = NO;
             
@@ -28,42 +32,149 @@ describe(@"Validation", ^{
                 error = validationError;
             }];
             
-            [[expectFutureValue(error) shouldNotEventuallyBeforeTimingOutAfter(1.0)] beNil];
+            [[expectFutureValue(error) shouldNotEventuallyBeforeTimingOutAfter(0.5)] beNil];
+            [[theValue([error.domain isEqualToString:SKEPParserErrorDomain]) should] beYes];
+            [[theValue(error.code == SKEPParserErrorCodeInputParamsValidation) should] beYes];
+            [[theValue(validationFinished) should] beYes];
+        });
+        
+        it(@"incorrect class inside input tuple", ^{
+            RACSignal *validationSignal = [parser validateInputForStartParsing:RACTuplePack([NSObject new], [NSObject new])];
+            __block NSError *error = nil;
+            __block BOOL validationFinished = NO;
+            
+            [validationSignal subscribeCompleted:^{
+                
+            }];
+            [validationSignal subscribeError:^(NSError *validationError) {
+                validationFinished = YES;
+                error = validationError;
+            }];
+            
+            [[expectFutureValue(error) shouldNotEventuallyBeforeTimingOutAfter(0.5)] beNil];
+            [[theValue([error.domain isEqualToString:SKEPParserErrorDomain]) should] beYes];
+            [[theValue(error.code == SKEPParserErrorCodeInputParamsValidation) should] beYes];
+            [[theValue(validationFinished) should] beYes];
+        });
+        
+        it(@"incorrect input number of arguments", ^{
+            RACSignal *validationSignal = [parser validateInputForStartParsing:RACTuplePack([NSObject new])];
+            __block NSError *error = nil;
+            __block BOOL validationFinished = NO;
+            
+            [validationSignal subscribeCompleted:^{
+                
+            }];
+            [validationSignal subscribeError:^(NSError *validationError) {
+                validationFinished = YES;
+                error = validationError;
+            }];
+            
+            [[expectFutureValue(error) shouldNotEventuallyBeforeTimingOutAfter(0.5)] beNil];
+            [[theValue([error.domain isEqualToString:SKEPParserErrorDomain]) should] beYes];
+            [[theValue(error.code == SKEPParserErrorCodeInputParamsValidation) should] beYes];
+            [[theValue(validationFinished) should] beYes];
+        });
+        
+        it(@"source file doesn't exist", ^{
+            RACSignal *validationSignal = [parser validateInputForStartParsing:RACTuplePack(NSTemporaryDirectory(), NSTemporaryDirectory())];
+            __block NSError *error = nil;
+            __block BOOL validationFinished = NO;
+            
+            [validationSignal subscribeCompleted:^{
+                
+            }];
+            [validationSignal subscribeError:^(NSError *validationError) {
+                validationFinished = YES;
+                error = validationError;
+            }];
+            
+            [[expectFutureValue(error) shouldNotEventuallyBeforeTimingOutAfter(0.5)] beNil];
+            [[theValue([error.domain isEqualToString:SKEPParserErrorDomain]) should] beYes];
+            [[theValue(error.code == SKEPParserErrorCodeNoSourceFilePath) should] beYes];
+            [[theValue(validationFinished) should] beYes];
+        });
+        
+        it(@"source file doesn't exist", ^{
+            RACSignal *validationSignal = [parser validateInputForStartParsing:RACTuplePack(NSTemporaryDirectory(), NSTemporaryDirectory())];
+            __block NSError *error = nil;
+            __block BOOL validationFinished = NO;
+            
+            [validationSignal subscribeCompleted:^{
+                
+            }];
+            [validationSignal subscribeError:^(NSError *validationError) {
+                validationFinished = YES;
+                error = validationError;
+            }];
+            
+            [[expectFutureValue(error) shouldNotEventuallyBeforeTimingOutAfter(0.5)] beNil];
+            [[theValue([error.domain isEqualToString:SKEPParserErrorDomain]) should] beYes];
+            [[theValue(error.code == SKEPParserErrorCodeNoSourceFilePath) should] beYes];
+            [[theValue(validationFinished) should] beYes];
+        });
+        
+        it(@"incorrect destination path #1", ^{
+            NSString *validSourcePath = [[NSBundle bundleForClass:[self class]] pathForResource:SKEPParserTestBookSource1 ofType:@"epub"];
+            RACSignal *validationSignal = [parser validateInputForStartParsing:RACTuplePack(validSourcePath, validSourcePath)];
+            __block NSError *error = nil;
+            __block BOOL validationFinished = NO;
+            
+            [validationSignal subscribeCompleted:^{
+                
+            }];
+            [validationSignal subscribeError:^(NSError *validationError) {
+                validationFinished = YES;
+                error = validationError;
+            }];
+            
+            [[expectFutureValue(error) shouldNotEventuallyBeforeTimingOutAfter(0.5)] beNil];
+            [[theValue([error.domain isEqualToString:SKEPParserErrorDomain]) should] beYes];
+            [[theValue(error.code == SKEPParserErrorCodeIncorrectDestinationPath) should] beYes];
+            [[theValue(validationFinished) should] beYes];
+        });
+        
+        it(@"incorrect destination path #2", ^{
+            NSString *validSourcePath = [[NSBundle bundleForClass:[self class]] pathForResource:SKEPParserTestBookSource1 ofType:@"epub"];
+            NSString *tempPathWithFakeSuffix = [NSTemporaryDirectory() stringByAppendingString:@"###"];
+            RACSignal *validationSignal = [parser validateInputForStartParsing:RACTuplePack(validSourcePath, tempPathWithFakeSuffix)];
+            __block NSError *error = nil;
+            __block BOOL validationFinished = NO;
+            
+            [validationSignal subscribeCompleted:^{
+                
+            }];
+            [validationSignal subscribeError:^(NSError *validationError) {
+                validationFinished = YES;
+                error = validationError;
+            }];
+            
+            [[expectFutureValue(error) shouldNotEventuallyBeforeTimingOutAfter(0.5)] beNil];
+            [[theValue([error.domain isEqualToString:SKEPParserErrorDomain]) should] beYes];
+            [[theValue(error.code == SKEPParserErrorCodeIncorrectDestinationPath) should] beYes];
+            [[theValue(validationFinished) should] beYes];
+        });
+        
+        it(@"correct inputs", ^{
+            NSString *validSourcePath = [[NSBundle bundleForClass:[self class]] pathForResource:SKEPParserTestBookSource1
+                                                                                         ofType:@"epub"];
+            RACSignal *validationSignal = [parser validateInputForStartParsing:RACTuplePack(validSourcePath, [SKFileSystemSupport applicationSupportDirectory])];
+            __block NSError *error = nil;
+            __block BOOL validationFinished = NO;
+            
+            [validationSignal subscribeCompleted:^{
+                validationFinished = YES;
+                error = nil;
+            }];
+            [validationSignal subscribeError:^(NSError *validationError) {
+                validationFinished = YES;
+                error = validationError;
+            }];
+            
+            [[expectFutureValue(error) shouldEventuallyBeforeTimingOutAfter(0.5)] beNil];
             [[theValue(validationFinished) should] beYes];
         });
     });
 });
-       
-
-/// example
-
-/*
-describe(@"Initialization", ^{
-    it(@"without special init methods", ^{
-        SKEPParser *parser = [SKEPParser new];
-        
-        __block id value = nil;
-        
-        [[parser.startParsingCommand.executionSignals
-          flattenMap:^RACStream *(RACSignal *executing) {
-            RACSignal *resultSignal = [executing flattenMap:^RACStream *(id value) {
-                return [RACSignal return:[RACUnit defaultUnit]];
-            }];
-            
-            [resultSignal subscribeNext:^(id x) {
-                value = x;
-            }];
-            return resultSignal;
-        }]
-         subscribeCompleted:^{
-            
-        }];
-        
-        [parser.startParsingCommand execute:nil];
-        
-        [[expectFutureValue(value) shouldNotEventuallyBeforeTimingOutAfter(5)] beNil];
-    });
-});
- */
 
 SPEC_END

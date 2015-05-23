@@ -12,11 +12,9 @@
 extern NSString *const SKEPParserErrorDomain;
 
 typedef NS_ENUM(NSUInteger, SKEPParserErrorCode) {
-    SKEPParserErrorCodeNoDestinationPath = -100,
-    SKEPParserErrorCodeDestinationPathIsFile = -101,
-    SKEPParserErrorCodeNoSourceFilePath = -102,
-    SKEPParserErrorCodeInputParamsValidation = -103,
-    SKEPParserErrorCodeUnexpectedClass = -104
+    SKEPParserErrorCodeIncorrectDestinationPath = -100,
+    SKEPParserErrorCodeNoSourceFilePath = -101,
+    SKEPParserErrorCodeInputParamsValidation = -102,
 };
 
 @interface SKEPParser : NSObject

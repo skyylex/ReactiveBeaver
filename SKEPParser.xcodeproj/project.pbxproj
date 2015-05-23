@@ -10,6 +10,7 @@
 		4206D18F1B052C65007F227A /* SKEPParser-Headers.h in Headers */ = {isa = PBXBuildFile; fileRef = 4206D18E1B052C65007F227A /* SKEPParser-Headers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4206D1951B052C66007F227A /* SKEPParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4206D1891B052C65007F227A /* SKEPParser.framework */; };
 		4206D19C1B052C66007F227A /* SKEPParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4206D19B1B052C66007F227A /* SKEPParserTests.m */; };
+		4246F40E1B111EAB00A2A96F /* moby-dick.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4246F40D1B111EAB00A2A96F /* moby-dick.epub */; };
 		425AC0711B06131500CF6070 /* SKEPParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 425AC06D1B06131500CF6070 /* SKEPParser.h */; };
 		425AC0721B06131500CF6070 /* SKEPParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AC06E1B06131500CF6070 /* SKEPParser.m */; };
 		425AC0731B06131500CF6070 /* SKEpub.h in Headers */ = {isa = PBXBuildFile; fileRef = 425AC06F1B06131500CF6070 /* SKEpub.h */; };
@@ -40,6 +41,7 @@
 		4206D1941B052C66007F227A /* SKEPParserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SKEPParserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4206D19A1B052C66007F227A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4206D19B1B052C66007F227A /* SKEPParserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKEPParserTests.m; sourceTree = "<group>"; };
+		4246F40D1B111EAB00A2A96F /* moby-dick.epub */ = {isa = PBXFileReference; lastKnownFileType = file; name = "moby-dick.epub"; path = "BookSources/moby-dick.epub"; sourceTree = SOURCE_ROOT; };
 		425AC06D1B06131500CF6070 /* SKEPParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKEPParser.h; path = Core/SKEPParser.h; sourceTree = "<group>"; };
 		425AC06E1B06131500CF6070 /* SKEPParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKEPParser.m; path = Core/SKEPParser.m; sourceTree = "<group>"; };
 		425AC06F1B06131500CF6070 /* SKEpub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKEpub.h; path = Core/SKEpub.h; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		4206D1991B052C66007F227A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4246F40D1B111EAB00A2A96F /* moby-dick.epub */,
 				4206D19A1B052C66007F227A /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -269,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4246F40E1B111EAB00A2A96F /* moby-dick.epub in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

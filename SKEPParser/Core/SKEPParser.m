@@ -21,7 +21,7 @@ NSString *const SKEPParserErrorDomain = @"SKEPParserErrorDomain";
         @weakify(self);
         _startParsingCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(RACTuple *paths) {
             @strongify(self);
-            RACSignal *validationSignal = [self validateStartParsingTuple:paths];
+            RACSignal *validationSignal = [self validateInputForStartParsing:paths];
             return [[validationSignal flattenMap:^RACStream *(NSNumber *validationSuccess) {
                 RACSignal *resultSignal = nil;
                 if (validationSuccess.boolValue == YES) {
@@ -46,7 +46,7 @@ NSString *const SKEPParserErrorDomain = @"SKEPParserErrorDomain";
 
 #pragma mark - Validation
 
-- (RACSignal *)validateStartParsingTuple:(RACTuple *)startParsingInput {
+- (RACSignal *)validateInputForStartParsing:(RACTuple *)startParsingInput {
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         NSError *error = nil;
         if ([startParsingInput isKindOfClass:[RACTuple class]]) {
@@ -58,16 +58,16 @@ NSString *const SKEPParserErrorDomain = @"SKEPParserErrorDomain";
                 BOOL destinationPathIsDirectory = NO;
                 BOOL sourcePathExist = [[NSFileManager defaultManager] fileExistsAtPath:sourcePath isDirectory:&sourcePathIsDirectory];
                 if (sourcePathExist == YES && sourcePathIsDirectory == NO) {
-                    BOOL destinationPathExist = [[NSFileManager defaultManager] fileExistsAtPath:sourcePath isDirectory:&destinationPathIsDirectory];
+                    BOOL destinationPathExist = [[NSFileManager defaultManager] fileExistsAtPath:destinationPath isDirectory:&destinationPathIsDirectory];
                     if (destinationPathExist == YES && destinationPathIsDirectory == YES) {
                         [subscriber sendNext:@YES];
                         [subscriber sendCompleted];
                     }
                     else if (destinationPathExist == NO) {
-                        error = [NSError errorWithDomain:SKEPParserErrorDomain code:SKEPParserErrorCodeNoDestinationPath userInfo:nil];
+                        error = [NSError errorWithDomain:SKEPParserErrorDomain code:SKEPParserErrorCodeIncorrectDestinationPath userInfo:nil];
                     }
                     else if (destinationPathExist == YES && destinationPathIsDirectory == NO) {
-                        error = [NSError errorWithDomain:SKEPParserErrorDomain code:SKEPParserErrorCodeDestinationPathIsFile userInfo:nil];
+                        error = [NSError errorWithDomain:SKEPParserErrorDomain code:SKEPParserErrorCodeIncorrectDestinationPath userInfo:nil];
                     }
                 }
                 else {
@@ -79,7 +79,7 @@ NSString *const SKEPParserErrorDomain = @"SKEPParserErrorDomain";
             }
         }
         else {
-            error = [NSError errorWithDomain:SKEPParserErrorDomain code:SKEPParserErrorCodeUnexpectedClass userInfo:nil];
+            error = [NSError errorWithDomain:SKEPParserErrorDomain code:SKEPParserErrorCodeInputParamsValidation userInfo:nil];
         }
         
         if (error != nil) {
