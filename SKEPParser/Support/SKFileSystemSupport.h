@@ -9,11 +9,20 @@
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
+extern NSString *const SKFileSystemSupportErrorDomain;
+
+typedef NS_ENUM(NSUInteger, SKFileSystemSupportErrorCode) {
+    SKFileSystemSupportErrorCodeNoFileOrDirectory = 110,
+    SKFileSystemSupportErrorCodePathLeadToFile = 111,
+    SKFileSystemSupportErrorCodeSavingToTempFolderFail = 112,
+};
+
 @interface SKFileSystemSupport : NSObject
 
-+ (BOOL)addSkipBackupAttributeToItemAtPath:(NSString *)filePathString;
+/// TODO: Cover all methods with tests
 
-+ (void)createDirectoryIfNeeded:(NSString *)directoryPath;
++ (RACSignal *)addSkipBackupAttributeToItemAtPath:(NSString *)filePathString;
++ (RACSignal *)createDirectoryIfNeeded:(NSString *)directoryPath;
 + (NSString *)applicationSupportDirectory;
 + (RACSignal *)saveFileURLDataToTheTempFolder:(NSString *)sourceURLString;
 + (RACSignal *)unarchiveFile:(NSString *)filePath toDestinationFolder:(NSString *)destinationFolder;

@@ -1,3 +1,11 @@
+//
+//  SKFileSupportTests.m
+//  SKEPParser
+//
+//  Created by skyylex on 24/05/15.
+//  Copyright (c) 2015 skyylex. All rights reserved.
+//
+
 #import "Kiwi.h"
 #import "SKEPParser.h"
 #import "SKFileSystemSupport.h"

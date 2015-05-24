@@ -20,6 +20,7 @@
 		425AC0791B06132700CF6070 /* SKFileSystemSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AC0761B06132700CF6070 /* SKFileSystemSupport.m */; };
 		425AC07A1B06132E00CF6070 /* SKEPParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AC06E1B06131500CF6070 /* SKEPParser.m */; };
 		425AC07B1B06133000CF6070 /* SKEpub.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AC0701B06131500CF6070 /* SKEpub.m */; };
+		426764C21B11CB76003DCB81 /* SKFileSupportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 426764C11B11CB76003DCB81 /* SKFileSupportTests.m */; };
 		66DC327DCF001B78ABEC974C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C175086A1771AD5B64BEB69F /* libPods.a */; };
 		CACF2B75DD31F64E7B173E53 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C175086A1771AD5B64BEB69F /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -48,6 +49,7 @@
 		425AC0701B06131500CF6070 /* SKEpub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKEpub.m; path = Core/SKEpub.m; sourceTree = "<group>"; };
 		425AC0751B06132700CF6070 /* SKFileSystemSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKFileSystemSupport.h; path = Support/SKFileSystemSupport.h; sourceTree = "<group>"; };
 		425AC0761B06132700CF6070 /* SKFileSystemSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKFileSystemSupport.m; path = Support/SKFileSystemSupport.m; sourceTree = "<group>"; };
+		426764C11B11CB76003DCB81 /* SKFileSupportTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKFileSupportTests.m; sourceTree = "<group>"; };
 		9B58439EBD17959E5550142A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C175086A1771AD5B64BEB69F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE94A7BFF78DFD919687D00E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				4206D19B1B052C66007F227A /* SKEPParserTests.m */,
+				426764C11B11CB76003DCB81 /* SKFileSupportTests.m */,
 				4206D1991B052C66007F227A /* Supporting Files */,
 			);
 			path = SKEPParserTests;
@@ -356,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				426764C21B11CB76003DCB81 /* SKFileSupportTests.m in Sources */,
 				425AC0791B06132700CF6070 /* SKFileSystemSupport.m in Sources */,
 				425AC07B1B06133000CF6070 /* SKEpub.m in Sources */,
 				4206D19C1B052C66007F227A /* SKEPParserTests.m in Sources */,
