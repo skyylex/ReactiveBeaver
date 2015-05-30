@@ -1,3 +1,4 @@
 language: objective-c
 xcode_workspace: SKEPParser.xcworkspace
 xcode_scheme: SKEPParserTests
+xcode_sdk: iphonesimulator8.1
