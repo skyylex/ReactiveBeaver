@@ -19,11 +19,12 @@ typedef NS_ENUM(NSUInteger, SKFileSystemSupportErrorCode) {
 
 @interface SKFileSystemSupport : NSObject
 
++ (NSString *)applicationSupportDirectory;
+
 /// TODO: Cover all methods with tests
 
 + (RACSignal *)addSkipBackupAttributeToItemAtPath:(NSString *)filePathString;
 + (RACSignal *)createDirectoryIfNeeded:(NSString *)directoryPath;
-+ (NSString *)applicationSupportDirectory;
 + (RACSignal *)saveFileURLDataToTheTempFolder:(NSString *)sourceURLString;
 + (RACSignal *)unarchiveFile:(NSString *)filePath toDestinationFolder:(NSString *)destinationFolder;
 

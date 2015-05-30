@@ -1,0 +1,3 @@
+language: objective-c
+xcode_workspace: SKEPParser.xcworkspace
+xcode_scheme: SKEPParserTests
