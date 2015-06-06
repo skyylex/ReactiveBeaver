@@ -9,21 +9,50 @@
 #import "Kiwi.h"
 #import "SKEPParser.h"
 #import "SKFileSystemSupport.h"
-
+#import "SKEpubNameConstants.h"
 
 static NSString *const SKEPParserTestBookSource1 = @"moby-dick";
 
 @interface SKEPParser()
 
+- (RACSignal *)startParsing:(RACTuple *)paths;
 - (RACSignal *)validateInputForStartParsing:(RACTuple *)startParsingInput;
 
 @end
 
 SPEC_BEGIN(SKEPParserTest)
 
-describe(@"Validation", ^{
+describe(@"SKEPParserTest", ^{
     let(parser, ^{
         return [SKEPParser new];
+    });
+    
+    context(@"startParsingCommand", ^{
+        it(@"moby-dick book parsing", ^{
+            NSString *validSourcePath = [[NSBundle bundleForClass:[self class]] pathForResource:SKEPParserTestBookSource1 ofType:@"epub"];;
+            NSString *destinationStringPath = [SKFileSystemSupport applicationSupportDirectory];
+            __block NSNumber *finished = nil;
+            [[parser startParsing:RACTuplePack(validSourcePath, destinationStringPath)] subscribeNext:^(id x) {
+                finished = @YES;
+            }];
+            
+            [[expectFutureValue(finished) shouldNotEventuallyBeforeTimingOutAfter(5.0)] beNil];
+            [[finished should] beYes];
+            
+            NSString *metaInfFolderPath = [destinationStringPath stringByAppendingPathComponent:SKEPEpubMetaInfFolder];
+            NSString *mimetypeFolderPath = [destinationStringPath stringByAppendingPathComponent:SKEPEpubMimetypeFolder];
+            
+            BOOL metaInfIsDirectory = NO;
+            BOOL mimetypeIsDirectory = NO;
+            BOOL metaInfExist = [[NSFileManager defaultManager] fileExistsAtPath:metaInfFolderPath isDirectory:&metaInfIsDirectory];
+            BOOL mimetypeExist = [[NSFileManager defaultManager] fileExistsAtPath:mimetypeFolderPath isDirectory:&mimetypeIsDirectory];
+            
+            [[theValue(metaInfIsDirectory) should] beYes];
+            [[theValue(mimetypeIsDirectory) should] beNo];
+            
+            [[theValue(metaInfExist) should] beYes];
+            [[theValue(mimetypeExist) should] beYes];
+        });
     });
     
     context(@"validateStartParsingTuple method", ^{

@@ -8,7 +8,7 @@
 
 #import "SKEPParser.h"
 #import "SKFileSystemSupport.h"
-#import <zipzap.h>
+#import "zipzap.h"
 
 NSString *const SKEPParserErrorDomain = @"SKEPParserErrorDomain";
 
@@ -21,25 +21,38 @@ NSString *const SKEPParserErrorDomain = @"SKEPParserErrorDomain";
         @weakify(self);
         _startParsingCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(RACTuple *paths) {
             @strongify(self);
-            RACSignal *validationSignal = [self validateInputForStartParsing:paths];
-            return [[validationSignal flattenMap:^RACStream *(NSNumber *validationSuccess) {
-                RACSignal *resultSignal = nil;
-                if (validationSuccess.boolValue == YES) {
-                    NSString *sourceFile = paths.first;
-                    resultSignal = [SKFileSystemSupport saveFileURLDataToTheTempFolder:sourceFile];
-                }
-                else {
-                    resultSignal = [RACSignal return:[RACUnit defaultUnit]];
-                }
-                
-                return resultSignal;
-            }] flattenMap:^RACStream *(NSString *tempFolderEpubPath) {
-                return [RACSignal return:[RACUnit defaultUnit]];
-            }];
+            return [self startParsing:paths];
         }];
     }
     
     return _startParsingCommand;
+}
+
+- (RACSignal *)startParsing:(RACTuple *)paths {
+    RACSignal *validationSignal = [self validateInputForStartParsing:paths];
+    return [[validationSignal flattenMap:^RACStream *(NSNumber *validationSuccess) {
+        RACSignal *resultSignal = nil;
+        if (validationSuccess.boolValue == YES) {
+            NSString *sourceFile = paths.first;
+            resultSignal = [SKFileSystemSupport saveFileURLDataToTheTempFolder:sourceFile];
+        }
+        else {
+            /// TODO: undefined what to return if validation failed
+            resultSignal = [RACSignal return:@NO];
+        }
+        
+        return resultSignal;
+    }] flattenMap:^RACStream *(NSString *tempFolderEpubPath) {
+        NSString *destinationPath = paths.second;
+        return [SKFileSystemSupport unarchiveFile:tempFolderEpubPath toDestinationFolder:destinationPath];
+    }];
+}
+
+#pragma makr - Error
+
+- (RACSignal *)errorDuringParsingTrigger {
+    /// TODO: implement error signal
+    return [RACSignal empty];
 }
 
 #pragma mark - Unarchiving

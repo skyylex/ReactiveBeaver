@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "28ECED3F8DFB444251D724AD"
+               BlueprintIdentifier = "A179672155EF13000B0B1E4B"
                BuildableName = "libPods-CocoaLumberjack.a"
                BlueprintName = "Pods-CocoaLumberjack"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DCE1C4435ADF2A037DC6BB42"
+               BlueprintIdentifier = "0F6586364E12509D12EFB510"
                BuildableName = "libPods-KSCrypto.a"
                BlueprintName = "Pods-KSCrypto"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -42,7 +42,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A01A96737269C7FC456E23F2"
+               BlueprintIdentifier = "BA5A32FC1358D116809B6665"
                BuildableName = "libPods-Kiwi.a"
                BlueprintName = "Pods-Kiwi"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -56,7 +56,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C86C34623C9A11F35652FA76"
+               BlueprintIdentifier = "DABD4A0522B345D2AE3022F2"
                BuildableName = "libPods-Ono.a"
                BlueprintName = "Pods-Ono"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -70,7 +70,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CFAC649AFFDA2E61196AF1D2"
+               BlueprintIdentifier = "3DC7CDF0D739EC0D2A0F16B2"
                BuildableName = "libPods-ReactiveCocoa.a"
                BlueprintName = "Pods-ReactiveCocoa"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -84,7 +84,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "94A7EB0CDBE7E6193A85BC43"
+               BlueprintIdentifier = "01168CA1046C13E5D97CDBE1"
                BuildableName = "libPods-zipzap.a"
                BlueprintName = "Pods-zipzap"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -98,7 +98,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0429A4E96927940BF8316AFC"
+               BlueprintIdentifier = "906D9EE0D72A137F035FFDFE"
                BuildableName = "libPods.a"
                BlueprintName = "Pods"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -177,7 +177,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0429A4E96927940BF8316AFC"
+            BlueprintIdentifier = "906D9EE0D72A137F035FFDFE"
             BuildableName = "libPods.a"
             BlueprintName = "Pods"
             ReferencedContainer = "container:Pods/Pods.xcodeproj">

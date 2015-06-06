@@ -41,7 +41,7 @@ describe(@"SKFileSystemSupport", ^{
             NSString *folderPath = [[SKFileSystemSupport applicationSupportDirectory] stringByAppendingPathComponent:SKFileSystemSupportTestFolderName];
             if ([[NSFileManager defaultManager] fileExistsAtPath:folderPath]) {
                 NSError *removeFolderError = nil;
-                BOOL removeSuccess = [[NSFileManager defaultManager] removeItemAtPath:folderPath error:&removeFolderError];
+                [[NSFileManager defaultManager] removeItemAtPath:folderPath error:&removeFolderError];
             }
             
             [SKFileSystemSupport createDirectoryIfNeeded:folderPath];

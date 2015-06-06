@@ -7,6 +7,7 @@
 //
 
 #import "SKFileSystemSupport.h"
+#import <CocoaLumberjack.h>
 #import <KSCrypto/KSSHA1Stream.h>
 #import <zipzap.h>
 
@@ -142,7 +143,7 @@ NSString *const SKFileSystemSupportErrorDomain = @"SKFileSystemSupportErrorDomai
             }
         }
         
-        if (resultTempPath == nil) {
+        if (resultTempPath != nil) {
             [subscriber sendNext:resultTempPath];
             [subscriber sendCompleted];
         }
@@ -161,26 +162,43 @@ NSString *const SKFileSystemSupportErrorDomain = @"SKFileSystemSupportErrorDomai
     RACSignal *resultSignal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         NSURL *path = [NSURL fileURLWithPath:destinationFolder];
         ZZArchive *archive = [ZZArchive archiveWithURL:[NSURL fileURLWithPath:filePath] error:nil];
+        
+        NSError *resultError = nil;
         for (ZZArchiveEntry *entry in archive.entries) {
             NSURL *targetPath = [path URLByAppendingPathComponent:entry.fileName];
             
-            if (entry.fileMode & S_IFDIR)
+            NSError *error = nil;
+            if (entry.fileMode & S_IFDIR) {
                 // check if directory bit is set
-                [[NSFileManager defaultManager] createDirectoryAtURL:targetPath
-                                         withIntermediateDirectories:YES
-                                                          attributes:nil
-                                                               error:nil];
+                [[NSFileManager defaultManager] createDirectoryAtURL:targetPath withIntermediateDirectories:YES attributes:nil error:&error];
+                if (error != nil) {
+                    resultError = error;
+                    break;
+                }
+            }
             else {
                 // Some archives don't have a separate entry for each directory
                 // and just include the directory's name in the filename.
                 // Make sure that directory exists before writing a file into it.
-                [[NSFileManager defaultManager] createDirectoryAtURL:[targetPath URLByDeletingLastPathComponent]
-                                         withIntermediateDirectories:YES
-                                                          attributes:nil
-                                                               error:nil];
-                
-                [[entry newDataWithError:nil] writeToURL:targetPath
-                                              atomically:NO];
+                [[NSFileManager defaultManager] createDirectoryAtURL:[targetPath URLByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:&error];
+                if (error == nil) {
+                    [[entry newDataWithError:&error] writeToURL:targetPath atomically:NO];
+                    if (error != nil) {
+                        resultError = error;
+                        break;
+                    }
+                }
+                else {
+                    resultError = error;
+                }
+            }
+            
+            if (resultError != nil) {
+                [subscriber sendError:resultError];
+            }
+            else {
+                [subscriber sendNext:@YES];
+                [subscriber sendCompleted];
             }
         }
         

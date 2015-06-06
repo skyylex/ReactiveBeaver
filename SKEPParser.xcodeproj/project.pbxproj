@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		051C3AE252F0E8C978B32CCE /* (null) in Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (Weak, ); }; };
+		16A59D5DDC7A0BEC507950A3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB2059ABFD25DE7F6C3B17C3 /* libPods.a */; };
 		4206D18F1B052C65007F227A /* SKEPParser-Headers.h in Headers */ = {isa = PBXBuildFile; fileRef = 4206D18E1B052C65007F227A /* SKEPParser-Headers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4206D1951B052C66007F227A /* SKEPParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4206D1891B052C65007F227A /* SKEPParser.framework */; };
 		4206D19C1B052C66007F227A /* SKEPParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4206D19B1B052C66007F227A /* SKEPParserTests.m */; };
@@ -21,8 +23,9 @@
 		425AC07A1B06132E00CF6070 /* SKEPParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AC06E1B06131500CF6070 /* SKEPParser.m */; };
 		425AC07B1B06133000CF6070 /* SKEpub.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AC0701B06131500CF6070 /* SKEpub.m */; };
 		426764C21B11CB76003DCB81 /* SKFileSupportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 426764C11B11CB76003DCB81 /* SKFileSupportTests.m */; };
-		66DC327DCF001B78ABEC974C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C175086A1771AD5B64BEB69F /* libPods.a */; };
-		CACF2B75DD31F64E7B173E53 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C175086A1771AD5B64BEB69F /* libPods.a */; };
+		42AE1F191B23711300F83BAC /* SKEpubNameConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 42AE1F181B23711300F83BAC /* SKEpubNameConstants.h */; };
+		C5AE02A8AE0D211442C6327C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB2059ABFD25DE7F6C3B17C3 /* libPods.a */; };
+		CACF2B75DD31F64E7B173E53 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +53,9 @@
 		425AC0751B06132700CF6070 /* SKFileSystemSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKFileSystemSupport.h; path = Support/SKFileSystemSupport.h; sourceTree = "<group>"; };
 		425AC0761B06132700CF6070 /* SKFileSystemSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKFileSystemSupport.m; path = Support/SKFileSystemSupport.m; sourceTree = "<group>"; };
 		426764C11B11CB76003DCB81 /* SKFileSupportTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKFileSupportTests.m; sourceTree = "<group>"; };
+		42AE1F181B23711300F83BAC /* SKEpubNameConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKEpubNameConstants.h; path = Support/SKEpubNameConstants.h; sourceTree = "<group>"; };
 		9B58439EBD17959E5550142A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		C175086A1771AD5B64BEB69F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB2059ABFD25DE7F6C3B17C3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE94A7BFF78DFD919687D00E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66DC327DCF001B78ABEC974C /* libPods.a in Frameworks */,
+				16A59D5DDC7A0BEC507950A3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,7 +73,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4206D1951B052C66007F227A /* SKEPParser.framework in Frameworks */,
-				CACF2B75DD31F64E7B173E53 /* libPods.a in Frameworks */,
+				CACF2B75DD31F64E7B173E53 /* (null) in Frameworks */,
+				051C3AE252F0E8C978B32CCE /* (null) in Frameworks */,
+				C5AE02A8AE0D211442C6327C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,7 +85,7 @@
 		3494A54EC6AC34C98782A22D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C175086A1771AD5B64BEB69F /* libPods.a */,
+				BB2059ABFD25DE7F6C3B17C3 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -158,6 +164,7 @@
 			children = (
 				425AC0751B06132700CF6070 /* SKFileSystemSupport.h */,
 				425AC0761B06132700CF6070 /* SKFileSystemSupport.m */,
+				42AE1F181B23711300F83BAC /* SKEpubNameConstants.h */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -179,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				425AC0711B06131500CF6070 /* SKEPParser.h in Headers */,
+				42AE1F191B23711300F83BAC /* SKEpubNameConstants.h in Headers */,
 				4206D18F1B052C65007F227A /* SKEPParser-Headers.h in Headers */,
 				425AC0731B06131500CF6070 /* SKEpub.h in Headers */,
 				425AC0771B06132700CF6070 /* SKFileSystemSupport.h in Headers */,
