@@ -15,8 +15,9 @@ static NSString *const SKEPParserTestBookSource1 = @"moby-dick";
 
 @interface SKEPParser()
 
-- (RACSignal *)startParsing:(RACTuple *)paths;
+- (RACSignal *)unarchiveEpubToDestinationFolder:(RACTuple *)paths;
 - (RACSignal *)validateInputForStartParsing:(RACTuple *)startParsingInput;
+- (RACSignal *)containerXMLParsed:(NSString *)epubDestinationPath;
 
 @end
 
@@ -32,7 +33,7 @@ describe(@"SKEPParserTest", ^{
             NSString *validSourcePath = [[NSBundle bundleForClass:[self class]] pathForResource:SKEPParserTestBookSource1 ofType:@"epub"];;
             NSString *destinationStringPath = [SKFileSystemSupport applicationSupportDirectory];
             __block NSNumber *finished = nil;
-            [[parser startParsing:RACTuplePack(validSourcePath, destinationStringPath)] subscribeNext:^(id x) {
+            [[parser unarchiveEpubToDestinationFolder:RACTuplePack(validSourcePath, destinationStringPath)] subscribeNext:^(id x) {
                 finished = @YES;
             }];
             
@@ -52,8 +53,19 @@ describe(@"SKEPParserTest", ^{
             
             [[theValue(metaInfExist) should] beYes];
             [[theValue(mimetypeExist) should] beYes];
+            
+            __block id contentOpfFile = nil;
+            [[parser containerXMLParsed:destinationStringPath] subscribeNext:^(id x) {
+                contentOpfFile = x;
+            }];
+            
+            
+            [[expectFutureValue(contentOpfFile) shouldNotEventuallyBeforeTimingOutAfter(1.0)] beNil];
+            BOOL contentOpfFileExist = [[NSFileManager defaultManager] fileExistsAtPath:contentOpfFile];
+            [[theValue(contentOpfFileExist) should] beYes];
         });
     });
+    
     
     context(@"validateStartParsingTuple method", ^{
         it(@"incorrect class instead of tuple", ^{

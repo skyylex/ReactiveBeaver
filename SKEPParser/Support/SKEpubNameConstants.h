@@ -13,4 +13,12 @@ static NSString *const SKEPEpubMetaInfFolder = @"META-INF";
 static NSString *const SKEPEpubOEBPSFolder = @"OEBPS";
 static NSString *const SKEPEpubMimetypeFolder = @"mimetype";
 
+/// container.xml
+static NSString *const SKEPEpubContainerXMLName = @"container.xml";
+static NSString *const SKEPEpubContainerXMLRootNodeName = @"container";
+static NSString *const SKEPEpubContainerXMLParentNodeName = @"rootfiles";
+static NSString *const SKEPEpubContainerXMLTargetNodeName = @"rootfile";
+
+static NSString *const SKEPEpubContainerXMLFullPathAttribute = @"full-path";
+
 #endif

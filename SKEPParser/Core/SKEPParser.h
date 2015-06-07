@@ -15,6 +15,12 @@ typedef NS_ENUM(NSUInteger, SKEPParserErrorCode) {
     SKEPParserErrorCodeIncorrectDestinationPath = -100,
     SKEPParserErrorCodeNoSourceFilePath = -101,
     SKEPParserErrorCodeInputParamsValidation = -102,
+    SKEPParserErrorCodeEpubNoDestinationFolder = -103,
+    SKEPParserErrorCodeContainerXMLFileOpening = -104,
+    SKEPParserErrorCodeContainerXMLNoFullPathAttribute = -105,
+    SKEPParserErrorCodeContainerXMLNoRootFilesElement = -106,
+    SKEPParserErrorCodeContainerXMLNoRootFileElement = -107
+    
 };
 
 @interface SKEPParser : NSObject

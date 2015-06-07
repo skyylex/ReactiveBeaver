@@ -9,6 +9,8 @@
 #import "SKEPParser.h"
 #import "SKFileSystemSupport.h"
 #import "zipzap.h"
+#import <DDXML.h>
+#import "SKEpubNameConstants.h"
 
 NSString *const SKEPParserErrorDomain = @"SKEPParserErrorDomain";
 
@@ -21,14 +23,82 @@ NSString *const SKEPParserErrorDomain = @"SKEPParserErrorDomain";
         @weakify(self);
         _startParsingCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(RACTuple *paths) {
             @strongify(self);
-            return [self startParsing:paths];
+            return [self unarchiveEpubToDestinationFolder:paths];
         }];
     }
     
     return _startParsingCommand;
 }
 
-- (RACSignal *)startParsing:(RACTuple *)paths {
+- (RACSignal *)containerXMLParsed:(NSString *)epubDestinationPath {
+    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        BOOL isDirectory = NO;
+        BOOL directoryExist = [[NSFileManager defaultManager] fileExistsAtPath:epubDestinationPath isDirectory:&isDirectory];
+        
+        if ((isDirectory == YES) && (directoryExist == YES)) {
+            NSString *containerXMLPath = [[epubDestinationPath stringByAppendingPathComponent:SKEPEpubMetaInfFolder] stringByAppendingPathComponent:SKEPEpubContainerXMLName];
+            NSData *containerXMLData = [NSData dataWithContentsOfFile:containerXMLPath];
+            if (containerXMLData != nil) {
+                NSError *documentOpeningError = nil;
+                DDXMLDocument *document = [[DDXMLDocument alloc] initWithData:containerXMLData
+                                                                      options:kNilOptions
+                                                                        error:&documentOpeningError];
+                if (document != nil) {
+                    /// TODO: rewrite with XPath
+                    NSArray *rootFiles = [document.rootElement elementsForName:SKEPEpubContainerXMLParentNodeName];
+                    if (rootFiles.count > 0) {
+                        DDXMLElement *rootFilesElement = rootFiles.firstObject;
+                        NSArray *rootFileElements = [rootFilesElement elementsForName:SKEPEpubContainerXMLTargetNodeName];
+                        if (rootFileElements != nil && rootFileElements.count > 0) {
+                            DDXMLElement *rootFileElement = rootFileElements.firstObject;
+                            if (rootFileElement != nil) {
+                                DDXMLNode *node = [rootFileElement attributeForName:SKEPEpubContainerXMLFullPathAttribute];
+                                NSString *fullPathValue = node.stringValue;
+                                if (fullPathValue != nil) {
+                                    [subscriber sendNext:fullPathValue];
+                                }
+                                else {
+                                    NSError *error = [NSError errorWithDomain:SKEPParserErrorDomain code:SKEPParserErrorCodeContainerXMLNoFullPathAttribute userInfo:nil];
+                                    [subscriber sendError:error];
+                                }
+                            }
+                            else {
+                                NSError *error = [NSError errorWithDomain:SKEPParserErrorDomain code:SKEPParserErrorCodeContainerXMLNoRootFileElement userInfo:nil];
+                                [subscriber sendError:error];
+                            }
+                        }
+                        else {
+                            NSError *error = [NSError errorWithDomain:SKEPParserErrorDomain code:SKEPParserErrorCodeContainerXMLNoRootFilesElement userInfo:nil];
+                            [subscriber sendError:error];
+                        }
+                    }
+                    else {
+                        NSError *error = [NSError errorWithDomain:SKEPParserErrorDomain code:SKEPParserErrorCodeContainerXMLNoRootFilesElement userInfo:nil];
+                        [subscriber sendError:error];
+                    }
+                }
+            }
+            else {
+                NSError *error = [NSError errorWithDomain:SKEPParserErrorDomain
+                                                     code:SKEPParserErrorCodeContainerXMLFileOpening
+                                                 userInfo:nil];
+                [subscriber sendError:error];
+            }
+        }
+        else {
+            NSError *error = [NSError errorWithDomain:SKEPParserErrorDomain
+                                                 code:SKEPParserErrorCodeEpubNoDestinationFolder
+                                             userInfo:nil];
+            [subscriber sendError:error];
+        }
+        
+        return nil;
+    }] map:^id(NSString *relativePath) {
+        return [epubDestinationPath stringByAppendingPathComponent:relativePath];
+    }];
+}
+
+- (RACSignal *)unarchiveEpubToDestinationFolder:(RACTuple *)paths {
     RACSignal *validationSignal = [self validateInputForStartParsing:paths];
     return [[validationSignal flattenMap:^RACStream *(NSNumber *validationSuccess) {
         RACSignal *resultSignal = nil;
