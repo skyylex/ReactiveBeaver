@@ -1,4 +1,5 @@
 language: objective-c
+before_script: travis/before_script.sh
 xcode_workspace: SKEPParser.xcworkspace
 xcode_scheme: SKEPParserTests
 xcode_sdk: iphonesimulator8.1

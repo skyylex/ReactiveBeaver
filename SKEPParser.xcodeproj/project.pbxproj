@@ -23,6 +23,12 @@
 		425AC07A1B06132E00CF6070 /* SKEPParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AC06E1B06131500CF6070 /* SKEPParser.m */; };
 		425AC07B1B06133000CF6070 /* SKEpub.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AC0701B06131500CF6070 /* SKEpub.m */; };
 		426764C21B11CB76003DCB81 /* SKFileSupportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 426764C11B11CB76003DCB81 /* SKFileSupportTests.m */; };
+		42A8B0EC1B24349A00E5A044 /* SKEPNavPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 42A8B0EA1B24349A00E5A044 /* SKEPNavPoint.h */; };
+		42A8B0ED1B24349A00E5A044 /* SKEPNavPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8B0EB1B24349A00E5A044 /* SKEPNavPoint.m */; };
+		42A8B0EE1B24349A00E5A044 /* SKEPNavPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8B0EB1B24349A00E5A044 /* SKEPNavPoint.m */; };
+		42A8B0F11B244E5100E5A044 /* SKEPSpineElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 42A8B0EF1B244E5100E5A044 /* SKEPSpineElement.h */; };
+		42A8B0F21B244E5100E5A044 /* SKEPSpineElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8B0F01B244E5100E5A044 /* SKEPSpineElement.m */; };
+		42A8B0F31B244E5100E5A044 /* SKEPSpineElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8B0F01B244E5100E5A044 /* SKEPSpineElement.m */; };
 		42AE1F191B23711300F83BAC /* SKEpubNameConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 42AE1F181B23711300F83BAC /* SKEpubNameConstants.h */; };
 		C5AE02A8AE0D211442C6327C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB2059ABFD25DE7F6C3B17C3 /* libPods.a */; };
 		CACF2B75DD31F64E7B173E53 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
@@ -53,6 +59,10 @@
 		425AC0751B06132700CF6070 /* SKFileSystemSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKFileSystemSupport.h; path = Support/SKFileSystemSupport.h; sourceTree = "<group>"; };
 		425AC0761B06132700CF6070 /* SKFileSystemSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKFileSystemSupport.m; path = Support/SKFileSystemSupport.m; sourceTree = "<group>"; };
 		426764C11B11CB76003DCB81 /* SKFileSupportTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKFileSupportTests.m; sourceTree = "<group>"; };
+		42A8B0EA1B24349A00E5A044 /* SKEPNavPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKEPNavPoint.h; path = Core/SKEPNavPoint.h; sourceTree = "<group>"; };
+		42A8B0EB1B24349A00E5A044 /* SKEPNavPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKEPNavPoint.m; path = Core/SKEPNavPoint.m; sourceTree = "<group>"; };
+		42A8B0EF1B244E5100E5A044 /* SKEPSpineElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKEPSpineElement.h; path = Core/SKEPSpineElement.h; sourceTree = "<group>"; };
+		42A8B0F01B244E5100E5A044 /* SKEPSpineElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKEPSpineElement.m; path = Core/SKEPSpineElement.m; sourceTree = "<group>"; };
 		42AE1F181B23711300F83BAC /* SKEpubNameConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKEpubNameConstants.h; path = Support/SKEpubNameConstants.h; sourceTree = "<group>"; };
 		9B58439EBD17959E5550142A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BB2059ABFD25DE7F6C3B17C3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +165,10 @@
 				425AC06E1B06131500CF6070 /* SKEPParser.m */,
 				425AC06F1B06131500CF6070 /* SKEpub.h */,
 				425AC0701B06131500CF6070 /* SKEpub.m */,
+				42A8B0EA1B24349A00E5A044 /* SKEPNavPoint.h */,
+				42A8B0EB1B24349A00E5A044 /* SKEPNavPoint.m */,
+				42A8B0EF1B244E5100E5A044 /* SKEPSpineElement.h */,
+				42A8B0F01B244E5100E5A044 /* SKEPSpineElement.m */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -187,6 +201,8 @@
 			files = (
 				425AC0711B06131500CF6070 /* SKEPParser.h in Headers */,
 				42AE1F191B23711300F83BAC /* SKEpubNameConstants.h in Headers */,
+				42A8B0F11B244E5100E5A044 /* SKEPSpineElement.h in Headers */,
+				42A8B0EC1B24349A00E5A044 /* SKEPNavPoint.h in Headers */,
 				4206D18F1B052C65007F227A /* SKEPParser-Headers.h in Headers */,
 				425AC0731B06131500CF6070 /* SKEpub.h in Headers */,
 				425AC0771B06132700CF6070 /* SKFileSystemSupport.h in Headers */,
@@ -359,7 +375,9 @@
 			files = (
 				425AC0781B06132700CF6070 /* SKFileSystemSupport.m in Sources */,
 				425AC0721B06131500CF6070 /* SKEPParser.m in Sources */,
+				42A8B0F21B244E5100E5A044 /* SKEPSpineElement.m in Sources */,
 				425AC0741B06131500CF6070 /* SKEpub.m in Sources */,
+				42A8B0ED1B24349A00E5A044 /* SKEPNavPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +388,9 @@
 				426764C21B11CB76003DCB81 /* SKFileSupportTests.m in Sources */,
 				425AC0791B06132700CF6070 /* SKFileSystemSupport.m in Sources */,
 				425AC07B1B06133000CF6070 /* SKEpub.m in Sources */,
+				42A8B0EE1B24349A00E5A044 /* SKEPNavPoint.m in Sources */,
 				4206D19C1B052C66007F227A /* SKEPParserTests.m in Sources */,
+				42A8B0F31B244E5100E5A044 /* SKEPSpineElement.m in Sources */,
 				425AC07A1B06132E00CF6070 /* SKEPParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,7 @@
 #import "SKEPParser.h"
 #import "SKFileSystemSupport.h"
 #import "SKEpubNameConstants.h"
+#import "DDXML.h"
 
 static NSString *const SKEPParserTestBookSource1 = @"moby-dick";
 
@@ -18,6 +19,8 @@ static NSString *const SKEPParserTestBookSource1 = @"moby-dick";
 - (RACSignal *)unarchiveEpubToDestinationFolder:(RACTuple *)paths;
 - (RACSignal *)validateInputForStartParsing:(RACTuple *)startParsingInput;
 - (RACSignal *)containerXMLParsed:(NSString *)epubDestinationPath;
+- (RACSignal *)contentOPFFileParsed:(NSString *)opfFilePath;
+- (RACSignal *)parseSpine:(DDXMLDocument *)document;
 
 @end
 
@@ -54,15 +57,18 @@ describe(@"SKEPParserTest", ^{
             [[theValue(metaInfExist) should] beYes];
             [[theValue(mimetypeExist) should] beYes];
             
-            __block id contentOpfFile = nil;
+            __block id opfFilePath = nil;
             [[parser containerXMLParsed:destinationStringPath] subscribeNext:^(id x) {
-                contentOpfFile = x;
+                opfFilePath = x;
             }];
             
-            
-            [[expectFutureValue(contentOpfFile) shouldNotEventuallyBeforeTimingOutAfter(1.0)] beNil];
-            BOOL contentOpfFileExist = [[NSFileManager defaultManager] fileExistsAtPath:contentOpfFile];
+            [[expectFutureValue(opfFilePath) shouldNotEventuallyBeforeTimingOutAfter(1.0)] beNil];
+            BOOL contentOpfFileExist = [[NSFileManager defaultManager] fileExistsAtPath:opfFilePath];
             [[theValue(contentOpfFileExist) should] beYes];
+            
+            [[parser contentOPFFileParsed:opfFilePath] subscribeNext:^(id x) {
+                
+            }];
         });
     });
     

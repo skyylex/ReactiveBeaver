@@ -11,6 +11,7 @@
 #import "zipzap.h"
 #import <DDXML.h>
 #import "SKEpubNameConstants.h"
+#import "SKEPSpineElement.h"
 
 NSString *const SKEPParserErrorDomain = @"SKEPParserErrorDomain";
 
@@ -28,6 +29,84 @@ NSString *const SKEPParserErrorDomain = @"SKEPParserErrorDomain";
     }
     
     return _startParsingCommand;
+}
+
+- (RACSignal *)parseManifest:(DDXMLDocument *)document {
+    /// TODO: implement
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        return nil;
+    }]
+}
+
+- (RACSignal *)parseSpine:(DDXMLDocument *)document {
+    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        if (document != nil) {
+            NSArray *spineElements = [document.rootElement elementsForName:SKEPEpubContainerXMLSpineElement];
+            if (spineElements != nil && spineElements.count > 0) {
+                [subscriber sendNext:spineElements.firstObject];
+                [subscriber sendCompleted];
+            }
+            else {
+                NSError *error = [NSError errorWithDomain:@"" code:0 userInfo:nil];
+                [subscriber sendError:error];
+            }
+        }
+        else {
+            NSError *error = [NSError errorWithDomain:@"" code:0 userInfo:nil];
+            [subscriber sendError:error];
+        }
+        return nil;
+    }] flattenMap:^RACStream *(DDXMLElement *element) {
+        return [element.children.rac_sequence.signal flattenMap:^RACStream *(DDXMLElement *spineItem) {
+            return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+                SKEPSpineElement *spineElement = [SKEPSpineElement new];
+                DDXMLNode *idRefNode = [spineItem attributeForName:@"idref"];
+                if (idRefNode != nil) {
+                    spineElement.idRef = idRefNode.stringValue;
+                    [subscriber sendNext:spineElement];
+                    [subscriber sendCompleted];
+                }
+                else {
+                    NSError *error = [NSError errorWithDomain:@"" code:0 userInfo:nil];
+                    [subscriber sendError:error];
+                }
+                
+                return nil;
+            }];
+        }];
+    }].collect;
+}
+
+- (RACSignal *)contentOPFFileParsed:(NSString *)opfFilePath {
+    @weakify(self);
+    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        NSError *error = nil;
+        if (opfFilePath != nil) {
+            NSData *data = [NSData dataWithContentsOfFile:opfFilePath];
+            if (data != nil) {
+                DDXMLDocument *document = [[DDXMLDocument alloc] initWithData:data options:kNilOptions error:&error];
+                if (error == nil) {
+                    [subscriber sendNext:document];
+                    [subscriber sendCompleted];
+                }
+            }
+            else {
+                /// TODO: improve error code
+                NSError *error = [NSError errorWithDomain:SKEPParserErrorDomain code:0 userInfo:nil];
+                [subscriber sendError:error];
+            }
+        }
+        else {
+            /// TODO: improve error code
+            NSError *error = [NSError errorWithDomain:SKEPParserErrorDomain code:0 userInfo:nil];
+            [subscriber sendError:error];
+        }
+        
+        return nil;
+    }] flattenMap:^RACStream *(DDXMLDocument *document) {
+        @strongify(self);
+        return [self parseSpine:document];
+    }];
 }
 
 - (RACSignal *)containerXMLParsed:(NSString *)epubDestinationPath {

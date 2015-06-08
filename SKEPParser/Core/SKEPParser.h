@@ -11,6 +11,7 @@
 
 extern NSString *const SKEPParserErrorDomain;
 
+/// TODO: remove duplicates
 typedef NS_ENUM(NSUInteger, SKEPParserErrorCode) {
     SKEPParserErrorCodeIncorrectDestinationPath = -100,
     SKEPParserErrorCodeNoSourceFilePath = -101,
