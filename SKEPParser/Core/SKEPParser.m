@@ -35,7 +35,7 @@ NSString *const SKEPParserErrorDomain = @"SKEPParserErrorDomain";
     /// TODO: implement
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         return nil;
-    }]
+    }];
 }
 
 - (RACSignal *)parseSpine:(DDXMLDocument *)document {

@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 skyylex. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 //! Project version number for SKEPParser.
 FOUNDATION_EXPORT double SKEPParserVersionNumber;
 
