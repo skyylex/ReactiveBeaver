@@ -9,21 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-extern NSString *const SKEPParserErrorDomain;
-
-/// TODO: remove duplicates
-typedef NS_ENUM(NSUInteger, SKEPParserErrorCode) {
-    SKEPParserErrorCodeIncorrectDestinationPath = -100,
-    SKEPParserErrorCodeNoSourceFilePath = -101,
-    SKEPParserErrorCodeInputParamsValidation = -102,
-    SKEPParserErrorCodeEpubNoDestinationFolder = -103,
-    SKEPParserErrorCodeContainerXMLFileOpening = -104,
-    SKEPParserErrorCodeContainerXMLNoFullPathAttribute = -105,
-    SKEPParserErrorCodeContainerXMLNoRootFilesElement = -106,
-    SKEPParserErrorCodeContainerXMLNoRootFileElement = -107
-    
-};
-
 @interface SKEPParser : NSObject
 
 /// input value needs to get RACTuple(sourcePath, destinationPath)

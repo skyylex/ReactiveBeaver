@@ -11,6 +11,7 @@
 #import "SKFileSystemSupport.h"
 #import "SKEpubNameConstants.h"
 #import "DDXML.h"
+#import "NSError+QuickCreation.h"
 
 static NSString *const SKEPParserTestBookSource1 = @"moby-dick";
 
@@ -66,8 +67,13 @@ describe(@"SKEPParserTest", ^{
             BOOL contentOpfFileExist = [[NSFileManager defaultManager] fileExistsAtPath:opfFilePath];
             [[theValue(contentOpfFileExist) should] beYes];
             
-            [[parser contentOPFFileParsed:opfFilePath] subscribeNext:^(id x) {
+            [[parser contentOPFFileParsed:opfFilePath] subscribeNext:^(RACTuple *tuple) {
+                NSArray *manifestElements = tuple.first;
+                NSArray *spineElements = tuple.second;
                 
+                /// Manually calculated values from contentOPF
+                [[@(manifestElements.count) should] equal:@(151)];
+                [[@(spineElements.count) should] equal:@(144)];
             }];
         });
     });

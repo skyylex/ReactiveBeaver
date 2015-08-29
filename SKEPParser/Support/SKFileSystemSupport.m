@@ -27,16 +27,15 @@ NSString *const SKFileSystemSupportErrorDomain = @"SKFileSystemSupportErrorDomai
             
             if (error != nil) {
                 [subscriber sendError:error];
-            }
-            else {
+            } else {
                 [subscriber sendNext:value];
                 [subscriber sendCompleted];
             }
-        }
-        else {
+        } else {
             error = [NSError errorWithDomain:SKFileSystemSupportErrorDomain
                                         code:SKFileSystemSupportErrorCodeNoFileOrDirectory
                                     userInfo:nil];
+            [subscriber sendError:error];
         }
         
         return nil;
@@ -51,8 +50,7 @@ NSString *const SKFileSystemSupportErrorDomain = @"SKFileSystemSupportErrorDomai
         if (fileExist == YES) {
             NSURL *URL = [NSURL fileURLWithPath:filePathString];
             [URL setResourceValue:@YES forKey:NSURLIsExcludedFromBackupKey error:&error];
-        }
-        else {
+        } else {
             error = [NSError errorWithDomain:SKFileSystemSupportErrorDomain
                                         code:SKFileSystemSupportErrorCodeNoFileOrDirectory
                                     userInfo:nil];
@@ -60,8 +58,7 @@ NSString *const SKFileSystemSupportErrorDomain = @"SKFileSystemSupportErrorDomai
         
         if (error != nil) {
             [subscriber sendError:error];
-        }
-        else {
+        } else {
             [subscriber sendNext:@YES];
             [subscriber sendCompleted];
         }
@@ -82,8 +79,7 @@ NSString *const SKFileSystemSupportErrorDomain = @"SKFileSystemSupportErrorDomai
                                         code:SKFileSystemSupportErrorCodePathLeadToFile
                                     userInfo:nil];
             [subscriber sendError:error];
-        }
-        else {
+        } else {
             [subscriber sendNext:@(exist)];
             [subscriber sendCompleted];
         }
@@ -92,19 +88,20 @@ NSString *const SKFileSystemSupportErrorDomain = @"SKFileSystemSupportErrorDomai
     
     return [needToCreateFolderTrigger flattenMap:^RACStream *(NSNumber *exist) {
         RACSignal *resultSignal = nil;
-        if (exist.boolValue) {
+        if (exist.boolValue == YES) {
             resultSignal = [RACSignal return:@YES];
-        }
-        else {
+        } else {
             resultSignal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
                 NSError *folderCreationError = nil;
-                [[NSFileManager defaultManager] createDirectoryAtPath:directoryPath withIntermediateDirectories:YES attributes:nil error:&folderCreationError];
+                [[NSFileManager defaultManager] createDirectoryAtPath:directoryPath
+                                          withIntermediateDirectories:YES
+                                                           attributes:nil
+                                                                error:&folderCreationError];
                 
                 if (folderCreationError == nil) {
                     [subscriber sendNext:@YES];
                     [subscriber sendCompleted];
-                }
-                else {
+                } else {
                     [subscriber sendError:folderCreationError];
                 }
                 
@@ -123,7 +120,7 @@ NSString *const SKFileSystemSupportErrorDomain = @"SKFileSystemSupportErrorDomai
 
 + (NSString *)applicationSupportDirectory {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
-    NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+    NSString *basePath = (paths.count > 0) ? paths.firstObject : nil;
     return basePath;
 }
 
@@ -134,7 +131,7 @@ NSString *const SKFileSystemSupportErrorDomain = @"SKFileSystemSupportErrorDomai
         NSURL *bookURL = [NSURL fileURLWithPath:sourceURLString];
         NSData *bookData = [NSData dataWithContentsOfURL:bookURL];
         NSString *resultTempPath = nil;
-        if (bookData) {
+        if (bookData != nil) {
             NSString *sha1String = [bookData ks_SHA1DigestString];
             NSString *epubFilePath = [NSTemporaryDirectory() stringByAppendingPathComponent:sha1String];
             BOOL savingResult = [bookData writeToFile:epubFilePath atomically:YES];
@@ -146,8 +143,7 @@ NSString *const SKFileSystemSupportErrorDomain = @"SKFileSystemSupportErrorDomai
         if (resultTempPath != nil) {
             [subscriber sendNext:resultTempPath];
             [subscriber sendCompleted];
-        }
-        else {
+        } else {
             NSError *error = [NSError errorWithDomain:SKFileSystemSupportErrorDomain
                                                  code:SKFileSystemSupportErrorCodeSavingToTempFolderFail
                                              userInfo:nil];
@@ -175,8 +171,7 @@ NSString *const SKFileSystemSupportErrorDomain = @"SKFileSystemSupportErrorDomai
                     resultError = error;
                     break;
                 }
-            }
-            else {
+            } else {
                 // Some archives don't have a separate entry for each directory
                 // and just include the directory's name in the filename.
                 // Make sure that directory exists before writing a file into it.
@@ -187,16 +182,14 @@ NSString *const SKFileSystemSupportErrorDomain = @"SKFileSystemSupportErrorDomai
                         resultError = error;
                         break;
                     }
-                }
-                else {
+                } else {
                     resultError = error;
                 }
             }
             
             if (resultError != nil) {
                 [subscriber sendError:resultError];
-            }
-            else {
+            } else {
                 [subscriber sendNext:@YES];
                 [subscriber sendCompleted];
             }

@@ -12,8 +12,11 @@
 #import <DDXML.h>
 #import "SKEpubNameConstants.h"
 #import "SKEPSpineElement.h"
+#import "NSError+QuickCreation.h"
+#import "SKEPManifestElement.h"
+#import "CocoaLumberjack.h"
 
-NSString *const SKEPParserErrorDomain = @"SKEPParserErrorDomain";
+static int ddLogLevel = DDLogLevelError;
 
 @implementation SKEPParser
 
@@ -33,28 +36,63 @@ NSString *const SKEPParserErrorDomain = @"SKEPParserErrorDomain";
 
 - (RACSignal *)parseManifest:(DDXMLDocument *)document {
     /// TODO: implement
-    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+    RACSignal *manifestSectionSignal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        if (document != nil) {
+            NSArray *manifestElements = [document.rootElement elementsForName:SKEPEpubContentOPFManifestElement];
+            if (manifestElements.count == 1) {
+                DDXMLElement *manifest = manifestElements.firstObject;
+                [subscriber sendNext:manifest];
+                [subscriber sendCompleted];
+            } else {
+                /// TODO: fix error code
+                [subscriber sendError:[NSError parserErrorWithCode:0]];
+            }
+        } else {
+            /// TODO: fix error code
+            [subscriber sendError:[NSError parserErrorWithCode:0]];
+        }
+        
         return nil;
+    }];
+    
+    return [manifestSectionSignal flattenMap:^RACStream *(DDXMLElement *manifestElement) {
+        return [manifestElement.children.rac_sequence.signal flattenMap:^RACStream *(id xmlObject) {
+            return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+                SKEPManifestElement *manifestElement = nil;
+                if ([xmlObject isKindOfClass:[DDXMLElement class]]) {
+                    DDXMLElement *element = (DDXMLElement *)xmlObject;
+                    manifestElement = [SKEPManifestElement new];
+                    manifestElement.identifier = [element attributeForName:SKEPManifestElementIdentifierKey].stringValue;
+                    manifestElement.href = [element attributeForName:SKEPManifestElementHrefKey].stringValue;
+                    manifestElement.mediaType = [element attributeForName:SKEPManifestElementMediaTypKey].stringValue;
+                    [subscriber sendNext:manifestElement];
+                } else if ([xmlObject isKindOfClass:[DDXMLNode class]]) {
+                    /// TODO: investigate what to do here with unspecified objects
+                    DDLogWarn(@"Unknown element: %@", xmlObject);
+                }
+                
+                [subscriber sendCompleted];
+                
+                return nil;
+            }];
+        }].collect;
     }];
 }
 
 - (RACSignal *)parseSpine:(DDXMLDocument *)document {
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         if (document != nil) {
-            NSArray *spineElements = [document.rootElement elementsForName:SKEPEpubContainerXMLSpineElement];
+            NSArray *spineElements = [document.rootElement elementsForName:SKEPEpubContentOPFSpineElement];
             if (spineElements != nil && spineElements.count > 0) {
                 [subscriber sendNext:spineElements.firstObject];
                 [subscriber sendCompleted];
+            } else {
+                [subscriber sendError:[NSError parserErrorWithCode:0]];
             }
-            else {
-                NSError *error = [NSError errorWithDomain:@"" code:0 userInfo:nil];
-                [subscriber sendError:error];
-            }
+        } else {
+            [subscriber sendError:[NSError parserErrorWithCode:0]];
         }
-        else {
-            NSError *error = [NSError errorWithDomain:@"" code:0 userInfo:nil];
-            [subscriber sendError:error];
-        }
+        
         return nil;
     }] flattenMap:^RACStream *(DDXMLElement *element) {
         return [element.children.rac_sequence.signal flattenMap:^RACStream *(DDXMLElement *spineItem) {
@@ -65,10 +103,8 @@ NSString *const SKEPParserErrorDomain = @"SKEPParserErrorDomain";
                     spineElement.idRef = idRefNode.stringValue;
                     [subscriber sendNext:spineElement];
                     [subscriber sendCompleted];
-                }
-                else {
-                    NSError *error = [NSError errorWithDomain:@"" code:0 userInfo:nil];
-                    [subscriber sendError:error];
+                } else {
+                    [subscriber sendError:[NSError parserErrorWithCode:0]];
                 }
                 
                 return nil;
@@ -89,86 +125,67 @@ NSString *const SKEPParserErrorDomain = @"SKEPParserErrorDomain";
                     [subscriber sendNext:document];
                     [subscriber sendCompleted];
                 }
-            }
-            else {
+            } else {
                 /// TODO: improve error code
-                NSError *error = [NSError errorWithDomain:SKEPParserErrorDomain code:0 userInfo:nil];
-                [subscriber sendError:error];
+                [subscriber sendError:[NSError parserErrorWithCode:0]];
             }
-        }
-        else {
+        } else {
             /// TODO: improve error code
-            NSError *error = [NSError errorWithDomain:SKEPParserErrorDomain code:0 userInfo:nil];
-            [subscriber sendError:error];
+            [subscriber sendError:[NSError parserErrorWithCode:0]];
         }
         
         return nil;
     }] flattenMap:^RACStream *(DDXMLDocument *document) {
         @strongify(self);
-        return [self parseSpine:document];
+        RACSignal *manifestParsedTrigger = [self parseManifest:document];
+        RACSignal *spineParsedTrigger = [self parseSpine:document];
+        return [manifestParsedTrigger combineLatestWith:spineParsedTrigger];;
     }];
+}
+
+- (NSString *)containerXMLPath:(NSString *)epubUnzippedPath {
+    NSString *metaFolder = [epubUnzippedPath stringByAppendingPathComponent:SKEPEpubMetaInfFolder];
+    NSString *containerXMLPath = [metaFolder stringByAppendingPathComponent:SKEPEpubContainerXMLName];
+    return containerXMLPath;
 }
 
 - (RACSignal *)containerXMLParsed:(NSString *)epubDestinationPath {
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        BOOL isDirectory = NO;
-        BOOL directoryExist = [[NSFileManager defaultManager] fileExistsAtPath:epubDestinationPath isDirectory:&isDirectory];
-        
-        if ((isDirectory == YES) && (directoryExist == YES)) {
-            NSString *containerXMLPath = [[epubDestinationPath stringByAppendingPathComponent:SKEPEpubMetaInfFolder] stringByAppendingPathComponent:SKEPEpubContainerXMLName];
-            NSData *containerXMLData = [NSData dataWithContentsOfFile:containerXMLPath];
-            if (containerXMLData != nil) {
-                NSError *documentOpeningError = nil;
-                DDXMLDocument *document = [[DDXMLDocument alloc] initWithData:containerXMLData
-                                                                      options:kNilOptions
-                                                                        error:&documentOpeningError];
-                if (document != nil) {
-                    /// TODO: rewrite with XPath
-                    NSArray *rootFiles = [document.rootElement elementsForName:SKEPEpubContainerXMLParentNodeName];
-                    if (rootFiles.count > 0) {
-                        DDXMLElement *rootFilesElement = rootFiles.firstObject;
-                        NSArray *rootFileElements = [rootFilesElement elementsForName:SKEPEpubContainerXMLTargetNodeName];
-                        if (rootFileElements != nil && rootFileElements.count > 0) {
-                            DDXMLElement *rootFileElement = rootFileElements.firstObject;
-                            if (rootFileElement != nil) {
-                                DDXMLNode *node = [rootFileElement attributeForName:SKEPEpubContainerXMLFullPathAttribute];
-                                NSString *fullPathValue = node.stringValue;
-                                if (fullPathValue != nil) {
-                                    [subscriber sendNext:fullPathValue];
-                                }
-                                else {
-                                    NSError *error = [NSError errorWithDomain:SKEPParserErrorDomain code:SKEPParserErrorCodeContainerXMLNoFullPathAttribute userInfo:nil];
-                                    [subscriber sendError:error];
-                                }
+        NSString *containerXML = [self containerXMLPath:epubDestinationPath];
+        NSData *containerXMLData = [NSData dataWithContentsOfFile:containerXML];
+        if (containerXMLData != nil) {
+            NSError *documentOpeningError = nil;
+            DDXMLDocument *document = [[DDXMLDocument alloc] initWithData:containerXMLData
+                                                                  options:kNilOptions
+                                                                    error:&documentOpeningError];
+            if (document != nil) {
+                /// TODO: rewrite with XPath
+                NSArray *rootFiles = [document.rootElement elementsForName:SKEPEpubContainerXMLParentNodeName];
+                if (rootFiles.count > 0) {
+                    DDXMLElement *rootFilesElement = rootFiles.firstObject;
+                    NSArray *rootFileElements = [rootFilesElement elementsForName:SKEPEpubContainerXMLTargetNodeName];
+                    if (rootFileElements != nil && rootFileElements.count > 0) {
+                        DDXMLElement *rootFileElement = rootFileElements.firstObject;
+                        if (rootFileElement != nil) {
+                            DDXMLNode *node = [rootFileElement attributeForName:SKEPEpubContainerXMLFullPathAttribute];
+                            NSString *fullPathValue = node.stringValue;
+                            if (fullPathValue != nil) {
+                                [subscriber sendNext:fullPathValue];
+                            } else {
+                                [subscriber sendError:[NSError parserErrorWithCode:SKEPParserErrorCodeContainerXMLNoFullPathAttribute]];
                             }
-                            else {
-                                NSError *error = [NSError errorWithDomain:SKEPParserErrorDomain code:SKEPParserErrorCodeContainerXMLNoRootFileElement userInfo:nil];
-                                [subscriber sendError:error];
-                            }
+                        } else {
+                            [subscriber sendError:[NSError parserErrorWithCode:SKEPParserErrorCodeContainerXMLNoRootFileElement]];
                         }
-                        else {
-                            NSError *error = [NSError errorWithDomain:SKEPParserErrorDomain code:SKEPParserErrorCodeContainerXMLNoRootFilesElement userInfo:nil];
-                            [subscriber sendError:error];
-                        }
+                    } else {
+                        [subscriber sendError:[NSError parserErrorWithCode:SKEPParserErrorCodeContainerXMLNoRootFilesElement]];
                     }
-                    else {
-                        NSError *error = [NSError errorWithDomain:SKEPParserErrorDomain code:SKEPParserErrorCodeContainerXMLNoRootFilesElement userInfo:nil];
-                        [subscriber sendError:error];
-                    }
+                } else {
+                    [subscriber sendError:[NSError parserErrorWithCode:SKEPParserErrorCodeContainerXMLNoRootFilesElement]];
                 }
             }
-            else {
-                NSError *error = [NSError errorWithDomain:SKEPParserErrorDomain
-                                                     code:SKEPParserErrorCodeContainerXMLFileOpening
-                                                 userInfo:nil];
-                [subscriber sendError:error];
-            }
-        }
-        else {
-            NSError *error = [NSError errorWithDomain:SKEPParserErrorDomain
-                                                 code:SKEPParserErrorCodeEpubNoDestinationFolder
-                                             userInfo:nil];
-            [subscriber sendError:error];
+        } else {
+            [subscriber sendError:[NSError parserErrorWithCode:SKEPParserErrorCodeContainerXMLFileOpening]];
         }
         
         return nil;
@@ -176,6 +193,15 @@ NSString *const SKEPParserErrorDomain = @"SKEPParserErrorDomain";
         return [epubDestinationPath stringByAppendingPathComponent:relativePath];
     }];
 }
+
+#pragma makr - Error
+
+- (RACSignal *)errorDuringParsingTrigger {
+    /// TODO: implement error signal
+    return [RACSignal empty];
+}
+
+#pragma mark - Unarchiving
 
 - (RACSignal *)unarchiveEpubToDestinationFolder:(RACTuple *)paths {
     RACSignal *validationSignal = [self validateInputForStartParsing:paths];
@@ -197,15 +223,6 @@ NSString *const SKEPParserErrorDomain = @"SKEPParserErrorDomain";
     }];
 }
 
-#pragma makr - Error
-
-- (RACSignal *)errorDuringParsingTrigger {
-    /// TODO: implement error signal
-    return [RACSignal empty];
-}
-
-#pragma mark - Unarchiving
-
 #pragma mark - Validation
 
 - (RACSignal *)validateInputForStartParsing:(RACTuple *)startParsingInput {
@@ -215,7 +232,9 @@ NSString *const SKEPParserErrorDomain = @"SKEPParserErrorDomain";
             NSString *sourcePath = startParsingInput.first;
             NSString *destinationPath = startParsingInput.second;
             
-            if ([sourcePath isKindOfClass:[NSString class]] && [destinationPath isKindOfClass:[NSString class]]) {
+            BOOL validSourceClass = [sourcePath isKindOfClass:[NSString class]];
+            BOOL validDestinationClass = [destinationPath isKindOfClass:[NSString class]];
+            if (validSourceClass == YES && validDestinationClass == YES) {
                 BOOL sourcePathIsDirectory = NO;
                 BOOL destinationPathIsDirectory = NO;
                 BOOL sourcePathExist = [[NSFileManager defaultManager] fileExistsAtPath:sourcePath isDirectory:&sourcePathIsDirectory];
@@ -224,24 +243,19 @@ NSString *const SKEPParserErrorDomain = @"SKEPParserErrorDomain";
                     if (destinationPathExist == YES && destinationPathIsDirectory == YES) {
                         [subscriber sendNext:@YES];
                         [subscriber sendCompleted];
+                    } else if (destinationPathExist == NO) {
+                        error = [NSError parserErrorWithCode:SKEPParserErrorCodeIncorrectDestinationPath];
+                    } else if (destinationPathExist == YES && destinationPathIsDirectory == NO) {
+                        error = [NSError parserErrorWithCode:SKEPParserErrorCodeIncorrectDestinationPath];
                     }
-                    else if (destinationPathExist == NO) {
-                        error = [NSError errorWithDomain:SKEPParserErrorDomain code:SKEPParserErrorCodeIncorrectDestinationPath userInfo:nil];
-                    }
-                    else if (destinationPathExist == YES && destinationPathIsDirectory == NO) {
-                        error = [NSError errorWithDomain:SKEPParserErrorDomain code:SKEPParserErrorCodeIncorrectDestinationPath userInfo:nil];
-                    }
+                } else {
+                    error = [NSError parserErrorWithCode:SKEPParserErrorCodeNoSourceFilePath];
                 }
-                else {
-                    error = [NSError errorWithDomain:SKEPParserErrorDomain code:SKEPParserErrorCodeNoSourceFilePath userInfo:nil];
-                }
+            } else {
+                error = [NSError parserErrorWithCode:SKEPParserErrorCodeInputParamsValidation];
             }
-            else {
-                error = [NSError errorWithDomain:SKEPParserErrorDomain code:SKEPParserErrorCodeInputParamsValidation userInfo:nil];
-            }
-        }
-        else {
-            error = [NSError errorWithDomain:SKEPParserErrorDomain code:SKEPParserErrorCodeInputParamsValidation userInfo:nil];
+        } else {
+            error = [NSError parserErrorWithCode:SKEPParserErrorCodeInputParamsValidation];
         }
         
         if (error != nil) {
