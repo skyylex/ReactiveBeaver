@@ -19,7 +19,49 @@
 
 static int ddLogLevel = DDLogLevelError;
 
+@interface SKEPParser()
+
+@property (nonatomic, strong) RACCommand *startParsingCommand;
+@property (nonatomic, copy) NSString *sourcePath;
+@property (nonatomic, copy) NSString *destinationPath;
+@end
+
 @implementation SKEPParser
+
+#pragma mark - Creation
+
++ (instancetype)parserWithSourcePath:(NSString *)sourcePath destinationPath:(NSString *)destinationPath {
+    NSAssert(sourcePath != nil, @"source path is nil. [Assert works in DEBUG mode]");
+    NSAssert(destinationPath != nil, @"destination path is nil. [Assert works in DEBUG mode]");
+    
+    SKEPParser *parser = nil;
+    
+    /// TODO: add validation of the source/destination paths
+    BOOL validSourcePath = YES;
+    BOOL validDestinationPath = YES;
+    
+    if (validSourcePath == YES && validDestinationPath == YES) {
+        parser = [SKEPParser new];
+        parser.sourcePath = sourcePath;
+        parser.destinationPath = destinationPath;
+    }
+    return parser;
+}
+
+#pragma mark - ObjC default API
+
+- (void)startParsingWithCompletionBlock:(SKEPParserResultCompletion)completion {
+    NSAssert(self.sourcePath != nil, @"source path is nil. [Assert works in DEBUG mode]");
+    NSAssert(self.destinationPath != nil, @"destination path is nil. [Assert works in DEBUG mode]");
+    
+    NSArray *inputs = @[self.sourcePath, self.destinationPath];
+    
+    /// TODO: complete implementation write tests
+    [[self.startParsingCommand.executionSignals take:1] flattenMap:^RACStream *(RACSignal *signal) {
+        return [RACSignal return:@YES];
+    }];
+    [self.startParsingCommand execute:[RACTuple tupleWithObjectsFromArray:inputs]];
+}
 
 #pragma mark - RACCommand
 
@@ -348,6 +390,14 @@ static int ddLogLevel = DDLogLevelError;
         
         return nil;
     }];
+}
+
+@end
+
+@implementation SKEPParser(ReactiveCocoaSupport)
+
+- (RACCommand *)startCommand {
+    return self.startParsingCommand;
 }
 
 @end

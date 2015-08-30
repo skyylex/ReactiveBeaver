@@ -13,30 +13,24 @@
 		4206D1951B052C66007F227A /* SKEPParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4206D1891B052C65007F227A /* SKEPParser.framework */; };
 		4206D19C1B052C66007F227A /* SKEPParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4206D19B1B052C66007F227A /* SKEPParserTests.m */; };
 		4246F40E1B111EAB00A2A96F /* moby-dick.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4246F40D1B111EAB00A2A96F /* moby-dick.epub */; };
-		4256F7A51B91A1B800C8417E /* NSError+QuickCreation.h in Headers */ = {isa = PBXBuildFile; fileRef = 4256F7A31B91A1B800C8417E /* NSError+QuickCreation.h */; };
-		4256F7A61B91A1B800C8417E /* NSError+QuickCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4256F7A41B91A1B800C8417E /* NSError+QuickCreation.m */; };
-		4256F7A71B91A62300C8417E /* SKEPParser.h in Sources */ = {isa = PBXBuildFile; fileRef = 425AC06D1B06131500CF6070 /* SKEPParser.h */; };
-		4256F7AA1B91B0C300C8417E /* SKEPManifest.h in Headers */ = {isa = PBXBuildFile; fileRef = 4256F7A81B91B0C300C8417E /* SKEPManifest.h */; };
-		4256F7AB1B91B0C300C8417E /* SKEPManifest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4256F7A91B91B0C300C8417E /* SKEPManifest.m */; };
-		4256F7AE1B91B0F100C8417E /* SKEPManifestElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 4256F7AC1B91B0F100C8417E /* SKEPManifestElement.h */; };
-		4256F7AF1B91B0F100C8417E /* SKEPManifestElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4256F7AD1B91B0F100C8417E /* SKEPManifestElement.m */; };
-		425AC0711B06131500CF6070 /* SKEPParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 425AC06D1B06131500CF6070 /* SKEPParser.h */; };
-		425AC0721B06131500CF6070 /* SKEPParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AC06E1B06131500CF6070 /* SKEPParser.m */; };
-		425AC0731B06131500CF6070 /* SKEpub.h in Headers */ = {isa = PBXBuildFile; fileRef = 425AC06F1B06131500CF6070 /* SKEpub.h */; };
-		425AC0741B06131500CF6070 /* SKEpub.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AC0701B06131500CF6070 /* SKEpub.m */; };
-		425AC0771B06132700CF6070 /* SKFileSystemSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 425AC0751B06132700CF6070 /* SKFileSystemSupport.h */; };
-		425AC0781B06132700CF6070 /* SKFileSystemSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AC0761B06132700CF6070 /* SKFileSystemSupport.m */; };
-		425AC0791B06132700CF6070 /* SKFileSystemSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AC0761B06132700CF6070 /* SKFileSystemSupport.m */; };
-		425AC07A1B06132E00CF6070 /* SKEPParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AC06E1B06131500CF6070 /* SKEPParser.m */; };
-		425AC07B1B06133000CF6070 /* SKEpub.m in Sources */ = {isa = PBXBuildFile; fileRef = 425AC0701B06131500CF6070 /* SKEpub.m */; };
 		426764C21B11CB76003DCB81 /* SKFileSupportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 426764C11B11CB76003DCB81 /* SKFileSupportTests.m */; };
-		42A8B0EC1B24349A00E5A044 /* SKEPNavPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 42A8B0EA1B24349A00E5A044 /* SKEPNavPoint.h */; };
-		42A8B0ED1B24349A00E5A044 /* SKEPNavPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8B0EB1B24349A00E5A044 /* SKEPNavPoint.m */; };
-		42A8B0EE1B24349A00E5A044 /* SKEPNavPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8B0EB1B24349A00E5A044 /* SKEPNavPoint.m */; };
-		42A8B0F11B244E5100E5A044 /* SKEPSpineElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 42A8B0EF1B244E5100E5A044 /* SKEPSpineElement.h */; };
-		42A8B0F21B244E5100E5A044 /* SKEPSpineElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8B0F01B244E5100E5A044 /* SKEPSpineElement.m */; };
-		42A8B0F31B244E5100E5A044 /* SKEPSpineElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 42A8B0F01B244E5100E5A044 /* SKEPSpineElement.m */; };
-		42AE1F191B23711300F83BAC /* SKEpubNameConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 42AE1F181B23711300F83BAC /* SKEpubNameConstants.h */; };
+		4269A4BA1B93A452008B3612 /* NSError+QuickCreation.h in Headers */ = {isa = PBXBuildFile; fileRef = 4269A4B51B93A452008B3612 /* NSError+QuickCreation.h */; };
+		4269A4BB1B93A452008B3612 /* NSError+QuickCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4269A4B61B93A452008B3612 /* NSError+QuickCreation.m */; };
+		4269A4BC1B93A452008B3612 /* SKEpubNameConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 4269A4B71B93A452008B3612 /* SKEpubNameConstants.h */; };
+		4269A4BD1B93A452008B3612 /* SKFileSystemSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 4269A4B81B93A452008B3612 /* SKFileSystemSupport.h */; };
+		4269A4BE1B93A452008B3612 /* SKFileSystemSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 4269A4B91B93A452008B3612 /* SKFileSystemSupport.m */; };
+		4269A4CB1B93A46B008B3612 /* SKEPManifest.h in Headers */ = {isa = PBXBuildFile; fileRef = 4269A4BF1B93A46B008B3612 /* SKEPManifest.h */; };
+		4269A4CC1B93A46B008B3612 /* SKEPManifest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4269A4C01B93A46B008B3612 /* SKEPManifest.m */; };
+		4269A4CD1B93A46B008B3612 /* SKEPManifestElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 4269A4C11B93A46B008B3612 /* SKEPManifestElement.h */; };
+		4269A4CE1B93A46B008B3612 /* SKEPManifestElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4269A4C21B93A46B008B3612 /* SKEPManifestElement.m */; };
+		4269A4CF1B93A46B008B3612 /* SKEPNavPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 4269A4C31B93A46B008B3612 /* SKEPNavPoint.h */; };
+		4269A4D01B93A46B008B3612 /* SKEPNavPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4269A4C41B93A46B008B3612 /* SKEPNavPoint.m */; };
+		4269A4D11B93A46B008B3612 /* SKEPParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 4269A4C51B93A46B008B3612 /* SKEPParser.h */; };
+		4269A4D21B93A46B008B3612 /* SKEPParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4269A4C61B93A46B008B3612 /* SKEPParser.m */; };
+		4269A4D31B93A46B008B3612 /* SKEPSpineElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 4269A4C71B93A46B008B3612 /* SKEPSpineElement.h */; };
+		4269A4D41B93A46B008B3612 /* SKEPSpineElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4269A4C81B93A46B008B3612 /* SKEPSpineElement.m */; };
+		4269A4D51B93A46B008B3612 /* SKEpub.h in Headers */ = {isa = PBXBuildFile; fileRef = 4269A4C91B93A46B008B3612 /* SKEpub.h */; };
+		4269A4D61B93A46B008B3612 /* SKEpub.m in Sources */ = {isa = PBXBuildFile; fileRef = 4269A4CA1B93A46B008B3612 /* SKEpub.m */; };
 		C5AE02A8AE0D211442C6327C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB2059ABFD25DE7F6C3B17C3 /* libPods.a */; };
 		CACF2B75DD31F64E7B173E53 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
@@ -59,24 +53,24 @@
 		4206D19A1B052C66007F227A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4206D19B1B052C66007F227A /* SKEPParserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKEPParserTests.m; sourceTree = "<group>"; };
 		4246F40D1B111EAB00A2A96F /* moby-dick.epub */ = {isa = PBXFileReference; lastKnownFileType = file; name = "moby-dick.epub"; path = "BookSources/moby-dick.epub"; sourceTree = SOURCE_ROOT; };
-		4256F7A31B91A1B800C8417E /* NSError+QuickCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSError+QuickCreation.h"; path = "Support/NSError+QuickCreation.h"; sourceTree = "<group>"; };
-		4256F7A41B91A1B800C8417E /* NSError+QuickCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSError+QuickCreation.m"; path = "Support/NSError+QuickCreation.m"; sourceTree = "<group>"; };
-		4256F7A81B91B0C300C8417E /* SKEPManifest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKEPManifest.h; path = Core/SKEPManifest.h; sourceTree = "<group>"; };
-		4256F7A91B91B0C300C8417E /* SKEPManifest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKEPManifest.m; path = Core/SKEPManifest.m; sourceTree = "<group>"; };
-		4256F7AC1B91B0F100C8417E /* SKEPManifestElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKEPManifestElement.h; path = Core/SKEPManifestElement.h; sourceTree = "<group>"; };
-		4256F7AD1B91B0F100C8417E /* SKEPManifestElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKEPManifestElement.m; path = Core/SKEPManifestElement.m; sourceTree = "<group>"; };
-		425AC06D1B06131500CF6070 /* SKEPParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKEPParser.h; path = Core/SKEPParser.h; sourceTree = "<group>"; };
-		425AC06E1B06131500CF6070 /* SKEPParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKEPParser.m; path = Core/SKEPParser.m; sourceTree = "<group>"; };
-		425AC06F1B06131500CF6070 /* SKEpub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKEpub.h; path = Core/SKEpub.h; sourceTree = "<group>"; };
-		425AC0701B06131500CF6070 /* SKEpub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKEpub.m; path = Core/SKEpub.m; sourceTree = "<group>"; };
-		425AC0751B06132700CF6070 /* SKFileSystemSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKFileSystemSupport.h; path = Support/SKFileSystemSupport.h; sourceTree = "<group>"; };
-		425AC0761B06132700CF6070 /* SKFileSystemSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKFileSystemSupport.m; path = Support/SKFileSystemSupport.m; sourceTree = "<group>"; };
 		426764C11B11CB76003DCB81 /* SKFileSupportTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKFileSupportTests.m; sourceTree = "<group>"; };
-		42A8B0EA1B24349A00E5A044 /* SKEPNavPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKEPNavPoint.h; path = Core/SKEPNavPoint.h; sourceTree = "<group>"; };
-		42A8B0EB1B24349A00E5A044 /* SKEPNavPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKEPNavPoint.m; path = Core/SKEPNavPoint.m; sourceTree = "<group>"; };
-		42A8B0EF1B244E5100E5A044 /* SKEPSpineElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKEPSpineElement.h; path = Core/SKEPSpineElement.h; sourceTree = "<group>"; };
-		42A8B0F01B244E5100E5A044 /* SKEPSpineElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKEPSpineElement.m; path = Core/SKEPSpineElement.m; sourceTree = "<group>"; };
-		42AE1F181B23711300F83BAC /* SKEpubNameConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKEpubNameConstants.h; path = Support/SKEpubNameConstants.h; sourceTree = "<group>"; };
+		4269A4B51B93A452008B3612 /* NSError+QuickCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+QuickCreation.h"; sourceTree = "<group>"; };
+		4269A4B61B93A452008B3612 /* NSError+QuickCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+QuickCreation.m"; sourceTree = "<group>"; };
+		4269A4B71B93A452008B3612 /* SKEpubNameConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEpubNameConstants.h; sourceTree = "<group>"; };
+		4269A4B81B93A452008B3612 /* SKFileSystemSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKFileSystemSupport.h; sourceTree = "<group>"; };
+		4269A4B91B93A452008B3612 /* SKFileSystemSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKFileSystemSupport.m; sourceTree = "<group>"; };
+		4269A4BF1B93A46B008B3612 /* SKEPManifest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEPManifest.h; sourceTree = "<group>"; };
+		4269A4C01B93A46B008B3612 /* SKEPManifest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEPManifest.m; sourceTree = "<group>"; };
+		4269A4C11B93A46B008B3612 /* SKEPManifestElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEPManifestElement.h; sourceTree = "<group>"; };
+		4269A4C21B93A46B008B3612 /* SKEPManifestElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEPManifestElement.m; sourceTree = "<group>"; };
+		4269A4C31B93A46B008B3612 /* SKEPNavPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEPNavPoint.h; sourceTree = "<group>"; };
+		4269A4C41B93A46B008B3612 /* SKEPNavPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEPNavPoint.m; sourceTree = "<group>"; };
+		4269A4C51B93A46B008B3612 /* SKEPParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEPParser.h; sourceTree = "<group>"; };
+		4269A4C61B93A46B008B3612 /* SKEPParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEPParser.m; sourceTree = "<group>"; };
+		4269A4C71B93A46B008B3612 /* SKEPSpineElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEPSpineElement.h; sourceTree = "<group>"; };
+		4269A4C81B93A46B008B3612 /* SKEPSpineElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEPSpineElement.m; sourceTree = "<group>"; };
+		4269A4C91B93A46B008B3612 /* SKEpub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEpub.h; sourceTree = "<group>"; };
+		4269A4CA1B93A46B008B3612 /* SKEpub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEpub.m; sourceTree = "<group>"; };
 		9B58439EBD17959E5550142A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BB2059ABFD25DE7F6C3B17C3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE94A7BFF78DFD919687D00E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -174,32 +168,32 @@
 		4206D1A51B052CA0007F227A /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				425AC06D1B06131500CF6070 /* SKEPParser.h */,
-				425AC06E1B06131500CF6070 /* SKEPParser.m */,
-				425AC06F1B06131500CF6070 /* SKEpub.h */,
-				425AC0701B06131500CF6070 /* SKEpub.m */,
-				42A8B0EA1B24349A00E5A044 /* SKEPNavPoint.h */,
-				42A8B0EB1B24349A00E5A044 /* SKEPNavPoint.m */,
-				42A8B0EF1B244E5100E5A044 /* SKEPSpineElement.h */,
-				42A8B0F01B244E5100E5A044 /* SKEPSpineElement.m */,
-				4256F7A81B91B0C300C8417E /* SKEPManifest.h */,
-				4256F7A91B91B0C300C8417E /* SKEPManifest.m */,
-				4256F7AC1B91B0F100C8417E /* SKEPManifestElement.h */,
-				4256F7AD1B91B0F100C8417E /* SKEPManifestElement.m */,
+				4269A4BF1B93A46B008B3612 /* SKEPManifest.h */,
+				4269A4C01B93A46B008B3612 /* SKEPManifest.m */,
+				4269A4C11B93A46B008B3612 /* SKEPManifestElement.h */,
+				4269A4C21B93A46B008B3612 /* SKEPManifestElement.m */,
+				4269A4C31B93A46B008B3612 /* SKEPNavPoint.h */,
+				4269A4C41B93A46B008B3612 /* SKEPNavPoint.m */,
+				4269A4C51B93A46B008B3612 /* SKEPParser.h */,
+				4269A4C61B93A46B008B3612 /* SKEPParser.m */,
+				4269A4C71B93A46B008B3612 /* SKEPSpineElement.h */,
+				4269A4C81B93A46B008B3612 /* SKEPSpineElement.m */,
+				4269A4C91B93A46B008B3612 /* SKEpub.h */,
+				4269A4CA1B93A46B008B3612 /* SKEpub.m */,
 			);
-			name = Core;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		425AC06C1B0612F100CF6070 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				425AC0751B06132700CF6070 /* SKFileSystemSupport.h */,
-				425AC0761B06132700CF6070 /* SKFileSystemSupport.m */,
-				42AE1F181B23711300F83BAC /* SKEpubNameConstants.h */,
-				4256F7A31B91A1B800C8417E /* NSError+QuickCreation.h */,
-				4256F7A41B91A1B800C8417E /* NSError+QuickCreation.m */,
+				4269A4B51B93A452008B3612 /* NSError+QuickCreation.h */,
+				4269A4B61B93A452008B3612 /* NSError+QuickCreation.m */,
+				4269A4B71B93A452008B3612 /* SKEpubNameConstants.h */,
+				4269A4B81B93A452008B3612 /* SKFileSystemSupport.h */,
+				4269A4B91B93A452008B3612 /* SKFileSystemSupport.m */,
 			);
-			name = Support;
+			path = Support;
 			sourceTree = "<group>";
 		};
 		D45A418EA2C2FD9CB2CA68B9 /* Pods */ = {
@@ -218,16 +212,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				425AC0711B06131500CF6070 /* SKEPParser.h in Headers */,
-				42AE1F191B23711300F83BAC /* SKEpubNameConstants.h in Headers */,
-				42A8B0F11B244E5100E5A044 /* SKEPSpineElement.h in Headers */,
-				4256F7AE1B91B0F100C8417E /* SKEPManifestElement.h in Headers */,
-				42A8B0EC1B24349A00E5A044 /* SKEPNavPoint.h in Headers */,
+				4269A4BC1B93A452008B3612 /* SKEpubNameConstants.h in Headers */,
+				4269A4CD1B93A46B008B3612 /* SKEPManifestElement.h in Headers */,
+				4269A4D51B93A46B008B3612 /* SKEpub.h in Headers */,
+				4269A4D11B93A46B008B3612 /* SKEPParser.h in Headers */,
+				4269A4D31B93A46B008B3612 /* SKEPSpineElement.h in Headers */,
+				4269A4CF1B93A46B008B3612 /* SKEPNavPoint.h in Headers */,
+				4269A4BD1B93A452008B3612 /* SKFileSystemSupport.h in Headers */,
 				4206D18F1B052C65007F227A /* SKEPParser-Headers.h in Headers */,
-				4256F7A51B91A1B800C8417E /* NSError+QuickCreation.h in Headers */,
-				4256F7AA1B91B0C300C8417E /* SKEPManifest.h in Headers */,
-				425AC0731B06131500CF6070 /* SKEpub.h in Headers */,
-				425AC0771B06132700CF6070 /* SKFileSystemSupport.h in Headers */,
+				4269A4CB1B93A46B008B3612 /* SKEPManifest.h in Headers */,
+				4269A4BA1B93A452008B3612 /* NSError+QuickCreation.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,14 +389,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				425AC0781B06132700CF6070 /* SKFileSystemSupport.m in Sources */,
-				4256F7AB1B91B0C300C8417E /* SKEPManifest.m in Sources */,
-				425AC0721B06131500CF6070 /* SKEPParser.m in Sources */,
-				4256F7A61B91A1B800C8417E /* NSError+QuickCreation.m in Sources */,
-				4256F7AF1B91B0F100C8417E /* SKEPManifestElement.m in Sources */,
-				42A8B0F21B244E5100E5A044 /* SKEPSpineElement.m in Sources */,
-				425AC0741B06131500CF6070 /* SKEpub.m in Sources */,
-				42A8B0ED1B24349A00E5A044 /* SKEPNavPoint.m in Sources */,
+				4269A4CE1B93A46B008B3612 /* SKEPManifestElement.m in Sources */,
+				4269A4BE1B93A452008B3612 /* SKFileSystemSupport.m in Sources */,
+				4269A4D01B93A46B008B3612 /* SKEPNavPoint.m in Sources */,
+				4269A4CC1B93A46B008B3612 /* SKEPManifest.m in Sources */,
+				4269A4BB1B93A452008B3612 /* NSError+QuickCreation.m in Sources */,
+				4269A4D61B93A46B008B3612 /* SKEpub.m in Sources */,
+				4269A4D41B93A46B008B3612 /* SKEPSpineElement.m in Sources */,
+				4269A4D21B93A46B008B3612 /* SKEPParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,14 +404,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4256F7A71B91A62300C8417E /* SKEPParser.h in Sources */,
 				426764C21B11CB76003DCB81 /* SKFileSupportTests.m in Sources */,
-				425AC0791B06132700CF6070 /* SKFileSystemSupport.m in Sources */,
-				425AC07B1B06133000CF6070 /* SKEpub.m in Sources */,
-				42A8B0EE1B24349A00E5A044 /* SKEPNavPoint.m in Sources */,
 				4206D19C1B052C66007F227A /* SKEPParserTests.m in Sources */,
-				42A8B0F31B244E5100E5A044 /* SKEPSpineElement.m in Sources */,
-				425AC07A1B06132E00CF6070 /* SKEPParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
