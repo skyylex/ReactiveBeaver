@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SKEPManifest.h"
 
 @interface SKEpub : NSObject
 

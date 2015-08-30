@@ -15,27 +15,38 @@
 #import "NSError+QuickCreation.h"
 #import "SKEPManifestElement.h"
 #import "CocoaLumberjack.h"
+#import "SKEPManifest.h"
 
 static int ddLogLevel = DDLogLevelError;
 
 @implementation SKEPParser
 
-#pragma marl - RACCommand
+#pragma mark - RACCommand
 
 - (RACCommand *)startParsingCommand {
     if (_startParsingCommand == nil) {
         @weakify(self);
         _startParsingCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(RACTuple *paths) {
             @strongify(self);
-            return [self unarchiveEpubToDestinationFolder:paths];
+            return [[self unarchiveEpubToDestinationFolder:paths] flattenMap:^RACStream *(id _) {
+                @strongify(self);
+                NSString *destinationPath = paths.second;
+                return [[self containerXMLParsed:destinationPath] flattenMap:^RACStream *(NSString *opfFilePath) {
+                    @strongify(self);
+                    return [[self contentOPFFileParsed:opfFilePath] flattenMap:^RACStream *(id value) {
+                        return [RACSignal return:@YES];
+                    }];
+                }];
+            }];
         }];
     }
     
     return _startParsingCommand;
 }
 
+#pragma mark - Parse
+
 - (RACSignal *)parseManifest:(DDXMLDocument *)document {
-    /// TODO: implement
     RACSignal *manifestSectionSignal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         if (document != nil) {
             NSArray *manifestElements = [document.rootElement elementsForName:SKEPEpubContentOPFManifestElement];
@@ -79,6 +90,62 @@ static int ddLogLevel = DDLogLevelError;
     }];
 }
 
+- (RACSignal *)parseMetadata:(DDXMLDocument *)document {
+    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        if (document != nil) {
+            NSArray *metadataElements = [document.rootElement elementsForName:SKEPEpubContentOPFMetadataElement];
+            if (metadataElements != nil && metadataElements.count > 0) {
+                [subscriber sendNext:metadataElements.firstObject];
+            } else {
+                [subscriber sendError:[NSError parserErrorWithCode:0]];
+            }
+        } else {
+            [subscriber sendError:[NSError parserErrorWithCode:0]];
+        }
+        
+        [subscriber sendCompleted];
+        
+        return nil;
+    }] flattenMap:^RACStream *(DDXMLElement *metadataElement) {
+        return [[[metadataElement.children.rac_sequence.signal flattenMap:^RACStream *(id xmlObject) {
+            NSDictionary *metaDataPart = nil;
+            if ([xmlObject isKindOfClass:[DDXMLElement class]]) {
+                DDXMLElement *element = (DDXMLElement *)xmlObject;
+                NSString *name = element.name;
+                NSString *value = element.stringValue;
+                metaDataPart = @{name : value};
+            }
+            
+            return [RACSignal return:metaDataPart];
+        }] filter:^BOOL(id value) {
+            return value != nil;
+        }].collect flattenMap:^RACStream *(NSArray *metaParts) {
+            return [metaParts.rac_sequence.signal aggregateWithStart:[NSDictionary dictionary] reduce:^id(NSDictionary *currentMetadata, NSDictionary *nextPath) {
+                NSMutableDictionary *mutableMetadata = currentMetadata.mutableCopy;
+                NSDictionary *result = currentMetadata;
+                BOOL allowedKeys = [SKEPParser supportedMetadataKey:nextPath.allKeys.firstObject];
+                if (allowedKeys == YES) {
+                    [mutableMetadata addEntriesFromDictionary:nextPath];
+                    result = mutableMetadata.copy;
+                }
+                return result;
+            }];
+        }];
+    }];
+}
+
++ (BOOL)supportedMetadataKey:(NSString *)key {
+    static NSSet *supportedKeys = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSArray *keys = @[@"dc:title", @"dc:creator", @"dc:identifier", @"dc:publisher", @"dc:contributor", @"dc:rights"];
+        supportedKeys = [NSSet setWithArray:keys];
+    });
+    
+    NSPredicate *sameStringKeyPredicate = [NSPredicate predicateWithFormat:@"SELF =[cd] %@", key];
+    return [supportedKeys filteredSetUsingPredicate:sameStringKeyPredicate].count > 0;
+}
+
 - (RACSignal *)parseSpine:(DDXMLDocument *)document {
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         if (document != nil) {
@@ -98,7 +165,7 @@ static int ddLogLevel = DDLogLevelError;
         return [element.children.rac_sequence.signal flattenMap:^RACStream *(DDXMLElement *spineItem) {
             return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
                 SKEPSpineElement *spineElement = [SKEPSpineElement new];
-                DDXMLNode *idRefNode = [spineItem attributeForName:@"idref"];
+                DDXMLNode *idRefNode = [spineItem attributeForName:SpineElementIDRefKey];
                 if (idRefNode != nil) {
                     spineElement.idRef = idRefNode.stringValue;
                     [subscriber sendNext:spineElement];
@@ -139,7 +206,24 @@ static int ddLogLevel = DDLogLevelError;
         @strongify(self);
         RACSignal *manifestParsedTrigger = [self parseManifest:document];
         RACSignal *spineParsedTrigger = [self parseSpine:document];
-        return [manifestParsedTrigger combineLatestWith:spineParsedTrigger];;
+        RACSignal *metadataParsedTrigger = [self parseMetadata:document];
+        RACSignal *collectedInfoTrigger = [[[metadataParsedTrigger flattenMap:^RACStream *(NSDictionary *metadataInfo) {
+            return [RACSignal return:[NSDictionary dictionaryWithObject:metadataInfo forKey:SKEPEpubContentOPFMetadataElement]];
+        }] flattenMap:^RACStream *(NSDictionary *collectedInfo) {
+            return [spineParsedTrigger flattenMap:^RACStream *(NSArray *spineElements) {
+                NSMutableDictionary *collectedInfoMutable = collectedInfo.mutableCopy;
+                [collectedInfoMutable setObject:spineElements forKey:SKEPEpubContentOPFSpineElement];
+                return [RACSignal return:collectedInfoMutable.copy];
+            }];
+        }] flattenMap:^RACStream *(id value) {
+            return [manifestParsedTrigger flattenMap:^RACStream *(NSArray *manifestElements) {
+                NSMutableDictionary *collectedInfoMutable = manifestElements.mutableCopy;
+                [collectedInfoMutable setObject:manifestElements forKey:SKEPEpubContentOPFManifestElement];
+                return [RACSignal return:collectedInfoMutable.copy];
+            }];
+        }];
+        
+        return collectedInfoTrigger;
     }];
 }
 
@@ -194,14 +278,14 @@ static int ddLogLevel = DDLogLevelError;
     }];
 }
 
-#pragma makr - Error
+#pragma mark - Error
 
 - (RACSignal *)errorDuringParsingTrigger {
     /// TODO: implement error signal
     return [RACSignal empty];
 }
 
-#pragma mark - Unarchiving
+#pragma mark - Unarchive
 
 - (RACSignal *)unarchiveEpubToDestinationFolder:(RACTuple *)paths {
     RACSignal *validationSignal = [self validateInputForStartParsing:paths];

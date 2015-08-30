@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define SpineElementIDRefKey @"idref"
+
 @interface SKEPSpineElement : NSObject
 
 @property (nonatomic, strong) NSNumber *index;

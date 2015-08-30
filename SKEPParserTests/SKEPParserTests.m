@@ -232,7 +232,7 @@ describe(@"SKEPParserTest", ^{
                 error = validationError;
             }];
             
-            [[expectFutureValue(error) shouldEventuallyBeforeTimingOutAfter(0.5)] beNil];
+            [[expectFutureValue(error) shouldEventuallyBeforeTimingOutAfter(1.0)] beNil];
             [[theValue(validationFinished) should] beYes];
         });
     });

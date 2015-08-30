@@ -22,6 +22,7 @@ static NSString *const SKEPEpubContainerXMLTargetNodeName = @"rootfile";
 static NSString *const SKEPEpubContainerXMLFullPathAttribute = @"full-path";
 
 /// content.opf
+static NSString *const SKEPEpubContentOPFMetadataElement = @"metadata";
 static NSString *const SKEPEpubContentOPFSpineElement = @"spine";
 static NSString *const SKEPEpubContentOPFManifestElement = @"manifest";
 
