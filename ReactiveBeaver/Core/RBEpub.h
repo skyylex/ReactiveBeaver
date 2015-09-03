@@ -1,15 +1,15 @@
 //
-//  SKEpub.h
-//  SKEPParser
+//  RBEpub.h
+//  ReactiveBeaver
 //
 //  Created by skyylex on 14/05/15.
 //  Copyright (c) 2015 skyylex. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "SKEPManifest.h"
+#import "RBManifest.h"
 
-@interface SKEpub : NSObject
+@interface RBEpub : NSObject
 
 @property (nonatomic, copy) NSString *sha1;
 @property (nonatomic, copy) NSString *title;

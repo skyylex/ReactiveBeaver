@@ -1,19 +1,19 @@
 //
-//  SKFileSystemSupport.m
-//  SKEPParser
+//  RBFileSystemSupport.m
+//  ReactiveBeaver
 //
 //  Created by skyylex on 12/05/15.
 //  Copyright (c) 2015 skyylex. All rights reserved.
 //
 
-#import "SKFileSystemSupport.h"
+#import "RBFileSystemSupport.h"
 #import <CocoaLumberjack.h>
 #import <KSCrypto/KSSHA1Stream.h>
 #import <zipzap.h>
 
-NSString *const SKFileSystemSupportErrorDomain = @"SKFileSystemSupportErrorDomain";
+NSString *const RBFileSystemSupportErrorDomain = @"RBFileSystemSupportErrorDomain";
 
-@implementation SKFileSystemSupport
+@implementation RBFileSystemSupport
 
 + (RACSignal *)backupSupportIsDisabledForDirectory:(NSString *)directoryPath {
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
@@ -32,8 +32,8 @@ NSString *const SKFileSystemSupportErrorDomain = @"SKFileSystemSupportErrorDomai
                 [subscriber sendCompleted];
             }
         } else {
-            error = [NSError errorWithDomain:SKFileSystemSupportErrorDomain
-                                        code:SKFileSystemSupportErrorCodeNoFileOrDirectory
+            error = [NSError errorWithDomain:RBFileSystemSupportErrorDomain
+                                        code:RBFileSystemSupportErrorCodeNoFileOrDirectory
                                     userInfo:nil];
             [subscriber sendError:error];
         }
@@ -51,8 +51,8 @@ NSString *const SKFileSystemSupportErrorDomain = @"SKFileSystemSupportErrorDomai
             NSURL *URL = [NSURL fileURLWithPath:filePathString];
             [URL setResourceValue:@YES forKey:NSURLIsExcludedFromBackupKey error:&error];
         } else {
-            error = [NSError errorWithDomain:SKFileSystemSupportErrorDomain
-                                        code:SKFileSystemSupportErrorCodeNoFileOrDirectory
+            error = [NSError errorWithDomain:RBFileSystemSupportErrorDomain
+                                        code:RBFileSystemSupportErrorCodeNoFileOrDirectory
                                     userInfo:nil];
         }
         
@@ -75,8 +75,8 @@ NSString *const SKFileSystemSupportErrorDomain = @"SKFileSystemSupportErrorDomai
                                                           isDirectory:&isDirectory];
         
         if (exist == YES && isDirectory == NO) {
-            error = [NSError errorWithDomain:SKFileSystemSupportErrorDomain
-                                        code:SKFileSystemSupportErrorCodePathLeadToFile
+            error = [NSError errorWithDomain:RBFileSystemSupportErrorDomain
+                                        code:RBFileSystemSupportErrorCodePathLeadToFile
                                     userInfo:nil];
             [subscriber sendError:error];
         } else {
@@ -144,8 +144,8 @@ NSString *const SKFileSystemSupportErrorDomain = @"SKFileSystemSupportErrorDomai
             [subscriber sendNext:resultTempPath];
             [subscriber sendCompleted];
         } else {
-            NSError *error = [NSError errorWithDomain:SKFileSystemSupportErrorDomain
-                                                 code:SKFileSystemSupportErrorCodeSavingToTempFolderFail
+            NSError *error = [NSError errorWithDomain:RBFileSystemSupportErrorDomain
+                                                 code:RBFileSystemSupportErrorCodeSavingToTempFolderFail
                                              userInfo:nil];
             [subscriber sendError:error];
         }

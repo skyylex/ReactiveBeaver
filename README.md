@@ -1,4 +1,4 @@
-# SKEPParser (in active development)
+# ReactiveBeaver (preparing first version)
 #### NOT released. 
 ePub parser for iOS and OS X. 
 Core parts are designed to be functional and are written in ReactiveCocoa. 
@@ -12,7 +12,7 @@ Core parts are designed to be functional and are written in ReactiveCocoa.
 
 ### License
 ##### Code
-SKEPParser code is available under the MIT license. See LICENSE for details.
+ReactiveBeaver code is available under the MIT license. See LICENSE for details.
 
 ##### Book sources
 All sources and compile tools were get from https://github.com/IDPF/epub3-samples 

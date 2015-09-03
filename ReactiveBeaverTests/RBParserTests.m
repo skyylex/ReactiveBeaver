@@ -1,21 +1,21 @@
 //
 //  SKFileSupportTests.m
-//  SKEPParser
+//  ReactiveBeaver
 //
 //  Created by skyylex on 24/05/15.
 //  Copyright (c) 2015 skyylex. All rights reserved.
 //
 
 #import "Kiwi.h"
-#import "SKEPParser.h"
-#import "SKFileSystemSupport.h"
-#import "SKEpubNameConstants.h"
+#import "RBParser.h"
+#import "RBFileSystemSupport.h"
+#import "RBEpubNameConstants.h"
 #import "DDXML.h"
 #import "NSError+QuickCreation.h"
 
-static NSString *const SKEPParserTestBookSource1 = @"moby-dick";
+static NSString *const RBParserTestBookSource1 = @"moby-dick";
 
-@interface SKEPParser()
+@interface RBParser()
 
 - (RACSignal *)unarchiveEpubToDestinationFolder:(RACTuple *)paths;
 - (RACSignal *)validateInputForStartParsing:(RACTuple *)startParsingInput;
@@ -25,17 +25,17 @@ static NSString *const SKEPParserTestBookSource1 = @"moby-dick";
 
 @end
 
-SPEC_BEGIN(SKEPParserTest)
+SPEC_BEGIN(RBParserTest)
 
-describe(@"SKEPParserTest", ^{
+describe(@"RBParserTest", ^{
     let(parser, ^{
-        return [SKEPParser new];
+        return [RBParser new];
     });
     
     context(@"startParsingCommand", ^{
         it(@"moby-dick book parsing", ^{
-            NSString *validSourcePath = [[NSBundle bundleForClass:[self class]] pathForResource:SKEPParserTestBookSource1 ofType:@"epub"];;
-            NSString *destinationStringPath = [SKFileSystemSupport applicationSupportDirectory];
+            NSString *validSourcePath = [[NSBundle bundleForClass:[self class]] pathForResource:RBParserTestBookSource1 ofType:@"epub"];;
+            NSString *destinationStringPath = [RBFileSystemSupport applicationSupportDirectory];
             __block NSNumber *finished = nil;
             [[parser unarchiveEpubToDestinationFolder:RACTuplePack(validSourcePath, destinationStringPath)] subscribeNext:^(id x) {
                 finished = @YES;
@@ -44,8 +44,8 @@ describe(@"SKEPParserTest", ^{
             [[expectFutureValue(finished) shouldNotEventuallyBeforeTimingOutAfter(5.0)] beNil];
             [[finished should] beYes];
             
-            NSString *metaInfFolderPath = [destinationStringPath stringByAppendingPathComponent:SKEPEpubMetaInfFolder];
-            NSString *mimetypeFolderPath = [destinationStringPath stringByAppendingPathComponent:SKEPEpubMimetypeFolder];
+            NSString *metaInfFolderPath = [destinationStringPath stringByAppendingPathComponent:RBEpubMetaInfFolder];
+            NSString *mimetypeFolderPath = [destinationStringPath stringByAppendingPathComponent:RBEpubMimetypeFolder];
             
             BOOL metaInfIsDirectory = NO;
             BOOL mimetypeIsDirectory = NO;
@@ -94,8 +94,8 @@ describe(@"SKEPParserTest", ^{
             }];
             
             [[expectFutureValue(error) shouldNotEventuallyBeforeTimingOutAfter(0.5)] beNil];
-            [[theValue([error.domain isEqualToString:SKEPParserErrorDomain]) should] beYes];
-            [[theValue(error.code == SKEPParserErrorCodeInputParamsValidation) should] beYes];
+            [[theValue([error.domain isEqualToString:RBParserErrorDomain]) should] beYes];
+            [[theValue(error.code == RBParserErrorCodeInputParamsValidation) should] beYes];
             [[theValue(validationFinished) should] beYes];
         });
         
@@ -113,8 +113,8 @@ describe(@"SKEPParserTest", ^{
             }];
             
             [[expectFutureValue(error) shouldNotEventuallyBeforeTimingOutAfter(0.5)] beNil];
-            [[theValue([error.domain isEqualToString:SKEPParserErrorDomain]) should] beYes];
-            [[theValue(error.code == SKEPParserErrorCodeInputParamsValidation) should] beYes];
+            [[theValue([error.domain isEqualToString:RBParserErrorDomain]) should] beYes];
+            [[theValue(error.code == RBParserErrorCodeInputParamsValidation) should] beYes];
             [[theValue(validationFinished) should] beYes];
         });
         
@@ -132,8 +132,8 @@ describe(@"SKEPParserTest", ^{
             }];
             
             [[expectFutureValue(error) shouldNotEventuallyBeforeTimingOutAfter(0.5)] beNil];
-            [[theValue([error.domain isEqualToString:SKEPParserErrorDomain]) should] beYes];
-            [[theValue(error.code == SKEPParserErrorCodeInputParamsValidation) should] beYes];
+            [[theValue([error.domain isEqualToString:RBParserErrorDomain]) should] beYes];
+            [[theValue(error.code == RBParserErrorCodeInputParamsValidation) should] beYes];
             [[theValue(validationFinished) should] beYes];
         });
         
@@ -151,8 +151,8 @@ describe(@"SKEPParserTest", ^{
             }];
             
             [[expectFutureValue(error) shouldNotEventuallyBeforeTimingOutAfter(0.5)] beNil];
-            [[theValue([error.domain isEqualToString:SKEPParserErrorDomain]) should] beYes];
-            [[theValue(error.code == SKEPParserErrorCodeNoSourceFilePath) should] beYes];
+            [[theValue([error.domain isEqualToString:RBParserErrorDomain]) should] beYes];
+            [[theValue(error.code == RBParserErrorCodeNoSourceFilePath) should] beYes];
             [[theValue(validationFinished) should] beYes];
         });
         
@@ -170,13 +170,13 @@ describe(@"SKEPParserTest", ^{
             }];
             
             [[expectFutureValue(error) shouldNotEventuallyBeforeTimingOutAfter(0.5)] beNil];
-            [[theValue([error.domain isEqualToString:SKEPParserErrorDomain]) should] beYes];
-            [[theValue(error.code == SKEPParserErrorCodeNoSourceFilePath) should] beYes];
+            [[theValue([error.domain isEqualToString:RBParserErrorDomain]) should] beYes];
+            [[theValue(error.code == RBParserErrorCodeNoSourceFilePath) should] beYes];
             [[theValue(validationFinished) should] beYes];
         });
         
         it(@"incorrect destination path #1", ^{
-            NSString *validSourcePath = [[NSBundle bundleForClass:[self class]] pathForResource:SKEPParserTestBookSource1 ofType:@"epub"];
+            NSString *validSourcePath = [[NSBundle bundleForClass:[self class]] pathForResource:RBParserTestBookSource1 ofType:@"epub"];
             RACSignal *validationSignal = [parser validateInputForStartParsing:RACTuplePack(validSourcePath, validSourcePath)];
             __block NSError *error = nil;
             __block BOOL validationFinished = NO;
@@ -190,13 +190,13 @@ describe(@"SKEPParserTest", ^{
             }];
             
             [[expectFutureValue(error) shouldNotEventuallyBeforeTimingOutAfter(0.5)] beNil];
-            [[theValue([error.domain isEqualToString:SKEPParserErrorDomain]) should] beYes];
-            [[theValue(error.code == SKEPParserErrorCodeIncorrectDestinationPath) should] beYes];
+            [[theValue([error.domain isEqualToString:RBParserErrorDomain]) should] beYes];
+            [[theValue(error.code == RBParserErrorCodeIncorrectDestinationPath) should] beYes];
             [[theValue(validationFinished) should] beYes];
         });
         
         it(@"incorrect destination path #2", ^{
-            NSString *validSourcePath = [[NSBundle bundleForClass:[self class]] pathForResource:SKEPParserTestBookSource1 ofType:@"epub"];
+            NSString *validSourcePath = [[NSBundle bundleForClass:[self class]] pathForResource:RBParserTestBookSource1 ofType:@"epub"];
             NSString *tempPathWithFakeSuffix = [NSTemporaryDirectory() stringByAppendingString:@"###"];
             RACSignal *validationSignal = [parser validateInputForStartParsing:RACTuplePack(validSourcePath, tempPathWithFakeSuffix)];
             __block NSError *error = nil;
@@ -211,15 +211,15 @@ describe(@"SKEPParserTest", ^{
             }];
             
             [[expectFutureValue(error) shouldNotEventuallyBeforeTimingOutAfter(0.5)] beNil];
-            [[theValue([error.domain isEqualToString:SKEPParserErrorDomain]) should] beYes];
-            [[theValue(error.code == SKEPParserErrorCodeIncorrectDestinationPath) should] beYes];
+            [[theValue([error.domain isEqualToString:RBParserErrorDomain]) should] beYes];
+            [[theValue(error.code == RBParserErrorCodeIncorrectDestinationPath) should] beYes];
             [[theValue(validationFinished) should] beYes];
         });
         
         it(@"correct inputs", ^{
-            NSString *validSourcePath = [[NSBundle bundleForClass:[self class]] pathForResource:SKEPParserTestBookSource1
+            NSString *validSourcePath = [[NSBundle bundleForClass:[self class]] pathForResource:RBParserTestBookSource1
                                                                                          ofType:@"epub"];
-            RACSignal *validationSignal = [parser validateInputForStartParsing:RACTuplePack(validSourcePath, [SKFileSystemSupport applicationSupportDirectory])];
+            RACSignal *validationSignal = [parser validateInputForStartParsing:RACTuplePack(validSourcePath, [RBFileSystemSupport applicationSupportDirectory])];
             __block NSError *error = nil;
             __block BOOL validationFinished = NO;
             

@@ -1,6 +1,6 @@
 platform :ios, '7.0'
 
-link_with 'SKEPParser', 'SKEPParserTests'
+link_with 'ReactiveBeaver', 'ReactiveBeaverTests'
 
 pod 'ReactiveCocoa', '~> 2.5'
 pod 'CocoaLumberjack', '~> 2.0'

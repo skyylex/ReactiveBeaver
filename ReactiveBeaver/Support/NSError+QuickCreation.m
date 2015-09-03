@@ -1,6 +1,6 @@
 //
 //  NSError+QuickCreation.m
-//  SKEPParser
+//  ReactiveBeaver
 //
 //  Created by Yury Lapitsky on 29.08.15.
 //  Copyright (c) 2015 skyylex. All rights reserved.
@@ -11,7 +11,7 @@
 @implementation NSError (QuickCreation)
 
 + (instancetype)parserErrorWithCode:(NSInteger)code {
-    return [NSError errorWithDomain:SKEPParserErrorDomain code:code userInfo:nil];
+    return [NSError errorWithDomain:RBParserErrorDomain code:code userInfo:nil];
     
 }
 

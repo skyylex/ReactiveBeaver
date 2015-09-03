@@ -1,13 +1,13 @@
 //
-//  SKEpub.m
-//  SKEPParser
+//  RBEpub.m
+//  ReactiveBeaver
 //
 //  Created by skyylex on 14/05/15.
 //  Copyright (c) 2015 skyylex. All rights reserved.
 //
 
-#import "SKEpub.h"
+#import "RBEpub.h"
 
-@implementation SKEpub
+@implementation RBEpub
 
 @end

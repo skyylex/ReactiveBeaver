@@ -1,32 +1,32 @@
 //
-//  SKEPParser.m
-//  SKEPParser
+//  RBParser.m
+//  ReactiveBeaver
 //
 //  Created by skyylex on 14/05/15.
 //  Copyright (c) 2015 skyylex. All rights reserved.
 //
 
-#import "SKEPParser.h"
-#import "SKFileSystemSupport.h"
+#import "RBParser.h"
+#import "RBFileSystemSupport.h"
 #import "zipzap.h"
 #import <DDXML.h>
-#import "SKEpubNameConstants.h"
-#import "SKEPSpineElement.h"
+#import "RBEpubNameConstants.h"
+#import "RBSpineElement.h"
 #import "NSError+QuickCreation.h"
-#import "SKEPManifestElement.h"
+#import "RBManifestElement.h"
 #import "CocoaLumberjack.h"
-#import "SKEPManifest.h"
+#import "RBManifest.h"
 
 static int ddLogLevel = DDLogLevelError;
 
-@interface SKEPParser()
+@interface RBParser()
 
 @property (nonatomic, strong) RACCommand *startParsingCommand;
 @property (nonatomic, copy) NSString *sourcePath;
 @property (nonatomic, copy) NSString *destinationPath;
 @end
 
-@implementation SKEPParser
+@implementation RBParser
 
 #pragma mark - Creation
 
@@ -34,14 +34,14 @@ static int ddLogLevel = DDLogLevelError;
     NSAssert(sourcePath != nil, @"source path is nil. [Assert works in DEBUG mode]");
     NSAssert(destinationPath != nil, @"destination path is nil. [Assert works in DEBUG mode]");
     
-    SKEPParser *parser = nil;
+    RBParser *parser = nil;
     
     /// TODO: add validation of the source/destination paths
     BOOL validSourcePath = YES;
     BOOL validDestinationPath = YES;
     
     if (validSourcePath == YES && validDestinationPath == YES) {
-        parser = [SKEPParser new];
+        parser = [RBParser new];
         parser.sourcePath = sourcePath;
         parser.destinationPath = destinationPath;
     }
@@ -50,7 +50,7 @@ static int ddLogLevel = DDLogLevelError;
 
 #pragma mark - ObjC default API
 
-- (void)startParsingWithCompletionBlock:(SKEPParserResultCompletion)completion {
+- (void)startParsingWithCompletionBlock:(RBParserResultCompletion)completion {
     NSAssert(self.sourcePath != nil, @"source path is nil. [Assert works in DEBUG mode]");
     NSAssert(self.destinationPath != nil, @"destination path is nil. [Assert works in DEBUG mode]");
     
@@ -91,7 +91,7 @@ static int ddLogLevel = DDLogLevelError;
 - (RACSignal *)parseManifest:(DDXMLDocument *)document {
     RACSignal *manifestSectionSignal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         if (document != nil) {
-            NSArray *manifestElements = [document.rootElement elementsForName:SKEPEpubContentOPFManifestElement];
+            NSArray *manifestElements = [document.rootElement elementsForName:RBEpubContentOPFManifestElement];
             if (manifestElements.count == 1) {
                 DDXMLElement *manifest = manifestElements.firstObject;
                 [subscriber sendNext:manifest];
@@ -111,13 +111,13 @@ static int ddLogLevel = DDLogLevelError;
     return [manifestSectionSignal flattenMap:^RACStream *(DDXMLElement *manifestElement) {
         return [manifestElement.children.rac_sequence.signal flattenMap:^RACStream *(id xmlObject) {
             return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-                SKEPManifestElement *manifestElement = nil;
+                RBManifestElement *manifestElement = nil;
                 if ([xmlObject isKindOfClass:[DDXMLElement class]]) {
                     DDXMLElement *element = (DDXMLElement *)xmlObject;
-                    manifestElement = [SKEPManifestElement new];
-                    manifestElement.identifier = [element attributeForName:SKEPManifestElementIdentifierKey].stringValue;
-                    manifestElement.href = [element attributeForName:SKEPManifestElementHrefKey].stringValue;
-                    manifestElement.mediaType = [element attributeForName:SKEPManifestElementMediaTypKey].stringValue;
+                    manifestElement = [RBManifestElement new];
+                    manifestElement.identifier = [element attributeForName:RBManifestElementIdentifierKey].stringValue;
+                    manifestElement.href = [element attributeForName:RBManifestElementHrefKey].stringValue;
+                    manifestElement.mediaType = [element attributeForName:RBManifestElementMediaTypKey].stringValue;
                     [subscriber sendNext:manifestElement];
                 } else if ([xmlObject isKindOfClass:[DDXMLNode class]]) {
                     /// TODO: investigate what to do here with unspecified objects
@@ -135,7 +135,7 @@ static int ddLogLevel = DDLogLevelError;
 - (RACSignal *)parseMetadata:(DDXMLDocument *)document {
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         if (document != nil) {
-            NSArray *metadataElements = [document.rootElement elementsForName:SKEPEpubContentOPFMetadataElement];
+            NSArray *metadataElements = [document.rootElement elementsForName:RBEpubContentOPFMetadataElement];
             if (metadataElements != nil && metadataElements.count > 0) {
                 [subscriber sendNext:metadataElements.firstObject];
             } else {
@@ -165,7 +165,7 @@ static int ddLogLevel = DDLogLevelError;
             return [metaParts.rac_sequence.signal aggregateWithStart:[NSDictionary dictionary] reduce:^id(NSDictionary *currentMetadata, NSDictionary *nextPath) {
                 NSMutableDictionary *mutableMetadata = currentMetadata.mutableCopy;
                 NSDictionary *result = currentMetadata;
-                BOOL allowedKeys = [SKEPParser supportedMetadataKey:nextPath.allKeys.firstObject];
+                BOOL allowedKeys = [RBParser supportedMetadataKey:nextPath.allKeys.firstObject];
                 if (allowedKeys == YES) {
                     [mutableMetadata addEntriesFromDictionary:nextPath];
                     result = mutableMetadata.copy;
@@ -191,7 +191,7 @@ static int ddLogLevel = DDLogLevelError;
 - (RACSignal *)parseSpine:(DDXMLDocument *)document {
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         if (document != nil) {
-            NSArray *spineElements = [document.rootElement elementsForName:SKEPEpubContentOPFSpineElement];
+            NSArray *spineElements = [document.rootElement elementsForName:RBEpubContentOPFSpineElement];
             if (spineElements != nil && spineElements.count > 0) {
                 [subscriber sendNext:spineElements.firstObject];
                 [subscriber sendCompleted];
@@ -206,7 +206,7 @@ static int ddLogLevel = DDLogLevelError;
     }] flattenMap:^RACStream *(DDXMLElement *element) {
         return [element.children.rac_sequence.signal flattenMap:^RACStream *(DDXMLElement *spineItem) {
             return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-                SKEPSpineElement *spineElement = [SKEPSpineElement new];
+                RBSpineElement *spineElement = [RBSpineElement new];
                 DDXMLNode *idRefNode = [spineItem attributeForName:SpineElementIDRefKey];
                 if (idRefNode != nil) {
                     spineElement.idRef = idRefNode.stringValue;
@@ -250,17 +250,17 @@ static int ddLogLevel = DDLogLevelError;
         RACSignal *spineParsedTrigger = [self parseSpine:document];
         RACSignal *metadataParsedTrigger = [self parseMetadata:document];
         RACSignal *collectedInfoTrigger = [[[metadataParsedTrigger flattenMap:^RACStream *(NSDictionary *metadataInfo) {
-            return [RACSignal return:[NSDictionary dictionaryWithObject:metadataInfo forKey:SKEPEpubContentOPFMetadataElement]];
+            return [RACSignal return:[NSDictionary dictionaryWithObject:metadataInfo forKey:RBEpubContentOPFMetadataElement]];
         }] flattenMap:^RACStream *(NSDictionary *collectedInfo) {
             return [spineParsedTrigger flattenMap:^RACStream *(NSArray *spineElements) {
                 NSMutableDictionary *collectedInfoMutable = collectedInfo.mutableCopy;
-                [collectedInfoMutable setObject:spineElements forKey:SKEPEpubContentOPFSpineElement];
+                [collectedInfoMutable setObject:spineElements forKey:RBEpubContentOPFSpineElement];
                 return [RACSignal return:collectedInfoMutable.copy];
             }];
         }] flattenMap:^RACStream *(id value) {
             return [manifestParsedTrigger flattenMap:^RACStream *(NSArray *manifestElements) {
                 NSMutableDictionary *collectedInfoMutable = manifestElements.mutableCopy;
-                [collectedInfoMutable setObject:manifestElements forKey:SKEPEpubContentOPFManifestElement];
+                [collectedInfoMutable setObject:manifestElements forKey:RBEpubContentOPFManifestElement];
                 return [RACSignal return:collectedInfoMutable.copy];
             }];
         }];
@@ -270,8 +270,8 @@ static int ddLogLevel = DDLogLevelError;
 }
 
 - (NSString *)containerXMLPath:(NSString *)epubUnzippedPath {
-    NSString *metaFolder = [epubUnzippedPath stringByAppendingPathComponent:SKEPEpubMetaInfFolder];
-    NSString *containerXMLPath = [metaFolder stringByAppendingPathComponent:SKEPEpubContainerXMLName];
+    NSString *metaFolder = [epubUnzippedPath stringByAppendingPathComponent:RBEpubMetaInfFolder];
+    NSString *containerXMLPath = [metaFolder stringByAppendingPathComponent:RBEpubContainerXMLName];
     return containerXMLPath;
 }
 
@@ -286,32 +286,32 @@ static int ddLogLevel = DDLogLevelError;
                                                                     error:&documentOpeningError];
             if (document != nil) {
                 /// TODO: rewrite with XPath
-                NSArray *rootFiles = [document.rootElement elementsForName:SKEPEpubContainerXMLParentNodeName];
+                NSArray *rootFiles = [document.rootElement elementsForName:RBEpubContainerXMLParentNodeName];
                 if (rootFiles.count > 0) {
                     DDXMLElement *rootFilesElement = rootFiles.firstObject;
-                    NSArray *rootFileElements = [rootFilesElement elementsForName:SKEPEpubContainerXMLTargetNodeName];
+                    NSArray *rootFileElements = [rootFilesElement elementsForName:RBEpubContainerXMLTargetNodeName];
                     if (rootFileElements != nil && rootFileElements.count > 0) {
                         DDXMLElement *rootFileElement = rootFileElements.firstObject;
                         if (rootFileElement != nil) {
-                            DDXMLNode *node = [rootFileElement attributeForName:SKEPEpubContainerXMLFullPathAttribute];
+                            DDXMLNode *node = [rootFileElement attributeForName:RBEpubContainerXMLFullPathAttribute];
                             NSString *fullPathValue = node.stringValue;
                             if (fullPathValue != nil) {
                                 [subscriber sendNext:fullPathValue];
                             } else {
-                                [subscriber sendError:[NSError parserErrorWithCode:SKEPParserErrorCodeContainerXMLNoFullPathAttribute]];
+                                [subscriber sendError:[NSError parserErrorWithCode:RBParserErrorCodeContainerXMLNoFullPathAttribute]];
                             }
                         } else {
-                            [subscriber sendError:[NSError parserErrorWithCode:SKEPParserErrorCodeContainerXMLNoRootFileElement]];
+                            [subscriber sendError:[NSError parserErrorWithCode:RBParserErrorCodeContainerXMLNoRootFileElement]];
                         }
                     } else {
-                        [subscriber sendError:[NSError parserErrorWithCode:SKEPParserErrorCodeContainerXMLNoRootFilesElement]];
+                        [subscriber sendError:[NSError parserErrorWithCode:RBParserErrorCodeContainerXMLNoRootFilesElement]];
                     }
                 } else {
-                    [subscriber sendError:[NSError parserErrorWithCode:SKEPParserErrorCodeContainerXMLNoRootFilesElement]];
+                    [subscriber sendError:[NSError parserErrorWithCode:RBParserErrorCodeContainerXMLNoRootFilesElement]];
                 }
             }
         } else {
-            [subscriber sendError:[NSError parserErrorWithCode:SKEPParserErrorCodeContainerXMLFileOpening]];
+            [subscriber sendError:[NSError parserErrorWithCode:RBParserErrorCodeContainerXMLFileOpening]];
         }
         
         return nil;
@@ -335,7 +335,7 @@ static int ddLogLevel = DDLogLevelError;
         RACSignal *resultSignal = nil;
         if (validationSuccess.boolValue == YES) {
             NSString *sourceFile = paths.first;
-            resultSignal = [SKFileSystemSupport saveFileURLDataToTheTempFolder:sourceFile];
+            resultSignal = [RBFileSystemSupport saveFileURLDataToTheTempFolder:sourceFile];
         }
         else {
             /// TODO: undefined what to return if validation failed
@@ -345,7 +345,7 @@ static int ddLogLevel = DDLogLevelError;
         return resultSignal;
     }] flattenMap:^RACStream *(NSString *tempFolderEpubPath) {
         NSString *destinationPath = paths.second;
-        return [SKFileSystemSupport unarchiveFile:tempFolderEpubPath toDestinationFolder:destinationPath];
+        return [RBFileSystemSupport unarchiveFile:tempFolderEpubPath toDestinationFolder:destinationPath];
     }];
 }
 
@@ -370,18 +370,18 @@ static int ddLogLevel = DDLogLevelError;
                         [subscriber sendNext:@YES];
                         [subscriber sendCompleted];
                     } else if (destinationPathExist == NO) {
-                        error = [NSError parserErrorWithCode:SKEPParserErrorCodeIncorrectDestinationPath];
+                        error = [NSError parserErrorWithCode:RBParserErrorCodeIncorrectDestinationPath];
                     } else if (destinationPathExist == YES && destinationPathIsDirectory == NO) {
-                        error = [NSError parserErrorWithCode:SKEPParserErrorCodeIncorrectDestinationPath];
+                        error = [NSError parserErrorWithCode:RBParserErrorCodeIncorrectDestinationPath];
                     }
                 } else {
-                    error = [NSError parserErrorWithCode:SKEPParserErrorCodeNoSourceFilePath];
+                    error = [NSError parserErrorWithCode:RBParserErrorCodeNoSourceFilePath];
                 }
             } else {
-                error = [NSError parserErrorWithCode:SKEPParserErrorCodeInputParamsValidation];
+                error = [NSError parserErrorWithCode:RBParserErrorCodeInputParamsValidation];
             }
         } else {
-            error = [NSError parserErrorWithCode:SKEPParserErrorCodeInputParamsValidation];
+            error = [NSError parserErrorWithCode:RBParserErrorCodeInputParamsValidation];
         }
         
         if (error != nil) {
@@ -394,7 +394,7 @@ static int ddLogLevel = DDLogLevelError;
 
 @end
 
-@implementation SKEPParser(ReactiveCocoaSupport)
+@implementation RBParser(ReactiveCocoaSupport)
 
 - (RACCommand *)startCommand {
     return self.startParsingCommand;

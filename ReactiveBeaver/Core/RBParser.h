@@ -1,6 +1,6 @@
 //
-//  SKEPParser.h
-//  SKEPParser
+//  RBParser.h
+//  ReactiveBeaver
 //
 //  Created by skyylex on 14/05/15.
 //  Copyright (c) 2015 skyylex. All rights reserved.
@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-typedef void(^SKEPParserResultCompletion)(NSDictionary *results, NSError *error);
+typedef void(^RBParserResultCompletion)(NSDictionary *results, NSError *error);
 
-@interface SKEPParser : NSObject
+@interface RBParser : NSObject
 
 /// Creation of parser instance
 /// @param sourcePath NSString path to the epub file (file should exist)
@@ -22,14 +22,14 @@ typedef void(^SKEPParserResultCompletion)(NSDictionary *results, NSError *error)
 @end
 
 /// Default API
-@interface SKEPParser(StandartObjC)
+@interface RBParser(StandartObjC)
 
-- (void)startParsingWithCompletionBlock:(SKEPParserResultCompletion)completion;
+- (void)startParsingWithCompletionBlock:(RBParserResultCompletion)completion;
 
 @end
 
 /// Alternative API for ReactiveCocoa support
-@interface SKEPParser(ReactiveCocoaSupport)
+@interface RBParser(ReactiveCocoaSupport)
 
 /// @note to begin actual parsing call execute: on returned RACComand object
 /// @return RACComand instance

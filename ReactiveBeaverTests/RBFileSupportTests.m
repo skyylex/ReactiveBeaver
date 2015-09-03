@@ -1,22 +1,22 @@
 //
-//  SKFileSupportTests.m
-//  SKEPParser
+//  RBFileSupportTests.m
+//  ReactiveBeaver
 //
 //  Created by skyylex on 24/05/15.
 //  Copyright (c) 2015 skyylex. All rights reserved.
 //
 
 #import "Kiwi.h"
-#import "SKFileSystemSupport.h"
+#import "RBFileSystemSupport.h"
 
-static NSString *const SKFileSystemSupportTestFolderName = @"SKFileSystemSupportTestFolderName";
+static NSString *const RBFileSystemSupportTestFolderName = @"SKFileSystemSupportTestFolderName";
 
-SPEC_BEGIN(SKFileSystemSupportTest)
+SPEC_BEGIN(RBFileSystemSupportTest)
 
-describe(@"SKFileSystemSupport", ^{
+describe(@"RBFileSystemSupport", ^{
     context(@"addSkipBackupAttributeToItemAtPath", ^{
         it(@"empty folder path", ^{
-            RACSignal *disableBackupSignal = [SKFileSystemSupport addSkipBackupAttributeToItemAtPath:@""];
+            RACSignal *disableBackupSignal = [RBFileSystemSupport addSkipBackupAttributeToItemAtPath:@""];
             
             __block BOOL disableBackupFinished = NO;
             __block NSError *disableBackupError = nil;
@@ -30,23 +30,23 @@ describe(@"SKFileSystemSupport", ^{
             }];
             
             [[expectFutureValue(disableBackupError) shouldNotEventuallyBeforeTimingOutAfter(0.5)] beNil];
-            [[theValue([disableBackupError.domain isEqualToString:SKFileSystemSupportErrorDomain]) should] beYes];
-            [[theValue(disableBackupError.code == SKFileSystemSupportErrorCodeNoFileOrDirectory) should] beYes];
+            [[theValue([disableBackupError.domain isEqualToString:RBFileSystemSupportErrorDomain]) should] beYes];
+            [[theValue(disableBackupError.code == RBFileSystemSupportErrorCodeNoFileOrDirectory) should] beYes];
             [[theValue(disableBackupFinished) should] beYes];
         });
         
         it(@"valid folder path", ^{
             /// Preparation
             
-            NSString *folderPath = [[SKFileSystemSupport applicationSupportDirectory] stringByAppendingPathComponent:SKFileSystemSupportTestFolderName];
+            NSString *folderPath = [[RBFileSystemSupport applicationSupportDirectory] stringByAppendingPathComponent:RBFileSystemSupportTestFolderName];
             if ([[NSFileManager defaultManager] fileExistsAtPath:folderPath]) {
                 NSError *removeFolderError = nil;
                 [[NSFileManager defaultManager] removeItemAtPath:folderPath error:&removeFolderError];
             }
             
-            [SKFileSystemSupport createDirectoryIfNeeded:folderPath];
+            [RBFileSystemSupport createDirectoryIfNeeded:folderPath];
             
-            RACSignal *disableBackupSignal = [SKFileSystemSupport addSkipBackupAttributeToItemAtPath:folderPath];
+            RACSignal *disableBackupSignal = [RBFileSystemSupport addSkipBackupAttributeToItemAtPath:folderPath];
             
             __block BOOL disableBackupFinished = NO;
             __block NSError *disableBackupError = nil;
@@ -60,8 +60,8 @@ describe(@"SKFileSystemSupport", ^{
             }];
             
             [[expectFutureValue(disableBackupError) shouldNotEventuallyBeforeTimingOutAfter(0.5)] beNil];
-            [[theValue([disableBackupError.domain isEqualToString:SKFileSystemSupportErrorDomain]) should] beYes];
-            [[theValue(disableBackupError.code == SKFileSystemSupportErrorCodeNoFileOrDirectory) should] beYes];
+            [[theValue([disableBackupError.domain isEqualToString:RBFileSystemSupportErrorDomain]) should] beYes];
+            [[theValue(disableBackupError.code == RBFileSystemSupportErrorCodeNoFileOrDirectory) should] beYes];
             [[theValue(disableBackupFinished) should] beYes];
         });
      });

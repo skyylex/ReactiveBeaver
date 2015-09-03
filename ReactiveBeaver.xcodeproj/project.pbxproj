@@ -9,28 +9,30 @@
 /* Begin PBXBuildFile section */
 		051C3AE252F0E8C978B32CCE /* (null) in Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (Weak, ); }; };
 		16A59D5DDC7A0BEC507950A3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB2059ABFD25DE7F6C3B17C3 /* libPods.a */; };
-		4206D18F1B052C65007F227A /* SKEPParser-Headers.h in Headers */ = {isa = PBXBuildFile; fileRef = 4206D18E1B052C65007F227A /* SKEPParser-Headers.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4206D1951B052C66007F227A /* SKEPParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4206D1891B052C65007F227A /* SKEPParser.framework */; };
-		4206D19C1B052C66007F227A /* SKEPParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4206D19B1B052C66007F227A /* SKEPParserTests.m */; };
+		4206D1951B052C66007F227A /* ReactiveBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4206D1891B052C65007F227A /* ReactiveBeaver.framework */; };
 		4246F40E1B111EAB00A2A96F /* moby-dick.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4246F40D1B111EAB00A2A96F /* moby-dick.epub */; };
-		426764C21B11CB76003DCB81 /* SKFileSupportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 426764C11B11CB76003DCB81 /* SKFileSupportTests.m */; };
-		4269A4BA1B93A452008B3612 /* NSError+QuickCreation.h in Headers */ = {isa = PBXBuildFile; fileRef = 4269A4B51B93A452008B3612 /* NSError+QuickCreation.h */; };
-		4269A4BB1B93A452008B3612 /* NSError+QuickCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4269A4B61B93A452008B3612 /* NSError+QuickCreation.m */; };
-		4269A4BC1B93A452008B3612 /* SKEpubNameConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 4269A4B71B93A452008B3612 /* SKEpubNameConstants.h */; };
-		4269A4BD1B93A452008B3612 /* SKFileSystemSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 4269A4B81B93A452008B3612 /* SKFileSystemSupport.h */; };
-		4269A4BE1B93A452008B3612 /* SKFileSystemSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 4269A4B91B93A452008B3612 /* SKFileSystemSupport.m */; };
-		4269A4CB1B93A46B008B3612 /* SKEPManifest.h in Headers */ = {isa = PBXBuildFile; fileRef = 4269A4BF1B93A46B008B3612 /* SKEPManifest.h */; };
-		4269A4CC1B93A46B008B3612 /* SKEPManifest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4269A4C01B93A46B008B3612 /* SKEPManifest.m */; };
-		4269A4CD1B93A46B008B3612 /* SKEPManifestElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 4269A4C11B93A46B008B3612 /* SKEPManifestElement.h */; };
-		4269A4CE1B93A46B008B3612 /* SKEPManifestElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4269A4C21B93A46B008B3612 /* SKEPManifestElement.m */; };
-		4269A4CF1B93A46B008B3612 /* SKEPNavPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 4269A4C31B93A46B008B3612 /* SKEPNavPoint.h */; };
-		4269A4D01B93A46B008B3612 /* SKEPNavPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4269A4C41B93A46B008B3612 /* SKEPNavPoint.m */; };
-		4269A4D11B93A46B008B3612 /* SKEPParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 4269A4C51B93A46B008B3612 /* SKEPParser.h */; };
-		4269A4D21B93A46B008B3612 /* SKEPParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4269A4C61B93A46B008B3612 /* SKEPParser.m */; };
-		4269A4D31B93A46B008B3612 /* SKEPSpineElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 4269A4C71B93A46B008B3612 /* SKEPSpineElement.h */; };
-		4269A4D41B93A46B008B3612 /* SKEPSpineElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4269A4C81B93A46B008B3612 /* SKEPSpineElement.m */; };
-		4269A4D51B93A46B008B3612 /* SKEpub.h in Headers */ = {isa = PBXBuildFile; fileRef = 4269A4C91B93A46B008B3612 /* SKEpub.h */; };
-		4269A4D61B93A46B008B3612 /* SKEpub.m in Sources */ = {isa = PBXBuildFile; fileRef = 4269A4CA1B93A46B008B3612 /* SKEpub.m */; };
+		42E8FFD71B979EA100EB2BAA /* NSError+QuickCreation.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFD21B979EA100EB2BAA /* NSError+QuickCreation.h */; };
+		42E8FFD81B979EA100EB2BAA /* NSError+QuickCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFD31B979EA100EB2BAA /* NSError+QuickCreation.m */; };
+		42E8FFD91B979EA100EB2BAA /* RBEpubNameConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFD41B979EA100EB2BAA /* RBEpubNameConstants.h */; };
+		42E8FFDA1B979EA100EB2BAA /* RBFileSystemSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFD51B979EA100EB2BAA /* RBFileSystemSupport.h */; };
+		42E8FFDB1B979EA100EB2BAA /* RBFileSystemSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFD61B979EA100EB2BAA /* RBFileSystemSupport.m */; };
+		42E8FFE81B979EB000EB2BAA /* RBEPNavPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFDC1B979EB000EB2BAA /* RBEPNavPoint.h */; };
+		42E8FFE91B979EB000EB2BAA /* RBEPNavPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFDD1B979EB000EB2BAA /* RBEPNavPoint.m */; };
+		42E8FFEA1B979EB000EB2BAA /* RBEpub.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFDE1B979EB000EB2BAA /* RBEpub.h */; };
+		42E8FFEB1B979EB000EB2BAA /* RBEpub.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFDF1B979EB000EB2BAA /* RBEpub.m */; };
+		42E8FFEC1B979EB000EB2BAA /* RBManifest.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFE01B979EB000EB2BAA /* RBManifest.h */; };
+		42E8FFED1B979EB000EB2BAA /* RBManifest.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFE11B979EB000EB2BAA /* RBManifest.m */; };
+		42E8FFEE1B979EB000EB2BAA /* RBManifestElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFE21B979EB000EB2BAA /* RBManifestElement.h */; };
+		42E8FFEF1B979EB000EB2BAA /* RBManifestElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFE31B979EB000EB2BAA /* RBManifestElement.m */; };
+		42E8FFF01B979EB000EB2BAA /* RBParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFE41B979EB000EB2BAA /* RBParser.h */; };
+		42E8FFF11B979EB000EB2BAA /* RBParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFE51B979EB000EB2BAA /* RBParser.m */; };
+		42E8FFF21B979EB000EB2BAA /* RBSpineElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFE61B979EB000EB2BAA /* RBSpineElement.h */; };
+		42E8FFF31B979EB000EB2BAA /* RBSpineElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFE71B979EB000EB2BAA /* RBSpineElement.m */; };
+		42E8FFF51B979EBC00EB2BAA /* ReactiveBeaver-Headers.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFF41B979EBC00EB2BAA /* ReactiveBeaver-Headers.h */; };
+		42E8FFF71B979EC800EB2BAA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42E8FFF61B979EC800EB2BAA /* Info.plist */; };
+		42EDBFC41B980A6100F39E7F /* RBParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EDBFC11B980A6100F39E7F /* RBParserTests.m */; };
+		42EDBFC51B980A6100F39E7F /* RBFileSupportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EDBFC21B980A6100F39E7F /* RBFileSupportTests.m */; };
+		42EDBFC61B980A6100F39E7F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42EDBFC31B980A6100F39E7F /* Info.plist */; };
 		C5AE02A8AE0D211442C6327C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB2059ABFD25DE7F6C3B17C3 /* libPods.a */; };
 		CACF2B75DD31F64E7B173E53 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
@@ -46,31 +48,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4206D1891B052C65007F227A /* SKEPParser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SKEPParser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4206D18D1B052C65007F227A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4206D18E1B052C65007F227A /* SKEPParser-Headers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SKEPParser-Headers.h"; sourceTree = "<group>"; };
-		4206D1941B052C66007F227A /* SKEPParserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SKEPParserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4206D19A1B052C66007F227A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4206D19B1B052C66007F227A /* SKEPParserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SKEPParserTests.m; sourceTree = "<group>"; };
+		4206D1891B052C65007F227A /* ReactiveBeaver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveBeaver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4206D1941B052C66007F227A /* ReactiveBeaverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveBeaverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4246F40D1B111EAB00A2A96F /* moby-dick.epub */ = {isa = PBXFileReference; lastKnownFileType = file; name = "moby-dick.epub"; path = "BookSources/moby-dick.epub"; sourceTree = SOURCE_ROOT; };
-		426764C11B11CB76003DCB81 /* SKFileSupportTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKFileSupportTests.m; sourceTree = "<group>"; };
-		4269A4B51B93A452008B3612 /* NSError+QuickCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+QuickCreation.h"; sourceTree = "<group>"; };
-		4269A4B61B93A452008B3612 /* NSError+QuickCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+QuickCreation.m"; sourceTree = "<group>"; };
-		4269A4B71B93A452008B3612 /* SKEpubNameConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEpubNameConstants.h; sourceTree = "<group>"; };
-		4269A4B81B93A452008B3612 /* SKFileSystemSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKFileSystemSupport.h; sourceTree = "<group>"; };
-		4269A4B91B93A452008B3612 /* SKFileSystemSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKFileSystemSupport.m; sourceTree = "<group>"; };
-		4269A4BF1B93A46B008B3612 /* SKEPManifest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEPManifest.h; sourceTree = "<group>"; };
-		4269A4C01B93A46B008B3612 /* SKEPManifest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEPManifest.m; sourceTree = "<group>"; };
-		4269A4C11B93A46B008B3612 /* SKEPManifestElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEPManifestElement.h; sourceTree = "<group>"; };
-		4269A4C21B93A46B008B3612 /* SKEPManifestElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEPManifestElement.m; sourceTree = "<group>"; };
-		4269A4C31B93A46B008B3612 /* SKEPNavPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEPNavPoint.h; sourceTree = "<group>"; };
-		4269A4C41B93A46B008B3612 /* SKEPNavPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEPNavPoint.m; sourceTree = "<group>"; };
-		4269A4C51B93A46B008B3612 /* SKEPParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEPParser.h; sourceTree = "<group>"; };
-		4269A4C61B93A46B008B3612 /* SKEPParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEPParser.m; sourceTree = "<group>"; };
-		4269A4C71B93A46B008B3612 /* SKEPSpineElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEPSpineElement.h; sourceTree = "<group>"; };
-		4269A4C81B93A46B008B3612 /* SKEPSpineElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEPSpineElement.m; sourceTree = "<group>"; };
-		4269A4C91B93A46B008B3612 /* SKEpub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEpub.h; sourceTree = "<group>"; };
-		4269A4CA1B93A46B008B3612 /* SKEpub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEpub.m; sourceTree = "<group>"; };
+		42E8FFD21B979EA100EB2BAA /* NSError+QuickCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSError+QuickCreation.h"; path = "ReactiveBeaver/Support/NSError+QuickCreation.h"; sourceTree = SOURCE_ROOT; };
+		42E8FFD31B979EA100EB2BAA /* NSError+QuickCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSError+QuickCreation.m"; path = "ReactiveBeaver/Support/NSError+QuickCreation.m"; sourceTree = SOURCE_ROOT; };
+		42E8FFD41B979EA100EB2BAA /* RBEpubNameConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBEpubNameConstants.h; path = ReactiveBeaver/Support/RBEpubNameConstants.h; sourceTree = SOURCE_ROOT; };
+		42E8FFD51B979EA100EB2BAA /* RBFileSystemSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBFileSystemSupport.h; path = ReactiveBeaver/Support/RBFileSystemSupport.h; sourceTree = SOURCE_ROOT; };
+		42E8FFD61B979EA100EB2BAA /* RBFileSystemSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBFileSystemSupport.m; path = ReactiveBeaver/Support/RBFileSystemSupport.m; sourceTree = SOURCE_ROOT; };
+		42E8FFDC1B979EB000EB2BAA /* RBEPNavPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBEPNavPoint.h; path = ReactiveBeaver/Core/RBEPNavPoint.h; sourceTree = SOURCE_ROOT; };
+		42E8FFDD1B979EB000EB2BAA /* RBEPNavPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBEPNavPoint.m; path = ReactiveBeaver/Core/RBEPNavPoint.m; sourceTree = SOURCE_ROOT; };
+		42E8FFDE1B979EB000EB2BAA /* RBEpub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBEpub.h; path = ReactiveBeaver/Core/RBEpub.h; sourceTree = SOURCE_ROOT; };
+		42E8FFDF1B979EB000EB2BAA /* RBEpub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBEpub.m; path = ReactiveBeaver/Core/RBEpub.m; sourceTree = SOURCE_ROOT; };
+		42E8FFE01B979EB000EB2BAA /* RBManifest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBManifest.h; path = ReactiveBeaver/Core/RBManifest.h; sourceTree = SOURCE_ROOT; };
+		42E8FFE11B979EB000EB2BAA /* RBManifest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBManifest.m; path = ReactiveBeaver/Core/RBManifest.m; sourceTree = SOURCE_ROOT; };
+		42E8FFE21B979EB000EB2BAA /* RBManifestElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBManifestElement.h; path = ReactiveBeaver/Core/RBManifestElement.h; sourceTree = SOURCE_ROOT; };
+		42E8FFE31B979EB000EB2BAA /* RBManifestElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBManifestElement.m; path = ReactiveBeaver/Core/RBManifestElement.m; sourceTree = SOURCE_ROOT; };
+		42E8FFE41B979EB000EB2BAA /* RBParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBParser.h; path = ReactiveBeaver/Core/RBParser.h; sourceTree = SOURCE_ROOT; };
+		42E8FFE51B979EB000EB2BAA /* RBParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBParser.m; path = ReactiveBeaver/Core/RBParser.m; sourceTree = SOURCE_ROOT; };
+		42E8FFE61B979EB000EB2BAA /* RBSpineElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBSpineElement.h; path = ReactiveBeaver/Core/RBSpineElement.h; sourceTree = SOURCE_ROOT; };
+		42E8FFE71B979EB000EB2BAA /* RBSpineElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBSpineElement.m; path = ReactiveBeaver/Core/RBSpineElement.m; sourceTree = SOURCE_ROOT; };
+		42E8FFF41B979EBC00EB2BAA /* ReactiveBeaver-Headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ReactiveBeaver-Headers.h"; path = "ReactiveBeaver/ReactiveBeaver-Headers.h"; sourceTree = SOURCE_ROOT; };
+		42E8FFF61B979EC800EB2BAA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ReactiveBeaver/Info.plist; sourceTree = SOURCE_ROOT; };
+		42EDBFC11B980A6100F39E7F /* RBParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBParserTests.m; path = ReactiveBeaverTests/RBParserTests.m; sourceTree = SOURCE_ROOT; };
+		42EDBFC21B980A6100F39E7F /* RBFileSupportTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBFileSupportTests.m; path = ReactiveBeaverTests/RBFileSupportTests.m; sourceTree = SOURCE_ROOT; };
+		42EDBFC31B980A6100F39E7F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ReactiveBeaverTests/Info.plist; sourceTree = SOURCE_ROOT; };
 		9B58439EBD17959E5550142A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BB2059ABFD25DE7F6C3B17C3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE94A7BFF78DFD919687D00E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4206D1951B052C66007F227A /* SKEPParser.framework in Frameworks */,
+				4206D1951B052C66007F227A /* ReactiveBeaver.framework in Frameworks */,
 				CACF2B75DD31F64E7B173E53 /* (null) in Frameworks */,
 				051C3AE252F0E8C978B32CCE /* (null) in Frameworks */,
 				C5AE02A8AE0D211442C6327C /* libPods.a in Frameworks */,
@@ -110,8 +112,8 @@
 		4206D17F1B052C65007F227A = {
 			isa = PBXGroup;
 			children = (
-				4206D18B1B052C65007F227A /* SKEPParser */,
-				4206D1981B052C66007F227A /* SKEPParserTests */,
+				4206D18B1B052C65007F227A /* ReactiveBeaver */,
+				4206D1981B052C66007F227A /* ReactiveBeaverTests */,
 				4206D18A1B052C65007F227A /* Products */,
 				D45A418EA2C2FD9CB2CA68B9 /* Pods */,
 				3494A54EC6AC34C98782A22D /* Frameworks */,
@@ -121,46 +123,48 @@
 		4206D18A1B052C65007F227A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4206D1891B052C65007F227A /* SKEPParser.framework */,
-				4206D1941B052C66007F227A /* SKEPParserTests.xctest */,
+				4206D1891B052C65007F227A /* ReactiveBeaver.framework */,
+				4206D1941B052C66007F227A /* ReactiveBeaverTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4206D18B1B052C65007F227A /* SKEPParser */ = {
+		4206D18B1B052C65007F227A /* ReactiveBeaver */ = {
 			isa = PBXGroup;
 			children = (
 				425AC06C1B0612F100CF6070 /* Support */,
 				4206D1A51B052CA0007F227A /* Core */,
-				4206D18E1B052C65007F227A /* SKEPParser-Headers.h */,
 				4206D18C1B052C65007F227A /* Supporting Files */,
 			);
+			name = ReactiveBeaver;
 			path = SKEPParser;
 			sourceTree = "<group>";
 		};
 		4206D18C1B052C65007F227A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4206D18D1B052C65007F227A /* Info.plist */,
+				42E8FFF61B979EC800EB2BAA /* Info.plist */,
+				42E8FFF41B979EBC00EB2BAA /* ReactiveBeaver-Headers.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4206D1981B052C66007F227A /* SKEPParserTests */ = {
+		4206D1981B052C66007F227A /* ReactiveBeaverTests */ = {
 			isa = PBXGroup;
 			children = (
-				4206D19B1B052C66007F227A /* SKEPParserTests.m */,
-				426764C11B11CB76003DCB81 /* SKFileSupportTests.m */,
 				4206D1991B052C66007F227A /* Supporting Files */,
 			);
+			name = ReactiveBeaverTests;
 			path = SKEPParserTests;
 			sourceTree = "<group>";
 		};
 		4206D1991B052C66007F227A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				42EDBFC11B980A6100F39E7F /* RBParserTests.m */,
+				42EDBFC21B980A6100F39E7F /* RBFileSupportTests.m */,
+				42EDBFC31B980A6100F39E7F /* Info.plist */,
 				4246F40D1B111EAB00A2A96F /* moby-dick.epub */,
-				4206D19A1B052C66007F227A /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -168,18 +172,18 @@
 		4206D1A51B052CA0007F227A /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				4269A4BF1B93A46B008B3612 /* SKEPManifest.h */,
-				4269A4C01B93A46B008B3612 /* SKEPManifest.m */,
-				4269A4C11B93A46B008B3612 /* SKEPManifestElement.h */,
-				4269A4C21B93A46B008B3612 /* SKEPManifestElement.m */,
-				4269A4C31B93A46B008B3612 /* SKEPNavPoint.h */,
-				4269A4C41B93A46B008B3612 /* SKEPNavPoint.m */,
-				4269A4C51B93A46B008B3612 /* SKEPParser.h */,
-				4269A4C61B93A46B008B3612 /* SKEPParser.m */,
-				4269A4C71B93A46B008B3612 /* SKEPSpineElement.h */,
-				4269A4C81B93A46B008B3612 /* SKEPSpineElement.m */,
-				4269A4C91B93A46B008B3612 /* SKEpub.h */,
-				4269A4CA1B93A46B008B3612 /* SKEpub.m */,
+				42E8FFDC1B979EB000EB2BAA /* RBEPNavPoint.h */,
+				42E8FFDD1B979EB000EB2BAA /* RBEPNavPoint.m */,
+				42E8FFDE1B979EB000EB2BAA /* RBEpub.h */,
+				42E8FFDF1B979EB000EB2BAA /* RBEpub.m */,
+				42E8FFE01B979EB000EB2BAA /* RBManifest.h */,
+				42E8FFE11B979EB000EB2BAA /* RBManifest.m */,
+				42E8FFE21B979EB000EB2BAA /* RBManifestElement.h */,
+				42E8FFE31B979EB000EB2BAA /* RBManifestElement.m */,
+				42E8FFE41B979EB000EB2BAA /* RBParser.h */,
+				42E8FFE51B979EB000EB2BAA /* RBParser.m */,
+				42E8FFE61B979EB000EB2BAA /* RBSpineElement.h */,
+				42E8FFE71B979EB000EB2BAA /* RBSpineElement.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -187,11 +191,11 @@
 		425AC06C1B0612F100CF6070 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				4269A4B51B93A452008B3612 /* NSError+QuickCreation.h */,
-				4269A4B61B93A452008B3612 /* NSError+QuickCreation.m */,
-				4269A4B71B93A452008B3612 /* SKEpubNameConstants.h */,
-				4269A4B81B93A452008B3612 /* SKFileSystemSupport.h */,
-				4269A4B91B93A452008B3612 /* SKFileSystemSupport.m */,
+				42E8FFD21B979EA100EB2BAA /* NSError+QuickCreation.h */,
+				42E8FFD31B979EA100EB2BAA /* NSError+QuickCreation.m */,
+				42E8FFD41B979EA100EB2BAA /* RBEpubNameConstants.h */,
+				42E8FFD51B979EA100EB2BAA /* RBFileSystemSupport.h */,
+				42E8FFD61B979EA100EB2BAA /* RBFileSystemSupport.m */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -212,25 +216,25 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4269A4BC1B93A452008B3612 /* SKEpubNameConstants.h in Headers */,
-				4269A4CD1B93A46B008B3612 /* SKEPManifestElement.h in Headers */,
-				4269A4D51B93A46B008B3612 /* SKEpub.h in Headers */,
-				4269A4D11B93A46B008B3612 /* SKEPParser.h in Headers */,
-				4269A4D31B93A46B008B3612 /* SKEPSpineElement.h in Headers */,
-				4269A4CF1B93A46B008B3612 /* SKEPNavPoint.h in Headers */,
-				4269A4BD1B93A452008B3612 /* SKFileSystemSupport.h in Headers */,
-				4206D18F1B052C65007F227A /* SKEPParser-Headers.h in Headers */,
-				4269A4CB1B93A46B008B3612 /* SKEPManifest.h in Headers */,
-				4269A4BA1B93A452008B3612 /* NSError+QuickCreation.h in Headers */,
+				42E8FFD91B979EA100EB2BAA /* RBEpubNameConstants.h in Headers */,
+				42E8FFF21B979EB000EB2BAA /* RBSpineElement.h in Headers */,
+				42E8FFE81B979EB000EB2BAA /* RBEPNavPoint.h in Headers */,
+				42E8FFEA1B979EB000EB2BAA /* RBEpub.h in Headers */,
+				42E8FFDA1B979EA100EB2BAA /* RBFileSystemSupport.h in Headers */,
+				42E8FFF51B979EBC00EB2BAA /* ReactiveBeaver-Headers.h in Headers */,
+				42E8FFD71B979EA100EB2BAA /* NSError+QuickCreation.h in Headers */,
+				42E8FFEE1B979EB000EB2BAA /* RBManifestElement.h in Headers */,
+				42E8FFEC1B979EB000EB2BAA /* RBManifest.h in Headers */,
+				42E8FFF01B979EB000EB2BAA /* RBParser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4206D1881B052C65007F227A /* SKEPParser */ = {
+		4206D1881B052C65007F227A /* ReactiveBeaver */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4206D19F1B052C66007F227A /* Build configuration list for PBXNativeTarget "SKEPParser" */;
+			buildConfigurationList = 4206D19F1B052C66007F227A /* Build configuration list for PBXNativeTarget "ReactiveBeaver" */;
 			buildPhases = (
 				40BA18A59FF7580FD188C4F5 /* Check Pods Manifest.lock */,
 				4206D1841B052C65007F227A /* Sources */,
@@ -243,14 +247,14 @@
 			);
 			dependencies = (
 			);
-			name = SKEPParser;
+			name = ReactiveBeaver;
 			productName = SKEPParser;
-			productReference = 4206D1891B052C65007F227A /* SKEPParser.framework */;
+			productReference = 4206D1891B052C65007F227A /* ReactiveBeaver.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4206D1931B052C66007F227A /* SKEPParserTests */ = {
+		4206D1931B052C66007F227A /* ReactiveBeaverTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4206D1A21B052C66007F227A /* Build configuration list for PBXNativeTarget "SKEPParserTests" */;
+			buildConfigurationList = 4206D1A21B052C66007F227A /* Build configuration list for PBXNativeTarget "ReactiveBeaverTests" */;
 			buildPhases = (
 				2537988F9CC134A41A0277E4 /* Check Pods Manifest.lock */,
 				4206D1901B052C66007F227A /* Sources */,
@@ -263,9 +267,9 @@
 			dependencies = (
 				4206D1971B052C66007F227A /* PBXTargetDependency */,
 			);
-			name = SKEPParserTests;
+			name = ReactiveBeaverTests;
 			productName = SKEPParserTests;
-			productReference = 4206D1941B052C66007F227A /* SKEPParserTests.xctest */;
+			productReference = 4206D1941B052C66007F227A /* ReactiveBeaverTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -285,7 +289,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4206D1831B052C65007F227A /* Build configuration list for PBXProject "SKEPParser" */;
+			buildConfigurationList = 4206D1831B052C65007F227A /* Build configuration list for PBXProject "ReactiveBeaver" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -297,8 +301,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4206D1881B052C65007F227A /* SKEPParser */,
-				4206D1931B052C66007F227A /* SKEPParserTests */,
+				4206D1881B052C65007F227A /* ReactiveBeaver */,
+				4206D1931B052C66007F227A /* ReactiveBeaverTests */,
 			);
 		};
 /* End PBXProject section */
@@ -308,6 +312,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42EDBFC61B980A6100F39E7F /* Info.plist in Resources */,
+				42E8FFF71B979EC800EB2BAA /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,14 +395,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4269A4CE1B93A46B008B3612 /* SKEPManifestElement.m in Sources */,
-				4269A4BE1B93A452008B3612 /* SKFileSystemSupport.m in Sources */,
-				4269A4D01B93A46B008B3612 /* SKEPNavPoint.m in Sources */,
-				4269A4CC1B93A46B008B3612 /* SKEPManifest.m in Sources */,
-				4269A4BB1B93A452008B3612 /* NSError+QuickCreation.m in Sources */,
-				4269A4D61B93A46B008B3612 /* SKEpub.m in Sources */,
-				4269A4D41B93A46B008B3612 /* SKEPSpineElement.m in Sources */,
-				4269A4D21B93A46B008B3612 /* SKEPParser.m in Sources */,
+				42E8FFF31B979EB000EB2BAA /* RBSpineElement.m in Sources */,
+				42E8FFD81B979EA100EB2BAA /* NSError+QuickCreation.m in Sources */,
+				42E8FFEF1B979EB000EB2BAA /* RBManifestElement.m in Sources */,
+				42E8FFE91B979EB000EB2BAA /* RBEPNavPoint.m in Sources */,
+				42E8FFF11B979EB000EB2BAA /* RBParser.m in Sources */,
+				42EDBFC41B980A6100F39E7F /* RBParserTests.m in Sources */,
+				42E8FFED1B979EB000EB2BAA /* RBManifest.m in Sources */,
+				42E8FFDB1B979EA100EB2BAA /* RBFileSystemSupport.m in Sources */,
+				42E8FFEB1B979EB000EB2BAA /* RBEpub.m in Sources */,
+				42EDBFC51B980A6100F39E7F /* RBFileSupportTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,8 +412,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				426764C21B11CB76003DCB81 /* SKFileSupportTests.m in Sources */,
-				4206D19C1B052C66007F227A /* SKEPParserTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,7 +420,7 @@
 /* Begin PBXTargetDependency section */
 		4206D1971B052C66007F227A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4206D1881B052C65007F227A /* SKEPParser */;
+			target = 4206D1881B052C65007F227A /* ReactiveBeaver */;
 			targetProxy = 4206D1961B052C66007F227A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -516,11 +522,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SKEPParser/Info.plist;
+				INFOPLIST_FILE = ReactiveBeaver/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ReactiveBeaver;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -533,11 +539,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SKEPParser/Info.plist;
+				INFOPLIST_FILE = ReactiveBeaver/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ReactiveBeaver;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -554,9 +560,9 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = SKEPParserTests/Info.plist;
+				INFOPLIST_FILE = ReactiveBeaver/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ReactiveBeaverTests;
 			};
 			name = Debug;
 		};
@@ -568,16 +574,16 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = SKEPParserTests/Info.plist;
+				INFOPLIST_FILE = ReactiveBeaver/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ReactiveBeaverTests;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4206D1831B052C65007F227A /* Build configuration list for PBXProject "SKEPParser" */ = {
+		4206D1831B052C65007F227A /* Build configuration list for PBXProject "ReactiveBeaver" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4206D19D1B052C66007F227A /* Debug */,
@@ -586,7 +592,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4206D19F1B052C66007F227A /* Build configuration list for PBXNativeTarget "SKEPParser" */ = {
+		4206D19F1B052C66007F227A /* Build configuration list for PBXNativeTarget "ReactiveBeaver" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4206D1A01B052C66007F227A /* Debug */,
@@ -595,7 +601,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4206D1A21B052C66007F227A /* Build configuration list for PBXNativeTarget "SKEPParserTests" */ = {
+		4206D1A21B052C66007F227A /* Build configuration list for PBXNativeTarget "ReactiveBeaverTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4206D1A31B052C66007F227A /* Debug */,

@@ -1,6 +1,6 @@
 //
-//  SKEPSpineElement.h
-//  SKEPParser
+//  RBSpineElement.h
+//  ReactiveBeaver
 //
 //  Created by skyylex on 07/06/15.
 //  Copyright (c) 2015 skyylex. All rights reserved.
@@ -10,7 +10,7 @@
 
 #define SpineElementIDRefKey @"idref"
 
-@interface SKEPSpineElement : NSObject
+@interface RBSpineElement : NSObject
 
 @property (nonatomic, strong) NSNumber *index;
 @property (nonatomic, strong) NSString *idRef;

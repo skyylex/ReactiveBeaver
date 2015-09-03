@@ -1,6 +1,6 @@
 //
-//  SKEPManifestElement.h
-//  SKEPParser
+//  RBManifestElement.h
+//  ReactiveBeaver
 //
 //  Created by Yury Lapitsky on 29.08.15.
 //  Copyright (c) 2015 skyylex. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-#define SKEPManifestElementIdentifierKey @"id"
-#define SKEPManifestElementHrefKey @"href"
-#define SKEPManifestElementMediaTypKey @"media-type"
+#define RBManifestElementIdentifierKey @"id"
+#define RBManifestElementHrefKey @"href"
+#define RBManifestElementMediaTypKey @"media-type"
 
-@interface SKEPManifestElement : NSObject
+@interface RBManifestElement : NSObject
 
 /// Should be unique inside manifest
 @property (nonatomic, strong) NSString *identifier;
