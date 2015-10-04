@@ -1,4 +1,5 @@
 language: objective-c
-before_script: travis/before_script.sh
-script: xcodebuild -workspace ReactiveBeaver.xcworkspace -scheme ReactiveBeaver -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-
+osx_image: xcode7
+xcode_workspace: ReactiveBeaver.xcworkspace
+xcode_scheme: ReactiveBeaverTests
+xcode_sdk: iphonesimulator9.0
