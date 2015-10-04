@@ -51,8 +51,8 @@ static int ddLogLevel = DDLogLevelError;
 #pragma mark - ObjC default API
 
 - (void)startParsingWithCompletionBlock:(RBParserResultCompletion)completion {
-    NSAssert(self.sourcePath != nil, @"source path is nil. [Assert works in DEBUG mode]");
-    NSAssert(self.destinationPath != nil, @"destination path is nil. [Assert works in DEBUG mode]");
+    NSAssert(self.sourcePath != nil, @"source path is nil.");
+    NSAssert(self.destinationPath != nil, @"destination path is nil.");
     
     NSArray *inputs = @[self.sourcePath, self.destinationPath];
     
@@ -97,12 +97,10 @@ static int ddLogLevel = DDLogLevelError;
                 [subscriber sendNext:manifest];
                 [subscriber sendCompleted];
             } else {
-                /// TODO: fix error code
-                [subscriber sendError:[NSError parserErrorWithCode:0]];
+                [subscriber sendError:[NSError parserErrorWithCode:RBManifestParseErrorMultipleTags]];
             }
         } else {
-            /// TODO: fix error code
-            [subscriber sendError:[NSError parserErrorWithCode:0]];
+            [subscriber sendError:[NSError parserErrorWithCode:RBManifestParseErrorNoDocument]];
         }
         
         return nil;
@@ -139,10 +137,10 @@ static int ddLogLevel = DDLogLevelError;
             if (metadataElements != nil && metadataElements.count > 0) {
                 [subscriber sendNext:metadataElements.firstObject];
             } else {
-                [subscriber sendError:[NSError parserErrorWithCode:0]];
+                [subscriber sendError:[NSError parserErrorWithCode:RBMetadataParseErrorWrongTagsAmount]];
             }
         } else {
-            [subscriber sendError:[NSError parserErrorWithCode:0]];
+            [subscriber sendError:[NSError parserErrorWithCode:RBMetadataParseErrorNoDocument]];
         }
         
         [subscriber sendCompleted];

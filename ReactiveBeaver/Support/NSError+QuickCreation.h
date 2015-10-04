@@ -23,6 +23,16 @@ typedef NS_ENUM(NSUInteger, RBParserErrorCode) {
     RBParserErrorCodeContainerXMLNoRootFileElement = -107
 };
 
+typedef NS_ENUM(NSUInteger, RBManifestParseError) {
+    RBManifestParseErrorMultipleTags = 200,
+    RBManifestParseErrorNoDocument = 201,
+};
+
+typedef NS_ENUM(NSUInteger, RBMetadataParseError) {
+    RBMetadataParseErrorWrongTagsAmount = 250,
+    RBMetadataParseErrorNoDocument = 251,
+};
+
 @interface NSError (QuickCreation)
 
 + (instancetype)parserErrorWithCode:(NSInteger)code;
