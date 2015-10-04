@@ -11,23 +11,23 @@
 		16A59D5DDC7A0BEC507950A3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB2059ABFD25DE7F6C3B17C3 /* libPods.a */; };
 		4206D1951B052C66007F227A /* ReactiveBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4206D1891B052C65007F227A /* ReactiveBeaver.framework */; };
 		4246F40E1B111EAB00A2A96F /* moby-dick.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4246F40D1B111EAB00A2A96F /* moby-dick.epub */; };
+		424EEC7F1BC1C4DE00480F1A /* RBEPNavPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC751BC1C4DE00480F1A /* RBEPNavPoint.h */; settings = {ASSET_TAGS = (); }; };
+		424EEC801BC1C4DE00480F1A /* RBEPNavPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC761BC1C4DE00480F1A /* RBEPNavPoint.m */; settings = {ASSET_TAGS = (); }; };
+		424EEC811BC1C4DE00480F1A /* RBEpub.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC771BC1C4DE00480F1A /* RBEpub.h */; settings = {ASSET_TAGS = (); }; };
+		424EEC821BC1C4DE00480F1A /* RBEpub.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC781BC1C4DE00480F1A /* RBEpub.m */; settings = {ASSET_TAGS = (); }; };
+		424EEC831BC1C4DE00480F1A /* RBManifest.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC791BC1C4DE00480F1A /* RBManifest.h */; settings = {ASSET_TAGS = (); }; };
+		424EEC841BC1C4DE00480F1A /* RBManifest.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC7A1BC1C4DE00480F1A /* RBManifest.m */; settings = {ASSET_TAGS = (); }; };
+		424EEC851BC1C4DE00480F1A /* RBManifestElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC7B1BC1C4DE00480F1A /* RBManifestElement.h */; settings = {ASSET_TAGS = (); }; };
+		424EEC861BC1C4DE00480F1A /* RBManifestElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC7C1BC1C4DE00480F1A /* RBManifestElement.m */; settings = {ASSET_TAGS = (); }; };
+		424EEC871BC1C4DE00480F1A /* RBSpineElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC7D1BC1C4DE00480F1A /* RBSpineElement.h */; settings = {ASSET_TAGS = (); }; };
+		424EEC881BC1C4DE00480F1A /* RBSpineElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC7E1BC1C4DE00480F1A /* RBSpineElement.m */; settings = {ASSET_TAGS = (); }; };
+		424EEC8B1BC1C4EA00480F1A /* RBParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC891BC1C4EA00480F1A /* RBParser.h */; settings = {ASSET_TAGS = (); }; };
+		424EEC8C1BC1C4EA00480F1A /* RBParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC8A1BC1C4EA00480F1A /* RBParser.m */; settings = {ASSET_TAGS = (); }; };
 		42E8FFD71B979EA100EB2BAA /* NSError+QuickCreation.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFD21B979EA100EB2BAA /* NSError+QuickCreation.h */; };
 		42E8FFD81B979EA100EB2BAA /* NSError+QuickCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFD31B979EA100EB2BAA /* NSError+QuickCreation.m */; };
 		42E8FFD91B979EA100EB2BAA /* RBEpubNameConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFD41B979EA100EB2BAA /* RBEpubNameConstants.h */; };
 		42E8FFDA1B979EA100EB2BAA /* RBFileSystemSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFD51B979EA100EB2BAA /* RBFileSystemSupport.h */; };
 		42E8FFDB1B979EA100EB2BAA /* RBFileSystemSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFD61B979EA100EB2BAA /* RBFileSystemSupport.m */; };
-		42E8FFE81B979EB000EB2BAA /* RBEPNavPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFDC1B979EB000EB2BAA /* RBEPNavPoint.h */; };
-		42E8FFE91B979EB000EB2BAA /* RBEPNavPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFDD1B979EB000EB2BAA /* RBEPNavPoint.m */; };
-		42E8FFEA1B979EB000EB2BAA /* RBEpub.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFDE1B979EB000EB2BAA /* RBEpub.h */; };
-		42E8FFEB1B979EB000EB2BAA /* RBEpub.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFDF1B979EB000EB2BAA /* RBEpub.m */; };
-		42E8FFEC1B979EB000EB2BAA /* RBManifest.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFE01B979EB000EB2BAA /* RBManifest.h */; };
-		42E8FFED1B979EB000EB2BAA /* RBManifest.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFE11B979EB000EB2BAA /* RBManifest.m */; };
-		42E8FFEE1B979EB000EB2BAA /* RBManifestElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFE21B979EB000EB2BAA /* RBManifestElement.h */; };
-		42E8FFEF1B979EB000EB2BAA /* RBManifestElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFE31B979EB000EB2BAA /* RBManifestElement.m */; };
-		42E8FFF01B979EB000EB2BAA /* RBParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFE41B979EB000EB2BAA /* RBParser.h */; };
-		42E8FFF11B979EB000EB2BAA /* RBParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFE51B979EB000EB2BAA /* RBParser.m */; };
-		42E8FFF21B979EB000EB2BAA /* RBSpineElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFE61B979EB000EB2BAA /* RBSpineElement.h */; };
-		42E8FFF31B979EB000EB2BAA /* RBSpineElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFE71B979EB000EB2BAA /* RBSpineElement.m */; };
 		42E8FFF51B979EBC00EB2BAA /* ReactiveBeaver-Headers.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFF41B979EBC00EB2BAA /* ReactiveBeaver-Headers.h */; };
 		42E8FFF71B979EC800EB2BAA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42E8FFF61B979EC800EB2BAA /* Info.plist */; };
 		42EDBFC41B980A6100F39E7F /* RBParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EDBFC11B980A6100F39E7F /* RBParserTests.m */; };
@@ -51,23 +51,23 @@
 		4206D1891B052C65007F227A /* ReactiveBeaver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveBeaver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4206D1941B052C66007F227A /* ReactiveBeaverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveBeaverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4246F40D1B111EAB00A2A96F /* moby-dick.epub */ = {isa = PBXFileReference; lastKnownFileType = file; name = "moby-dick.epub"; path = "BookSources/moby-dick.epub"; sourceTree = SOURCE_ROOT; };
+		424EEC751BC1C4DE00480F1A /* RBEPNavPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBEPNavPoint.h; path = "ReactiveBeaver/Core/Data Structures/RBEPNavPoint.h"; sourceTree = SOURCE_ROOT; };
+		424EEC761BC1C4DE00480F1A /* RBEPNavPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBEPNavPoint.m; path = "ReactiveBeaver/Core/Data Structures/RBEPNavPoint.m"; sourceTree = SOURCE_ROOT; };
+		424EEC771BC1C4DE00480F1A /* RBEpub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBEpub.h; path = "ReactiveBeaver/Core/Data Structures/RBEpub.h"; sourceTree = SOURCE_ROOT; };
+		424EEC781BC1C4DE00480F1A /* RBEpub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBEpub.m; path = "ReactiveBeaver/Core/Data Structures/RBEpub.m"; sourceTree = SOURCE_ROOT; };
+		424EEC791BC1C4DE00480F1A /* RBManifest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBManifest.h; path = "ReactiveBeaver/Core/Data Structures/RBManifest.h"; sourceTree = SOURCE_ROOT; };
+		424EEC7A1BC1C4DE00480F1A /* RBManifest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBManifest.m; path = "ReactiveBeaver/Core/Data Structures/RBManifest.m"; sourceTree = SOURCE_ROOT; };
+		424EEC7B1BC1C4DE00480F1A /* RBManifestElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBManifestElement.h; path = "ReactiveBeaver/Core/Data Structures/RBManifestElement.h"; sourceTree = SOURCE_ROOT; };
+		424EEC7C1BC1C4DE00480F1A /* RBManifestElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBManifestElement.m; path = "ReactiveBeaver/Core/Data Structures/RBManifestElement.m"; sourceTree = SOURCE_ROOT; };
+		424EEC7D1BC1C4DE00480F1A /* RBSpineElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBSpineElement.h; path = "ReactiveBeaver/Core/Data Structures/RBSpineElement.h"; sourceTree = SOURCE_ROOT; };
+		424EEC7E1BC1C4DE00480F1A /* RBSpineElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBSpineElement.m; path = "ReactiveBeaver/Core/Data Structures/RBSpineElement.m"; sourceTree = SOURCE_ROOT; };
+		424EEC891BC1C4EA00480F1A /* RBParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBParser.h; path = ReactiveBeaver/Core/Workers/RBParser.h; sourceTree = SOURCE_ROOT; };
+		424EEC8A1BC1C4EA00480F1A /* RBParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBParser.m; path = ReactiveBeaver/Core/Workers/RBParser.m; sourceTree = SOURCE_ROOT; };
 		42E8FFD21B979EA100EB2BAA /* NSError+QuickCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSError+QuickCreation.h"; path = "ReactiveBeaver/Support/NSError+QuickCreation.h"; sourceTree = SOURCE_ROOT; };
 		42E8FFD31B979EA100EB2BAA /* NSError+QuickCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSError+QuickCreation.m"; path = "ReactiveBeaver/Support/NSError+QuickCreation.m"; sourceTree = SOURCE_ROOT; };
 		42E8FFD41B979EA100EB2BAA /* RBEpubNameConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBEpubNameConstants.h; path = ReactiveBeaver/Support/RBEpubNameConstants.h; sourceTree = SOURCE_ROOT; };
 		42E8FFD51B979EA100EB2BAA /* RBFileSystemSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBFileSystemSupport.h; path = ReactiveBeaver/Support/RBFileSystemSupport.h; sourceTree = SOURCE_ROOT; };
 		42E8FFD61B979EA100EB2BAA /* RBFileSystemSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBFileSystemSupport.m; path = ReactiveBeaver/Support/RBFileSystemSupport.m; sourceTree = SOURCE_ROOT; };
-		42E8FFDC1B979EB000EB2BAA /* RBEPNavPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBEPNavPoint.h; path = ReactiveBeaver/Core/RBEPNavPoint.h; sourceTree = SOURCE_ROOT; };
-		42E8FFDD1B979EB000EB2BAA /* RBEPNavPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBEPNavPoint.m; path = ReactiveBeaver/Core/RBEPNavPoint.m; sourceTree = SOURCE_ROOT; };
-		42E8FFDE1B979EB000EB2BAA /* RBEpub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBEpub.h; path = ReactiveBeaver/Core/RBEpub.h; sourceTree = SOURCE_ROOT; };
-		42E8FFDF1B979EB000EB2BAA /* RBEpub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBEpub.m; path = ReactiveBeaver/Core/RBEpub.m; sourceTree = SOURCE_ROOT; };
-		42E8FFE01B979EB000EB2BAA /* RBManifest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBManifest.h; path = ReactiveBeaver/Core/RBManifest.h; sourceTree = SOURCE_ROOT; };
-		42E8FFE11B979EB000EB2BAA /* RBManifest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBManifest.m; path = ReactiveBeaver/Core/RBManifest.m; sourceTree = SOURCE_ROOT; };
-		42E8FFE21B979EB000EB2BAA /* RBManifestElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBManifestElement.h; path = ReactiveBeaver/Core/RBManifestElement.h; sourceTree = SOURCE_ROOT; };
-		42E8FFE31B979EB000EB2BAA /* RBManifestElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBManifestElement.m; path = ReactiveBeaver/Core/RBManifestElement.m; sourceTree = SOURCE_ROOT; };
-		42E8FFE41B979EB000EB2BAA /* RBParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBParser.h; path = ReactiveBeaver/Core/RBParser.h; sourceTree = SOURCE_ROOT; };
-		42E8FFE51B979EB000EB2BAA /* RBParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBParser.m; path = ReactiveBeaver/Core/RBParser.m; sourceTree = SOURCE_ROOT; };
-		42E8FFE61B979EB000EB2BAA /* RBSpineElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBSpineElement.h; path = ReactiveBeaver/Core/RBSpineElement.h; sourceTree = SOURCE_ROOT; };
-		42E8FFE71B979EB000EB2BAA /* RBSpineElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBSpineElement.m; path = ReactiveBeaver/Core/RBSpineElement.m; sourceTree = SOURCE_ROOT; };
 		42E8FFF41B979EBC00EB2BAA /* ReactiveBeaver-Headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ReactiveBeaver-Headers.h"; path = "ReactiveBeaver/ReactiveBeaver-Headers.h"; sourceTree = SOURCE_ROOT; };
 		42E8FFF61B979EC800EB2BAA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ReactiveBeaver/Info.plist; sourceTree = SOURCE_ROOT; };
 		42EDBFC11B980A6100F39E7F /* RBParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBParserTests.m; path = ReactiveBeaverTests/RBParserTests.m; sourceTree = SOURCE_ROOT; };
@@ -172,20 +172,38 @@
 		4206D1A51B052CA0007F227A /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				42E8FFDC1B979EB000EB2BAA /* RBEPNavPoint.h */,
-				42E8FFDD1B979EB000EB2BAA /* RBEPNavPoint.m */,
-				42E8FFDE1B979EB000EB2BAA /* RBEpub.h */,
-				42E8FFDF1B979EB000EB2BAA /* RBEpub.m */,
-				42E8FFE01B979EB000EB2BAA /* RBManifest.h */,
-				42E8FFE11B979EB000EB2BAA /* RBManifest.m */,
-				42E8FFE21B979EB000EB2BAA /* RBManifestElement.h */,
-				42E8FFE31B979EB000EB2BAA /* RBManifestElement.m */,
-				42E8FFE41B979EB000EB2BAA /* RBParser.h */,
-				42E8FFE51B979EB000EB2BAA /* RBParser.m */,
-				42E8FFE61B979EB000EB2BAA /* RBSpineElement.h */,
-				42E8FFE71B979EB000EB2BAA /* RBSpineElement.m */,
+				424EEC741BC1C46700480F1A /* Workers */,
+				424EEC731BC1C40000480F1A /* Data structure */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		424EEC731BC1C40000480F1A /* Data structure */ = {
+			isa = PBXGroup;
+			children = (
+				424EEC751BC1C4DE00480F1A /* RBEPNavPoint.h */,
+				424EEC761BC1C4DE00480F1A /* RBEPNavPoint.m */,
+				424EEC771BC1C4DE00480F1A /* RBEpub.h */,
+				424EEC781BC1C4DE00480F1A /* RBEpub.m */,
+				424EEC791BC1C4DE00480F1A /* RBManifest.h */,
+				424EEC7A1BC1C4DE00480F1A /* RBManifest.m */,
+				424EEC7B1BC1C4DE00480F1A /* RBManifestElement.h */,
+				424EEC7C1BC1C4DE00480F1A /* RBManifestElement.m */,
+				424EEC7D1BC1C4DE00480F1A /* RBSpineElement.h */,
+				424EEC7E1BC1C4DE00480F1A /* RBSpineElement.m */,
+			);
+			name = "Data structure";
+			path = "ReactiveBeaver/Core/Data Structures";
+			sourceTree = "<group>";
+		};
+		424EEC741BC1C46700480F1A /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				424EEC891BC1C4EA00480F1A /* RBParser.h */,
+				424EEC8A1BC1C4EA00480F1A /* RBParser.m */,
+			);
+			name = Workers;
+			path = ReactiveBeaver/Core/Workers;
 			sourceTree = "<group>";
 		};
 		425AC06C1B0612F100CF6070 /* Support */ = {
@@ -217,15 +235,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				42E8FFD91B979EA100EB2BAA /* RBEpubNameConstants.h in Headers */,
-				42E8FFF21B979EB000EB2BAA /* RBSpineElement.h in Headers */,
-				42E8FFE81B979EB000EB2BAA /* RBEPNavPoint.h in Headers */,
-				42E8FFEA1B979EB000EB2BAA /* RBEpub.h in Headers */,
+				424EEC7F1BC1C4DE00480F1A /* RBEPNavPoint.h in Headers */,
+				424EEC871BC1C4DE00480F1A /* RBSpineElement.h in Headers */,
+				424EEC811BC1C4DE00480F1A /* RBEpub.h in Headers */,
 				42E8FFDA1B979EA100EB2BAA /* RBFileSystemSupport.h in Headers */,
 				42E8FFF51B979EBC00EB2BAA /* ReactiveBeaver-Headers.h in Headers */,
 				42E8FFD71B979EA100EB2BAA /* NSError+QuickCreation.h in Headers */,
-				42E8FFEE1B979EB000EB2BAA /* RBManifestElement.h in Headers */,
-				42E8FFEC1B979EB000EB2BAA /* RBManifest.h in Headers */,
-				42E8FFF01B979EB000EB2BAA /* RBParser.h in Headers */,
+				424EEC8B1BC1C4EA00480F1A /* RBParser.h in Headers */,
+				424EEC851BC1C4DE00480F1A /* RBManifestElement.h in Headers */,
+				424EEC831BC1C4DE00480F1A /* RBManifest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,15 +413,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42E8FFF31B979EB000EB2BAA /* RBSpineElement.m in Sources */,
 				42E8FFD81B979EA100EB2BAA /* NSError+QuickCreation.m in Sources */,
-				42E8FFEF1B979EB000EB2BAA /* RBManifestElement.m in Sources */,
-				42E8FFE91B979EB000EB2BAA /* RBEPNavPoint.m in Sources */,
-				42E8FFF11B979EB000EB2BAA /* RBParser.m in Sources */,
+				424EEC801BC1C4DE00480F1A /* RBEPNavPoint.m in Sources */,
+				424EEC8C1BC1C4EA00480F1A /* RBParser.m in Sources */,
+				424EEC841BC1C4DE00480F1A /* RBManifest.m in Sources */,
+				424EEC861BC1C4DE00480F1A /* RBManifestElement.m in Sources */,
 				42EDBFC41B980A6100F39E7F /* RBParserTests.m in Sources */,
-				42E8FFED1B979EB000EB2BAA /* RBManifest.m in Sources */,
+				424EEC821BC1C4DE00480F1A /* RBEpub.m in Sources */,
+				424EEC881BC1C4DE00480F1A /* RBSpineElement.m in Sources */,
 				42E8FFDB1B979EA100EB2BAA /* RBFileSystemSupport.m in Sources */,
-				42E8FFEB1B979EB000EB2BAA /* RBEpub.m in Sources */,
 				42EDBFC51B980A6100F39E7F /* RBFileSupportTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
