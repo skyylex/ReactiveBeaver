@@ -1,4 +1,4 @@
-[![Build    Status](https://img.shields.io/travis/skyylex/ReactiveBeaver/master.svg)](https://travis-ci.org/skyylex/ReactiveBeaver)
+[![Build    Status](https://travis-ci.org/skyylex/ReactiveBeaver.svg?branch=master)](https://travis-ci.org/skyylex/ReactiveBeaver)
 
 # ReactiveBeaver (preparing first version)
 #### NOT released.
