@@ -7,15 +7,19 @@
 //
 
 #import "RBParser.h"
-#import "RBFileSystemSupport.h"
+
 #import "zipzap.h"
 #import <DDXML.h>
-#import "RBEpubNameConstants.h"
-#import "RBSpineElement.h"
-#import "NSError+QuickCreation.h"
-#import "RBManifestElement.h"
 #import "CocoaLumberjack.h"
-#import "RBManifest.h"
+
+#import "RBFileSystemSupport.h"
+#import "RBEpubNameConstants.h"
+#import "NSError+QuickCreation.h"
+
+#import "RBEpub.h"
+#import "RBManifestElement.h"
+#import "RBSpineElement.h"
+
 
 static int ddLogLevel = DDLogLevelError;
 
@@ -30,7 +34,7 @@ static int ddLogLevel = DDLogLevelError;
 
 #pragma mark - Creation
 
-+ (instancetype)parserWithSourcePath:(NSString *)sourcePath destinationPath:(NSString *)destinationPath {
++ (instancetype)parserWithSourcePath:(nonnull NSString *)sourcePath destinationPath:(nonnull NSString *)destinationPath {
     NSAssert(sourcePath != nil, @"source path is nil. [Assert works in DEBUG mode]");
     NSAssert(destinationPath != nil, @"destination path is nil. [Assert works in DEBUG mode]");
     
@@ -56,9 +60,16 @@ static int ddLogLevel = DDLogLevelError;
     
     NSArray *inputs = @[self.sourcePath, self.destinationPath];
     
-    /// TODO: complete implementation write tests
-    [[self.startParsingCommand.executionSignals take:1] flattenMap:^RACStream *(RACSignal *signal) {
-        return [RACSignal return:@YES];
+    /// TODO: complete implementation and write tests
+    RACSignal *executionSignal = [self.startParsingCommand.executionSignals take:1];
+    [executionSignal subscribeNext:^(RACSignal *signal) {
+        [signal subscribeNext:^(RBEpub *epub) {
+            completion(epub, nil);
+        }];
+    }];
+    
+    [self.startParsingCommand.errors subscribeNext:^(id x) {
+        NSLog(@"Error occured");
     }];
     [self.startParsingCommand execute:[RACTuple tupleWithObjectsFromArray:inputs]];
 }
@@ -75,8 +86,13 @@ static int ddLogLevel = DDLogLevelError;
                 NSString *destinationPath = paths.second;
                 return [[self containerXMLParsed:destinationPath] flattenMap:^RACStream *(NSString *opfFilePath) {
                     @strongify(self);
-                    return [[self contentOPFFileParsed:opfFilePath] flattenMap:^RACStream *(id value) {
-                        return [RACSignal return:@YES];
+                    return [[self contentOPFFileParsed:opfFilePath] flattenMap:^RACStream *(NSDictionary *collectedInfo) {
+                        
+                        RBEpub *epub = [RBEpub new];
+                        epub.manifestElements = collectedInfo[RBEpubContentOPFManifestElement];
+                        epub.spineElements = collectedInfo[RBEpubContentOPFSpineElement];
+                        
+                        return [RACSignal return:epub];
                     }];
                 }];
             }];
@@ -178,7 +194,12 @@ static int ddLogLevel = DDLogLevelError;
     static NSSet *supportedKeys = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSArray *keys = @[@"dc:title", @"dc:creator", @"dc:identifier", @"dc:publisher", @"dc:contributor", @"dc:rights"];
+        NSArray *keys = @[@"dc:title",
+                          @"dc:creator",
+                          @"dc:identifier",
+                          @"dc:publisher",
+                          @"dc:contributor",
+                          @"dc:rights"];
         supportedKeys = [NSSet setWithArray:keys];
     });
     
@@ -194,9 +215,11 @@ static int ddLogLevel = DDLogLevelError;
                 [subscriber sendNext:spineElements.firstObject];
                 [subscriber sendCompleted];
             } else {
+                /// TODO: improve error code
                 [subscriber sendError:[NSError parserErrorWithCode:0]];
             }
         } else {
+            /// TODO: improve error code
             [subscriber sendError:[NSError parserErrorWithCode:0]];
         }
         
@@ -211,6 +234,7 @@ static int ddLogLevel = DDLogLevelError;
                     [subscriber sendNext:spineElement];
                     [subscriber sendCompleted];
                 } else {
+                    /// TODO: improve error code
                     [subscriber sendError:[NSError parserErrorWithCode:0]];
                 }
                 
@@ -255,9 +279,9 @@ static int ddLogLevel = DDLogLevelError;
                 [collectedInfoMutable setObject:spineElements forKey:RBEpubContentOPFSpineElement];
                 return [RACSignal return:collectedInfoMutable.copy];
             }];
-        }] flattenMap:^RACStream *(id value) {
+        }] flattenMap:^RACStream *(NSDictionary *collectedInfo) {
             return [manifestParsedTrigger flattenMap:^RACStream *(NSArray *manifestElements) {
-                NSMutableDictionary *collectedInfoMutable = manifestElements.mutableCopy;
+                NSMutableDictionary *collectedInfoMutable = collectedInfo.mutableCopy;
                 [collectedInfoMutable setObject:manifestElements forKey:RBEpubContentOPFManifestElement];
                 return [RACSignal return:collectedInfoMutable.copy];
             }];
@@ -283,7 +307,6 @@ static int ddLogLevel = DDLogLevelError;
                                                                   options:kNilOptions
                                                                     error:&documentOpeningError];
             if (document != nil) {
-                /// TODO: rewrite with XPath
                 NSArray *rootFiles = [document.rootElement elementsForName:RBEpubContainerXMLParentNodeName];
                 if (rootFiles.count > 0) {
                     DDXMLElement *rootFilesElement = rootFiles.firstObject;

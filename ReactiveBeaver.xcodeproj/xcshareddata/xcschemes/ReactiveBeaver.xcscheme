@@ -28,7 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4206D1931B052C66007F227A"
+               BuildableName = "ReactiveBeaverTests.xctest"
+               BlueprintName = "ReactiveBeaverTests"
+               ReferencedContainer = "container:ReactiveBeaver.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "4206D1881B052C65007F227A"
+            BuildableName = "ReactiveBeaver.framework"
+            BlueprintName = "ReactiveBeaver"
+            ReferencedContainer = "container:ReactiveBeaver.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

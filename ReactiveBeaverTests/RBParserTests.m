@@ -34,14 +34,15 @@ describe(@"RBParserTest", ^{
     
     context(@"startParsingCommand", ^{
         it(@"moby-dick book parsing", ^{
-            NSString *validSourcePath = [[NSBundle bundleForClass:[self class]] pathForResource:RBParserTestBookSource1 ofType:@"epub"];;
+            Class specClass = [self class];
+            NSString *validSourcePath = [[NSBundle bundleForClass:specClass] pathForResource:RBParserTestBookSource1 ofType:@"epub"];;
             NSString *destinationStringPath = [RBFileSystemSupport applicationSupportDirectory];
-            __block NSNumber *finished = nil;
+            __block NSNumber *finished = @(0);
             [[parser unarchiveEpubToDestinationFolder:RACTuplePack(validSourcePath, destinationStringPath)] subscribeNext:^(id x) {
                 finished = @YES;
             }];
             
-            [[expectFutureValue(finished) shouldNotEventuallyBeforeTimingOutAfter(5.0)] beNil];
+            [[expectFutureValue(finished) shouldNotEventuallyBeforeTimingOutAfter(3.0)] beNil];
             [[finished should] beYes];
             
             NSString *metaInfFolderPath = [destinationStringPath stringByAppendingPathComponent:RBEpubMetaInfFolder];

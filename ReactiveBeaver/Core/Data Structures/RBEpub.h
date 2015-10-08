@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RBManifest.h"
 
 @interface RBEpub : NSObject
 
@@ -15,11 +14,14 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *author;
 
-@property (nonatomic, strong) NSArray *chapters;
-@property (nonatomic, strong) NSArray *navPoints;
+@property (nonatomic, strong) NSArray *spineElements;
+@property (nonatomic, strong) NSArray *manifestElements;
 
 @property (nonatomic, readonly) NSString *sourceEpubPath;
 @property (nonatomic, readonly) NSString *destinationEpubPath;
+
+/// TODO:
+@property (nonatomic, readonly) NSString *coverPath;
 
 - (void)initWithSourcePath:(NSString *)epubSource
            destinationPath:(NSString *)destination

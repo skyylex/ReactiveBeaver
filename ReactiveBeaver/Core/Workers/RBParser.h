@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import "RBEpub.h"
 
-typedef void(^RBParserResultCompletion)(NSDictionary *results, NSError *error);
+typedef void(^RBParserResultCompletion)(RBEpub * _Nullable epub, NSError * _Nullable error);
 
 @interface RBParser : NSObject
 
@@ -17,7 +18,7 @@ typedef void(^RBParserResultCompletion)(NSDictionary *results, NSError *error);
 /// @param sourcePath NSString path to the epub file (file should exist)
 /// @param destinationPath NSString path to the destination folder
 /// @return if both params points out to the valid file and folder - new parser instance will be returned, otherwise - nil
-+ (instancetype)parserWithSourcePath:(NSString *)sourcePath destinationPath:(NSString *)destinationPath;
++ (instancetype)parserWithSourcePath:(NSString *_Nonnull)sourcePath destinationPath:(NSString * _Nonnull)destinationPath;
 
 @end
 
