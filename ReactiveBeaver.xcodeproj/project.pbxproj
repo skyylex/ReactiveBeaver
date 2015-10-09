@@ -11,6 +11,9 @@
 		051C3AE252F0E8C978B32CCE /* (null) in Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (Weak, ); }; };
 		16A59D5DDC7A0BEC507950A3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB2059ABFD25DE7F6C3B17C3 /* libPods.a */; };
 		4206D1951B052C66007F227A /* ReactiveBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4206D1891B052C65007F227A /* ReactiveBeaver.framework */; };
+		4208EBAE1BC7A512006B24C6 /* RBMetaData.h in Headers */ = {isa = PBXBuildFile; fileRef = 4208EBAC1BC7A512006B24C6 /* RBMetaData.h */; settings = {ASSET_TAGS = (); }; };
+		4208EBAF1BC7A512006B24C6 /* RBMetaData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4208EBAD1BC7A512006B24C6 /* RBMetaData.m */; settings = {ASSET_TAGS = (); }; };
+		4208EBB01BC7A512006B24C6 /* RBMetaData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4208EBAD1BC7A512006B24C6 /* RBMetaData.m */; settings = {ASSET_TAGS = (); }; };
 		424EEC7F1BC1C4DE00480F1A /* RBEPNavPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC751BC1C4DE00480F1A /* RBEPNavPoint.h */; settings = {ASSET_TAGS = (); }; };
 		424EEC801BC1C4DE00480F1A /* RBEPNavPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC761BC1C4DE00480F1A /* RBEPNavPoint.m */; settings = {ASSET_TAGS = (); }; };
 		424EEC811BC1C4DE00480F1A /* RBEpub.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC771BC1C4DE00480F1A /* RBEpub.h */; settings = {ASSET_TAGS = (); }; };
@@ -67,6 +70,8 @@
 /* Begin PBXFileReference section */
 		4206D1891B052C65007F227A /* ReactiveBeaver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveBeaver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4206D1941B052C66007F227A /* ReactiveBeaverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveBeaverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4208EBAC1BC7A512006B24C6 /* RBMetaData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBMetaData.h; path = "ReactiveBeaver/Core/Data Structures/RBMetaData.h"; sourceTree = SOURCE_ROOT; };
+		4208EBAD1BC7A512006B24C6 /* RBMetaData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBMetaData.m; path = "ReactiveBeaver/Core/Data Structures/RBMetaData.m"; sourceTree = SOURCE_ROOT; };
 		4246F40D1B111EAB00A2A96F /* moby-dick.epub */ = {isa = PBXFileReference; lastKnownFileType = file; name = "moby-dick.epub"; path = "BookSources/moby-dick.epub"; sourceTree = SOURCE_ROOT; };
 		424EEC751BC1C4DE00480F1A /* RBEPNavPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBEPNavPoint.h; path = "ReactiveBeaver/Core/Data Structures/RBEPNavPoint.h"; sourceTree = SOURCE_ROOT; };
 		424EEC761BC1C4DE00480F1A /* RBEPNavPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBEPNavPoint.m; path = "ReactiveBeaver/Core/Data Structures/RBEPNavPoint.m"; sourceTree = SOURCE_ROOT; };
@@ -231,6 +236,8 @@
 				424EEC7C1BC1C4DE00480F1A /* RBManifestElement.m */,
 				424EEC7D1BC1C4DE00480F1A /* RBSpineElement.h */,
 				424EEC7E1BC1C4DE00480F1A /* RBSpineElement.m */,
+				4208EBAC1BC7A512006B24C6 /* RBMetaData.h */,
+				4208EBAD1BC7A512006B24C6 /* RBMetaData.m */,
 			);
 			name = "Data structure";
 			path = "ReactiveBeaver/Core/Data Structures";
@@ -307,6 +314,7 @@
 				424EEC871BC1C4DE00480F1A /* RBSpineElement.h in Headers */,
 				424EEC811BC1C4DE00480F1A /* RBEpub.h in Headers */,
 				42E8FFDA1B979EA100EB2BAA /* RBFileSystemSupport.h in Headers */,
+				4208EBAE1BC7A512006B24C6 /* RBMetaData.h in Headers */,
 				42E8FFF51B979EBC00EB2BAA /* ReactiveBeaver-Headers.h in Headers */,
 				42E8FFD71B979EA100EB2BAA /* NSError+QuickCreation.h in Headers */,
 				424EEC8B1BC1C4EA00480F1A /* RBParser.h in Headers */,
@@ -578,6 +586,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4208EBAF1BC7A512006B24C6 /* RBMetaData.m in Sources */,
 				42E8FFD81B979EA100EB2BAA /* NSError+QuickCreation.m in Sources */,
 				424EEC801BC1C4DE00480F1A /* RBEPNavPoint.m in Sources */,
 				424EEC8C1BC1C4EA00480F1A /* RBParser.m in Sources */,
@@ -613,6 +622,7 @@
 				42FDE5B91BC704E20056F3A6 /* RBManifestElement.m in Sources */,
 				42FDE5A11BC704BC0056F3A6 /* main.m in Sources */,
 				4266D4D51BC70A6C0060F53C /* RBDBookCell.m in Sources */,
+				4208EBB01BC7A512006B24C6 /* RBMetaData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

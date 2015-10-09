@@ -11,6 +11,7 @@
 #import "zipzap.h"
 #import <DDXML.h>
 #import "CocoaLumberjack.h"
+#import "KSSHA1Stream.h"
 
 #import "RBFileSystemSupport.h"
 #import "RBEpubNameConstants.h"
@@ -81,7 +82,7 @@ static int ddLogLevel = DDLogLevelError;
         @weakify(self);
         _startParsingCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(RACTuple *paths) {
             @strongify(self);
-            return [[self unarchiveEpubToDestinationFolder:paths] flattenMap:^RACStream *(id _) {
+            return [[self unarchiveEpubToDestinationFolder:paths] flattenMap:^RACStream *(NSString *epubDigest) {
                 @strongify(self);
                 NSString *destinationPath = paths.second;
                 return [[self containerXMLParsed:destinationPath] flattenMap:^RACStream *(NSString *opfFilePath) {
@@ -89,6 +90,7 @@ static int ddLogLevel = DDLogLevelError;
                     return [[self contentOPFFileParsed:opfFilePath] flattenMap:^RACStream *(NSDictionary *collectedInfo) {
                         
                         RBEpub *epub = [RBEpub new];
+                        epub.sha1 = epubDigest;
                         epub.manifestElements = collectedInfo[RBEpubContentOPFManifestElement];
                         epub.spineElements = collectedInfo[RBEpubContentOPFSpineElement];
                         
@@ -366,7 +368,11 @@ static int ddLogLevel = DDLogLevelError;
         return resultSignal;
     }] flattenMap:^RACStream *(NSString *tempFolderEpubPath) {
         NSString *destinationPath = paths.second;
-        return [RBFileSystemSupport unarchiveFile:tempFolderEpubPath toDestinationFolder:destinationPath];
+        NSData *epubRawData = [NSData dataWithContentsOfFile:tempFolderEpubPath];
+        NSString *epubDigest = [NSData ks_stringFromSHA1Digest:epubRawData];
+        return [[RBFileSystemSupport unarchiveFile:tempFolderEpubPath toDestinationFolder:destinationPath] map:^id(id _) {
+            return epubDigest;
+        }];
     }];
 }
 

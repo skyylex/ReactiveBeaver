@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RBMetaData.h"
+#import "MTLModel.h"
 
+/// TODO: rewrite to apply MTLModel
 @interface RBEpub : NSObject
 
 @property (nonatomic, copy) NSString *sha1;
@@ -17,6 +20,10 @@
 @property (nonatomic, strong) NSArray *spineElements;
 @property (nonatomic, strong) NSArray *manifestElements;
 
+/// TODO:
+@property (nonatomic, strong) RBMetaData *metadata;
+
+/// TODO:
 @property (nonatomic, readonly) NSString *sourceEpubPath;
 @property (nonatomic, readonly) NSString *destinationEpubPath;
 
