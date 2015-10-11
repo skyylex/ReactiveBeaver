@@ -26,9 +26,11 @@ static int ddLogLevel = DDLogLevelError;
 
 @interface RBParser()
 
+@property (nonatomic, strong) NSString *sourcePath;
+@property (nonatomic, strong) NSString *destinationPath;
+
 @property (nonatomic, strong) RACCommand *startParsingCommand;
-@property (nonatomic, copy) NSString *sourcePath;
-@property (nonatomic, copy) NSString *destinationPath;
+
 @end
 
 @implementation RBParser
@@ -42,8 +44,8 @@ static int ddLogLevel = DDLogLevelError;
     RBParser *parser = nil;
     
     /// TODO: add validation of the source/destination paths
-    BOOL validSourcePath = YES;
-    BOOL validDestinationPath = YES;
+    BOOL validSourcePath = [[NSFileManager defaultManager] fileExistsAtPath:sourcePath];
+    BOOL validDestinationPath = [[NSFileManager defaultManager] fileExistsAtPath:destinationPath];
     
     if (validSourcePath == YES && validDestinationPath == YES) {
         parser = [RBParser new];
@@ -61,7 +63,6 @@ static int ddLogLevel = DDLogLevelError;
     
     NSArray *inputs = @[self.sourcePath, self.destinationPath];
     
-    /// TODO: complete implementation and write tests
     RACSignal *executionSignal = [self.startParsingCommand.executionSignals take:1];
     [executionSignal subscribeNext:^(RACSignal *signal) {
         [signal subscribeNext:^(RBEpub *epub) {
@@ -69,8 +70,8 @@ static int ddLogLevel = DDLogLevelError;
         }];
     }];
     
-    [self.startParsingCommand.errors subscribeNext:^(id x) {
-        NSLog(@"Error occured");
+    [self.startParsingCommand.errors subscribeNext:^(NSError *error) {
+        completion(nil, error);
     }];
     [self.startParsingCommand execute:[RACTuple tupleWithObjectsFromArray:inputs]];
 }
@@ -93,6 +94,9 @@ static int ddLogLevel = DDLogLevelError;
                         epub.sha1 = epubDigest;
                         epub.manifestElements = collectedInfo[RBEpubContentOPFManifestElement];
                         epub.spineElements = collectedInfo[RBEpubContentOPFSpineElement];
+                        epub.metadata = collectedInfo[RBEpubContentOPFMetadataElement];
+                        epub.sourceEpubPath = paths.first;
+                        epub.destinationEpubPath = paths.second;
                         
                         return [RACSignal return:epub];
                     }];
@@ -274,7 +278,19 @@ static int ddLogLevel = DDLogLevelError;
         RACSignal *spineParsedTrigger = [self parseSpine:document];
         RACSignal *metadataParsedTrigger = [self parseMetadata:document];
         RACSignal *collectedInfoTrigger = [[[metadataParsedTrigger flattenMap:^RACStream *(NSDictionary *metadataInfo) {
-            return [RACSignal return:[NSDictionary dictionaryWithObject:metadataInfo forKey:RBEpubContentOPFMetadataElement]];
+            
+            return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+                NSError *error = nil;
+                RBMetadata *metadata = [MTLJSONAdapter modelOfClass:[RBMetadata class] fromJSONDictionary:metadataInfo error:&error];
+                if (error != nil) {
+                    [subscriber sendError:error];
+                } else {
+                    [subscriber sendNext:@{RBEpubContentOPFMetadataElement: metadata}];
+                    [subscriber sendCompleted];
+                }
+                
+                return nil;
+            }];
         }] flattenMap:^RACStream *(NSDictionary *collectedInfo) {
             return [spineParsedTrigger flattenMap:^RACStream *(NSArray *spineElements) {
                 NSMutableDictionary *collectedInfoMutable = collectedInfo.mutableCopy;

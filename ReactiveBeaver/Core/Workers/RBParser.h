@@ -18,7 +18,7 @@ typedef void(^RBParserResultCompletion)(RBEpub * _Nullable epub, NSError * _Null
 /// @param sourcePath NSString path to the epub file (file should exist)
 /// @param destinationPath NSString path to the destination folder
 /// @return if both params points out to the valid file and folder - new parser instance will be returned, otherwise - nil
-+ (instancetype)parserWithSourcePath:(NSString *_Nonnull)sourcePath destinationPath:(NSString * _Nonnull)destinationPath;
++ (instancetype)parserWithSourcePath:(NSString *)sourcePath destinationPath:(NSString * )destinationPath;
 
 @end
 

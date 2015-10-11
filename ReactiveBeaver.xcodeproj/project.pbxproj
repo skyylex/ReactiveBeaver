@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		04F12670DAD1DD7EF05E2E5C /* libPods-ReactiveBeaverTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E175836EE1BEBEC137DBB83F /* libPods-ReactiveBeaverTests.a */; };
-		051C3AE252F0E8C978B32CCE /* (null) in Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (Weak, ); }; };
-		16A59D5DDC7A0BEC507950A3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB2059ABFD25DE7F6C3B17C3 /* libPods.a */; };
 		4206D1951B052C66007F227A /* ReactiveBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4206D1891B052C65007F227A /* ReactiveBeaver.framework */; };
-		4208EBAE1BC7A512006B24C6 /* RBMetaData.h in Headers */ = {isa = PBXBuildFile; fileRef = 4208EBAC1BC7A512006B24C6 /* RBMetaData.h */; settings = {ASSET_TAGS = (); }; };
-		4208EBAF1BC7A512006B24C6 /* RBMetaData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4208EBAD1BC7A512006B24C6 /* RBMetaData.m */; settings = {ASSET_TAGS = (); }; };
-		4208EBB01BC7A512006B24C6 /* RBMetaData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4208EBAD1BC7A512006B24C6 /* RBMetaData.m */; settings = {ASSET_TAGS = (); }; };
+		4208EBAE1BC7A512006B24C6 /* RBMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = 4208EBAC1BC7A512006B24C6 /* RBMetadata.h */; settings = {ASSET_TAGS = (); }; };
+		4208EBAF1BC7A512006B24C6 /* RBMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 4208EBAD1BC7A512006B24C6 /* RBMetadata.m */; settings = {ASSET_TAGS = (); }; };
+		4208EBB01BC7A512006B24C6 /* RBMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 4208EBAD1BC7A512006B24C6 /* RBMetadata.m */; settings = {ASSET_TAGS = (); }; };
+		423F4B5B1BC9AE7600BA072F /* RBFileSupportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EDBFC21B980A6100F39E7F /* RBFileSupportTests.m */; settings = {ASSET_TAGS = (); }; };
+		423F4B5C1BC9AE7900BA072F /* RBParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EDBFC11B980A6100F39E7F /* RBParserTests.m */; settings = {ASSET_TAGS = (); }; };
 		424EEC7F1BC1C4DE00480F1A /* RBEPNavPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC751BC1C4DE00480F1A /* RBEPNavPoint.h */; settings = {ASSET_TAGS = (); }; };
 		424EEC801BC1C4DE00480F1A /* RBEPNavPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC761BC1C4DE00480F1A /* RBEPNavPoint.m */; settings = {ASSET_TAGS = (); }; };
 		424EEC811BC1C4DE00480F1A /* RBEpub.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC771BC1C4DE00480F1A /* RBEpub.h */; settings = {ASSET_TAGS = (); }; };
@@ -35,8 +35,6 @@
 		42E8FFDB1B979EA100EB2BAA /* RBFileSystemSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFD61B979EA100EB2BAA /* RBFileSystemSupport.m */; };
 		42E8FFF51B979EBC00EB2BAA /* ReactiveBeaver-Headers.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFF41B979EBC00EB2BAA /* ReactiveBeaver-Headers.h */; };
 		42E8FFF71B979EC800EB2BAA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42E8FFF61B979EC800EB2BAA /* Info.plist */; };
-		42EDBFC41B980A6100F39E7F /* RBParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EDBFC11B980A6100F39E7F /* RBParserTests.m */; };
-		42EDBFC51B980A6100F39E7F /* RBFileSupportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EDBFC21B980A6100F39E7F /* RBFileSupportTests.m */; };
 		42EDBFC61B980A6100F39E7F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42EDBFC31B980A6100F39E7F /* Info.plist */; };
 		42FDE5521BC6FF800056F3A6 /* moby-dick.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4246F40D1B111EAB00A2A96F /* moby-dick.epub */; settings = {ASSET_TAGS = (); }; };
 		42FDE5531BC6FF810056F3A6 /* moby-dick.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4246F40D1B111EAB00A2A96F /* moby-dick.epub */; settings = {ASSET_TAGS = (); }; };
@@ -52,9 +50,8 @@
 		42FDE5B81BC704DF0056F3A6 /* RBEpub.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC781BC1C4DE00480F1A /* RBEpub.m */; settings = {ASSET_TAGS = (); }; };
 		42FDE5B91BC704E20056F3A6 /* RBManifestElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC7C1BC1C4DE00480F1A /* RBManifestElement.m */; settings = {ASSET_TAGS = (); }; };
 		42FDE5BA1BC704E30056F3A6 /* RBSpineElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC7E1BC1C4DE00480F1A /* RBSpineElement.m */; settings = {ASSET_TAGS = (); }; };
-		AF4C5BAC4FA743BAF97F94C8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB2059ABFD25DE7F6C3B17C3 /* libPods.a */; };
-		C5AE02A8AE0D211442C6327C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB2059ABFD25DE7F6C3B17C3 /* libPods.a */; };
-		CACF2B75DD31F64E7B173E53 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		B081CFC663F09C2F89CE4A87 /* libPods-ReactiveBeaver-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B09BCF4309F917F8B7B9B45 /* libPods-ReactiveBeaver-Demo.a */; };
+		C6A03E30C69F574B73BBC335 /* libPods-ReactiveBeaver.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E17AB6AA841E7592E38230 /* libPods-ReactiveBeaver.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,10 +65,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2BABE405A4DACFB00D8ECB80 /* Pods-ReactiveBeaver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaver/Pods-ReactiveBeaver.debug.xcconfig"; sourceTree = "<group>"; };
 		4206D1891B052C65007F227A /* ReactiveBeaver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveBeaver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4206D1941B052C66007F227A /* ReactiveBeaverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveBeaverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4208EBAC1BC7A512006B24C6 /* RBMetaData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBMetaData.h; path = "ReactiveBeaver/Core/Data Structures/RBMetaData.h"; sourceTree = SOURCE_ROOT; };
-		4208EBAD1BC7A512006B24C6 /* RBMetaData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBMetaData.m; path = "ReactiveBeaver/Core/Data Structures/RBMetaData.m"; sourceTree = SOURCE_ROOT; };
+		4208EBAC1BC7A512006B24C6 /* RBMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBMetadata.h; path = "ReactiveBeaver/Core/Data Structures/RBMetadata.h"; sourceTree = SOURCE_ROOT; };
+		4208EBAD1BC7A512006B24C6 /* RBMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBMetadata.m; path = "ReactiveBeaver/Core/Data Structures/RBMetadata.m"; sourceTree = SOURCE_ROOT; };
 		4246F40D1B111EAB00A2A96F /* moby-dick.epub */ = {isa = PBXFileReference; lastKnownFileType = file; name = "moby-dick.epub"; path = "BookSources/moby-dick.epub"; sourceTree = SOURCE_ROOT; };
 		424EEC751BC1C4DE00480F1A /* RBEPNavPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBEPNavPoint.h; path = "ReactiveBeaver/Core/Data Structures/RBEPNavPoint.h"; sourceTree = SOURCE_ROOT; };
 		424EEC761BC1C4DE00480F1A /* RBEPNavPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBEPNavPoint.m; path = "ReactiveBeaver/Core/Data Structures/RBEPNavPoint.m"; sourceTree = SOURCE_ROOT; };
@@ -107,9 +105,16 @@
 		42FDE5AB1BC704BC0056F3A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42FDE5AE1BC704BC0056F3A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42FDE5B01BC704BC0056F3A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B09BCF4309F917F8B7B9B45 /* libPods-ReactiveBeaver-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactiveBeaver-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BE47BC50BFB6C2547085D3C /* Pods-ReactiveBeaver-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaver-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaver-Demo/Pods-ReactiveBeaver-Demo.release.xcconfig"; sourceTree = "<group>"; };
+		93DCEF9FCBD47096B940B374 /* Pods-ReactiveBeaver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaver.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaver/Pods-ReactiveBeaver.release.xcconfig"; sourceTree = "<group>"; };
 		9B58439EBD17959E5550142A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BB2059ABFD25DE7F6C3B17C3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1BE962B5F19D18728DC9667 /* Pods-ReactiveBeaver-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaver-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaver-Demo/Pods-ReactiveBeaver-Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		C9E17AB6AA841E7592E38230 /* libPods-ReactiveBeaver.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactiveBeaver.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E175836EE1BEBEC137DBB83F /* libPods-ReactiveBeaverTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactiveBeaverTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E600B09F2E934CCB064A5446 /* Pods-ReactiveBeaverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaverTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaverTests/Pods-ReactiveBeaverTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EBAA7CE2A4E347940A70BB01 /* Pods-ReactiveBeaverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaverTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaverTests/Pods-ReactiveBeaverTests.release.xcconfig"; sourceTree = "<group>"; };
 		EE94A7BFF78DFD919687D00E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,7 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16A59D5DDC7A0BEC507950A3 /* libPods.a in Frameworks */,
+				C6A03E30C69F574B73BBC335 /* libPods-ReactiveBeaver.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,9 +132,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4206D1951B052C66007F227A /* ReactiveBeaver.framework in Frameworks */,
-				CACF2B75DD31F64E7B173E53 /* (null) in Frameworks */,
-				051C3AE252F0E8C978B32CCE /* (null) in Frameworks */,
-				C5AE02A8AE0D211442C6327C /* libPods.a in Frameworks */,
 				04F12670DAD1DD7EF05E2E5C /* libPods-ReactiveBeaverTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,7 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF4C5BAC4FA743BAF97F94C8 /* libPods.a in Frameworks */,
+				B081CFC663F09C2F89CE4A87 /* libPods-ReactiveBeaver-Demo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +152,8 @@
 			children = (
 				BB2059ABFD25DE7F6C3B17C3 /* libPods.a */,
 				E175836EE1BEBEC137DBB83F /* libPods-ReactiveBeaverTests.a */,
+				C9E17AB6AA841E7592E38230 /* libPods-ReactiveBeaver.a */,
+				4B09BCF4309F917F8B7B9B45 /* libPods-ReactiveBeaver-Demo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -236,8 +240,8 @@
 				424EEC7C1BC1C4DE00480F1A /* RBManifestElement.m */,
 				424EEC7D1BC1C4DE00480F1A /* RBSpineElement.h */,
 				424EEC7E1BC1C4DE00480F1A /* RBSpineElement.m */,
-				4208EBAC1BC7A512006B24C6 /* RBMetaData.h */,
-				4208EBAD1BC7A512006B24C6 /* RBMetaData.m */,
+				4208EBAC1BC7A512006B24C6 /* RBMetadata.h */,
+				4208EBAD1BC7A512006B24C6 /* RBMetadata.m */,
 			);
 			name = "Data structure";
 			path = "ReactiveBeaver/Core/Data Structures";
@@ -298,6 +302,12 @@
 			children = (
 				9B58439EBD17959E5550142A /* Pods.debug.xcconfig */,
 				EE94A7BFF78DFD919687D00E /* Pods.release.xcconfig */,
+				2BABE405A4DACFB00D8ECB80 /* Pods-ReactiveBeaver.debug.xcconfig */,
+				93DCEF9FCBD47096B940B374 /* Pods-ReactiveBeaver.release.xcconfig */,
+				C1BE962B5F19D18728DC9667 /* Pods-ReactiveBeaver-Demo.debug.xcconfig */,
+				7BE47BC50BFB6C2547085D3C /* Pods-ReactiveBeaver-Demo.release.xcconfig */,
+				E600B09F2E934CCB064A5446 /* Pods-ReactiveBeaverTests.debug.xcconfig */,
+				EBAA7CE2A4E347940A70BB01 /* Pods-ReactiveBeaverTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -314,7 +324,7 @@
 				424EEC871BC1C4DE00480F1A /* RBSpineElement.h in Headers */,
 				424EEC811BC1C4DE00480F1A /* RBEpub.h in Headers */,
 				42E8FFDA1B979EA100EB2BAA /* RBFileSystemSupport.h in Headers */,
-				4208EBAE1BC7A512006B24C6 /* RBMetaData.h in Headers */,
+				4208EBAE1BC7A512006B24C6 /* RBMetadata.h in Headers */,
 				42E8FFF51B979EBC00EB2BAA /* ReactiveBeaver-Headers.h in Headers */,
 				42E8FFD71B979EA100EB2BAA /* NSError+QuickCreation.h in Headers */,
 				424EEC8B1BC1C4EA00480F1A /* RBParser.h in Headers */,
@@ -516,7 +526,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveBeaver/Pods-ReactiveBeaver-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		979F073F80F7A42BEF34795A /* Check Pods Manifest.lock */ = {
@@ -546,7 +556,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveBeaver-Demo/Pods-ReactiveBeaver-Demo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B5C5BF3BFC945B8F6D3A8428 /* Embed Pods Frameworks */ = {
@@ -576,7 +586,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveBeaver-Demo/Pods-ReactiveBeaver-Demo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -586,16 +596,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4208EBAF1BC7A512006B24C6 /* RBMetaData.m in Sources */,
+				4208EBAF1BC7A512006B24C6 /* RBMetadata.m in Sources */,
 				42E8FFD81B979EA100EB2BAA /* NSError+QuickCreation.m in Sources */,
 				424EEC801BC1C4DE00480F1A /* RBEPNavPoint.m in Sources */,
 				424EEC8C1BC1C4EA00480F1A /* RBParser.m in Sources */,
 				424EEC861BC1C4DE00480F1A /* RBManifestElement.m in Sources */,
-				42EDBFC41B980A6100F39E7F /* RBParserTests.m in Sources */,
 				424EEC821BC1C4DE00480F1A /* RBEpub.m in Sources */,
 				424EEC881BC1C4DE00480F1A /* RBSpineElement.m in Sources */,
 				42E8FFDB1B979EA100EB2BAA /* RBFileSystemSupport.m in Sources */,
-				42EDBFC51B980A6100F39E7F /* RBFileSupportTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +611,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				423F4B5C1BC9AE7900BA072F /* RBParserTests.m in Sources */,
+				423F4B5B1BC9AE7600BA072F /* RBFileSupportTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,7 +632,7 @@
 				42FDE5B91BC704E20056F3A6 /* RBManifestElement.m in Sources */,
 				42FDE5A11BC704BC0056F3A6 /* main.m in Sources */,
 				4266D4D51BC70A6C0060F53C /* RBDBookCell.m in Sources */,
-				4208EBB01BC7A512006B24C6 /* RBMetaData.m in Sources */,
+				4208EBB01BC7A512006B24C6 /* RBMetadata.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -693,7 +703,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -734,7 +744,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -746,7 +756,7 @@
 		};
 		4206D1A01B052C66007F227A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B58439EBD17959E5550142A /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 2BABE405A4DACFB00D8ECB80 /* Pods-ReactiveBeaver.debug.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -763,7 +773,7 @@
 		};
 		4206D1A11B052C66007F227A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE94A7BFF78DFD919687D00E /* Pods.release.xcconfig */;
+			baseConfigurationReference = 93DCEF9FCBD47096B940B374 /* Pods-ReactiveBeaver.release.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -780,7 +790,7 @@
 		};
 		4206D1A31B052C66007F227A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B58439EBD17959E5550142A /* Pods.debug.xcconfig */;
+			baseConfigurationReference = E600B09F2E934CCB064A5446 /* Pods-ReactiveBeaverTests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -798,7 +808,7 @@
 		};
 		4206D1A41B052C66007F227A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE94A7BFF78DFD919687D00E /* Pods.release.xcconfig */;
+			baseConfigurationReference = EBAA7CE2A4E347940A70BB01 /* Pods-ReactiveBeaverTests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -812,13 +822,13 @@
 		};
 		42FDE5B21BC704BC0056F3A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B58439EBD17959E5550142A /* Pods.debug.xcconfig */;
+			baseConfigurationReference = C1BE962B5F19D18728DC9667 /* Pods-ReactiveBeaver-Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = "ReactiveBeaver-Demo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "skyylex.com.ReactiveBeaver-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -827,11 +837,11 @@
 		};
 		42FDE5B31BC704BC0056F3A6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE94A7BFF78DFD919687D00E /* Pods.release.xcconfig */;
+			baseConfigurationReference = 7BE47BC50BFB6C2547085D3C /* Pods-ReactiveBeaver-Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "ReactiveBeaver-Demo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "skyylex.com.ReactiveBeaver-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";

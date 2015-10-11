@@ -7,31 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RBMetaData.h"
+#import "RBMetadata.h"
 #import "MTLModel.h"
 
 /// TODO: rewrite to apply MTLModel
 @interface RBEpub : NSObject
 
 @property (nonatomic, copy) NSString *sha1;
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *author;
+
+@property (nonatomic, strong) RBMetadata *metadata;
+
+@property (nonatomic, copy) NSString *sourceEpubPath;
+@property (nonatomic, copy) NSString *destinationEpubPath;
 
 @property (nonatomic, strong) NSArray *spineElements;
 @property (nonatomic, strong) NSArray *manifestElements;
 
 /// TODO:
-@property (nonatomic, strong) RBMetaData *metadata;
-
-/// TODO:
-@property (nonatomic, readonly) NSString *sourceEpubPath;
-@property (nonatomic, readonly) NSString *destinationEpubPath;
-
-/// TODO:
-@property (nonatomic, readonly) NSString *coverPath;
-
-- (void)initWithSourcePath:(NSString *)epubSource
-           destinationPath:(NSString *)destination
-                     error:(NSError *__autoreleasing*)error;
+@property (nonatomic, copy) NSString *coverPath;
 
 @end

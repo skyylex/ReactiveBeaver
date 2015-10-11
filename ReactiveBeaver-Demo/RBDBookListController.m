@@ -10,9 +10,11 @@
 #import "RBDBookListController.h"
 #import "RBDBookListViewModel.h"
 #import "RBDBookCell.h"
+#import "MBProgressHUD.h"
 
 /// Constants
 #define InitialRowHeight 40.0
+
 @interface RBDBookListController()
 
 @property (nonatomic, strong) RBDBookListViewModel *viewModel;
@@ -38,6 +40,14 @@
 
 - (void)prepareViewModel {
     self.viewModel = [RBDBookListViewModel new];
+    
+    [[self.viewModel.parsingStartTrigger flattenMap:^RACStream *(id value) {
+        return [self showHUDAction];
+    }] subscribeNext:^(id x) {}];
+    
+    [[self.viewModel.parsingEndTrigger flattenMap:^RACStream *(id value) {
+        return [self hideHUDAction];
+    }] subscribeNext:^(id x) {}];
 }
 
 - (void)prepareTableView {
@@ -65,8 +75,40 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.viewModel parseBookWithIndex:indexPath.row];
-    
-    /// TODO: add HUD
+}
+
+#pragma mark - Actions
+
+- (RACSignal *)showHUDAction {
+    RACSignal *currentViewSignal = [RACSignal return:self.tableView];
+    return [currentViewSignal flattenMap:^RACStream *(UIView *view) {
+        return [[RACSignal return:[RACUnit defaultUnit]].deliverOnMainThread flattenMap:^RACStream *(id value) {
+            return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+                [MBProgressHUD showHUDAddedTo:view animated:YES];
+                
+                [subscriber sendNext:[RACUnit defaultUnit]];
+                [subscriber sendCompleted];
+                
+                return nil;
+            }];
+        }];
+    }];
+}
+
+- (RACSignal *)hideHUDAction {
+    RACSignal *currentViewSignal = [RACSignal return:self.tableView];
+    return [currentViewSignal flattenMap:^RACStream *(UIView *view) {
+        return [[RACSignal return:[RACUnit defaultUnit]].deliverOnMainThread flattenMap:^RACStream *(id value) {
+            return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+                [MBProgressHUD hideAllHUDsForView:view animated:YES];
+                
+                [subscriber sendNext:[RACUnit defaultUnit]];
+                [subscriber sendCompleted];
+                
+                return nil;
+            }];
+        }];
+    }];
 }
 
 @end

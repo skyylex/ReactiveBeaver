@@ -1,14 +1,14 @@
 //
-//  RBMetaData.m
+//  RBMetadata.m
 //  ReactiveBeaver
 //
 //  Created by Yury Lapitsky on 09.10.15.
 //  Copyright © 2015 skyylex. All rights reserved.
 //
 
-#import "RBMetaData.h"
+#import "RBMetadata.h"
 
-@implementation RBMetaData
+@implementation RBMetadata
 
 #pragma mark - MTLJSONSerializing
 

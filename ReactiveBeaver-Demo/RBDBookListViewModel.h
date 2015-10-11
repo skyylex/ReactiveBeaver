@@ -11,6 +11,10 @@
 
 @interface RBDBookListViewModel : NSObject
 
+/// Triggers
+@property (nonatomic, readonly) RACSignal *parsingEndTrigger;
+@property (nonatomic, readonly) RACSignal *parsingStartTrigger;
+
 /// Data
 @property (nonatomic, readonly) NSArray *bookNames;
 

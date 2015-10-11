@@ -12,6 +12,9 @@
 
 @interface RBDBookListViewModel()
 
+/// Triggers control
+@property (nonatomic, strong) RACSubject *parsingStartEndSubject;
+
 /// Workers
 @property (nonatomic, strong, readwrite) RBParser *parser;
 
@@ -36,6 +39,9 @@
 - (void)prepare {
     /// Data
     self.bookNames = @[MobyDickBook];
+    
+    /// RAC
+    self.parsingStartEndSubject = [RACSubject subject];
 }
 
 #pragma mark - Actions
@@ -50,10 +56,21 @@
     BOOL isDirectory = NO;
     BOOL folderExist = [[NSFileManager defaultManager] fileExistsAtPath:destinationPath isDirectory:&isDirectory];
     if (destinationFolderCreated == YES || (folderExist == YES && isDirectory == YES)) {
-        self.parser = [RBParser parserWithSourcePath:sourcePath destinationPath:destinationPath];
-        [self.parser startParsingWithCompletionBlock:^(RBEpub *epub, NSError *error) {
-            
-        }];
+        [self.parsingStartEndSubject sendNext:RACTuplePack(@YES, [RACUnit defaultUnit])];
+        self.parser = [RBParser new];
+        
+        [[[self.parser startCommand].executionSignals
+          flattenMap:^(RACSignal *parsingSignal) {
+              return parsingSignal;
+          }]
+         subscribeNext:^(id result) {
+            [self.parsingStartEndSubject sendNext:RACTuplePack(@NO, result)];
+         }
+         error:^(NSError *error) {
+             [self.parsingStartEndSubject sendNext:RACTuplePack(@NO, [RACUnit defaultUnit])];
+         }];
+        
+        [[self.parser startCommand] execute:RACTuplePack(sourcePath, destinationPath)];
     } else {
         NSLog(@"Cannot create destination folder");
     }
@@ -69,6 +86,20 @@
 
 - (NSString *)epubSourcePathWithName:(nonnull NSString *)name {
     return [[NSBundle mainBundle] pathForResource:name ofType:@"epub"];
+}
+
+#pragma mark - Triggers
+
+- (RACSignal *)parsingEndTrigger {
+    return [self.parsingStartEndSubject filter:^BOOL(NSNumber *value) {
+        return value != nil && value.boolValue == NO;
+    }];
+}
+
+- (RACSignal *)parsingStartTrigger {
+    return [self.parsingStartEndSubject filter:^BOOL(NSNumber *value) {
+        return value != nil && value.boolValue == YES;
+    }];
 }
 
 

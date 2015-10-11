@@ -1,5 +1,5 @@
 //
-//  RBMetaData.h
+//  RBMetadata.h
 //  ReactiveBeaver
 //
 //  Created by Yury Lapitsky on 09.10.15.
@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MTLModel.h"
-#import "MTLJSONAdapter.h"
 
-@interface RBMetaData : MTLModel<MTLJSONSerializing>
+#import "MTLJSONAdapter.h"
+#import "MTLModel.h"
+
+@interface RBMetadata : MTLModel<MTLJSONSerializing>
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *creator;
