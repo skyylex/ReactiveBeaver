@@ -11,6 +11,7 @@
 #import "RBDBookListViewModel.h"
 #import "RBDBookCell.h"
 #import "MBProgressHUD.h"
+#import "RBDDetailsController.h"
 
 /// Constants
 #define InitialRowHeight 40.0
@@ -45,8 +46,13 @@
         return [self showHUDAction];
     }] subscribeNext:^(id x) {}];
     
-    [[self.viewModel.parsingEndTrigger flattenMap:^RACStream *(id value) {
-        return [self hideHUDAction];
+    @weakify(self);
+    [[self.viewModel.parsingEndTrigger flattenMap:^RACStream *(RBEpub *epub) {
+        @strongify(self);
+        return [[self hideHUDAction] flattenMap:^RACStream *(id _) {
+            @strongify(self);
+            return [self showDetailsController:epub];
+        }];
     }] subscribeNext:^(id x) {}];
 }
 
@@ -78,6 +84,23 @@
 }
 
 #pragma mark - Actions
+
+- (RACSignal *)showDetailsController:(RBEpub *)epub {
+    RACSignal *transportSignal = [RACSignal return:RACTuplePack(self.navigationController, self.storyboard, epub)];
+    RACSignal *showAction = [transportSignal flattenMap:^RACStream *(RACTuple *tuple) {
+        UINavigationController *presenter = tuple.first;
+        UIStoryboard *storyboard = tuple.second;
+        
+        RBDDetailsController *controller = [storyboard instantiateViewControllerWithIdentifier:(NSString *)RBDDetailsControllerStoryboardId];
+        controller.epub = tuple.third;
+        
+        [presenter pushViewController:controller animated:YES];
+        
+        return [RACSignal return:[RACUnit defaultUnit]];
+    }];
+    
+    return showAction;
+}
 
 - (RACSignal *)showHUDAction {
     RACSignal *currentViewSignal = [RACSignal return:self.tableView];

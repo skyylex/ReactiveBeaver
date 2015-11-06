@@ -9,25 +9,26 @@
 /* Begin PBXBuildFile section */
 		04F12670DAD1DD7EF05E2E5C /* libPods-ReactiveBeaverTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E175836EE1BEBEC137DBB83F /* libPods-ReactiveBeaverTests.a */; };
 		4206D1951B052C66007F227A /* ReactiveBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4206D1891B052C65007F227A /* ReactiveBeaver.framework */; };
-		4208EBAE1BC7A512006B24C6 /* RBMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = 4208EBAC1BC7A512006B24C6 /* RBMetadata.h */; settings = {ASSET_TAGS = (); }; };
-		4208EBAF1BC7A512006B24C6 /* RBMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 4208EBAD1BC7A512006B24C6 /* RBMetadata.m */; settings = {ASSET_TAGS = (); }; };
-		4208EBB01BC7A512006B24C6 /* RBMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 4208EBAD1BC7A512006B24C6 /* RBMetadata.m */; settings = {ASSET_TAGS = (); }; };
-		423F4B5B1BC9AE7600BA072F /* RBFileSupportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EDBFC21B980A6100F39E7F /* RBFileSupportTests.m */; settings = {ASSET_TAGS = (); }; };
-		423F4B5C1BC9AE7900BA072F /* RBParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EDBFC11B980A6100F39E7F /* RBParserTests.m */; settings = {ASSET_TAGS = (); }; };
-		424EEC7F1BC1C4DE00480F1A /* RBEPNavPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC751BC1C4DE00480F1A /* RBEPNavPoint.h */; settings = {ASSET_TAGS = (); }; };
-		424EEC801BC1C4DE00480F1A /* RBEPNavPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC761BC1C4DE00480F1A /* RBEPNavPoint.m */; settings = {ASSET_TAGS = (); }; };
-		424EEC811BC1C4DE00480F1A /* RBEpub.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC771BC1C4DE00480F1A /* RBEpub.h */; settings = {ASSET_TAGS = (); }; };
-		424EEC821BC1C4DE00480F1A /* RBEpub.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC781BC1C4DE00480F1A /* RBEpub.m */; settings = {ASSET_TAGS = (); }; };
-		424EEC851BC1C4DE00480F1A /* RBManifestElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC7B1BC1C4DE00480F1A /* RBManifestElement.h */; settings = {ASSET_TAGS = (); }; };
-		424EEC861BC1C4DE00480F1A /* RBManifestElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC7C1BC1C4DE00480F1A /* RBManifestElement.m */; settings = {ASSET_TAGS = (); }; };
-		424EEC871BC1C4DE00480F1A /* RBSpineElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC7D1BC1C4DE00480F1A /* RBSpineElement.h */; settings = {ASSET_TAGS = (); }; };
-		424EEC881BC1C4DE00480F1A /* RBSpineElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC7E1BC1C4DE00480F1A /* RBSpineElement.m */; settings = {ASSET_TAGS = (); }; };
-		424EEC8B1BC1C4EA00480F1A /* RBParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC891BC1C4EA00480F1A /* RBParser.h */; settings = {ASSET_TAGS = (); }; };
-		424EEC8C1BC1C4EA00480F1A /* RBParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC8A1BC1C4EA00480F1A /* RBParser.m */; settings = {ASSET_TAGS = (); }; };
-		4266D4CF1BC707B40060F53C /* RBDBookListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4266D4CE1BC707B40060F53C /* RBDBookListViewModel.m */; settings = {ASSET_TAGS = (); }; };
-		4266D4D21BC709DF0060F53C /* RBDBookListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4266D4D11BC709DF0060F53C /* RBDBookListController.m */; settings = {ASSET_TAGS = (); }; };
-		4266D4D51BC70A6C0060F53C /* RBDBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4266D4D41BC70A6C0060F53C /* RBDBookCell.m */; settings = {ASSET_TAGS = (); }; };
-		4266D4D61BC7104A0060F53C /* moby-dick.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4246F40D1B111EAB00A2A96F /* moby-dick.epub */; settings = {ASSET_TAGS = (); }; };
+		4208EBAE1BC7A512006B24C6 /* RBMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = 4208EBAC1BC7A512006B24C6 /* RBMetadata.h */; };
+		4208EBAF1BC7A512006B24C6 /* RBMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 4208EBAD1BC7A512006B24C6 /* RBMetadata.m */; };
+		4208EBB01BC7A512006B24C6 /* RBMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 4208EBAD1BC7A512006B24C6 /* RBMetadata.m */; };
+		423F4B5B1BC9AE7600BA072F /* RBFileSupportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EDBFC21B980A6100F39E7F /* RBFileSupportTests.m */; };
+		423F4B5C1BC9AE7900BA072F /* RBParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EDBFC11B980A6100F39E7F /* RBParserTests.m */; };
+		424EEC7F1BC1C4DE00480F1A /* RBEPNavPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC751BC1C4DE00480F1A /* RBEPNavPoint.h */; };
+		424EEC801BC1C4DE00480F1A /* RBEPNavPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC761BC1C4DE00480F1A /* RBEPNavPoint.m */; };
+		424EEC811BC1C4DE00480F1A /* RBEpub.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC771BC1C4DE00480F1A /* RBEpub.h */; };
+		424EEC821BC1C4DE00480F1A /* RBEpub.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC781BC1C4DE00480F1A /* RBEpub.m */; };
+		424EEC851BC1C4DE00480F1A /* RBManifestElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC7B1BC1C4DE00480F1A /* RBManifestElement.h */; };
+		424EEC861BC1C4DE00480F1A /* RBManifestElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC7C1BC1C4DE00480F1A /* RBManifestElement.m */; };
+		424EEC871BC1C4DE00480F1A /* RBSpineElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC7D1BC1C4DE00480F1A /* RBSpineElement.h */; };
+		424EEC881BC1C4DE00480F1A /* RBSpineElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC7E1BC1C4DE00480F1A /* RBSpineElement.m */; };
+		424EEC8B1BC1C4EA00480F1A /* RBParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC891BC1C4EA00480F1A /* RBParser.h */; };
+		424EEC8C1BC1C4EA00480F1A /* RBParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC8A1BC1C4EA00480F1A /* RBParser.m */; };
+		4266D4CF1BC707B40060F53C /* RBDBookListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4266D4CE1BC707B40060F53C /* RBDBookListViewModel.m */; };
+		4266D4D21BC709DF0060F53C /* RBDBookListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4266D4D11BC709DF0060F53C /* RBDBookListController.m */; };
+		4266D4D51BC70A6C0060F53C /* RBDBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4266D4D41BC70A6C0060F53C /* RBDBookCell.m */; };
+		4266D4D61BC7104A0060F53C /* moby-dick.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4246F40D1B111EAB00A2A96F /* moby-dick.epub */; };
+		4299106E1BECE8B90028EA30 /* RBDDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4299106D1BECE8B90028EA30 /* RBDDetailsController.m */; };
 		42E8FFD71B979EA100EB2BAA /* NSError+QuickCreation.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFD21B979EA100EB2BAA /* NSError+QuickCreation.h */; };
 		42E8FFD81B979EA100EB2BAA /* NSError+QuickCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFD31B979EA100EB2BAA /* NSError+QuickCreation.m */; };
 		42E8FFD91B979EA100EB2BAA /* RBEpubNameConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFD41B979EA100EB2BAA /* RBEpubNameConstants.h */; };
@@ -36,20 +37,20 @@
 		42E8FFF51B979EBC00EB2BAA /* ReactiveBeaver-Headers.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFF41B979EBC00EB2BAA /* ReactiveBeaver-Headers.h */; };
 		42E8FFF71B979EC800EB2BAA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42E8FFF61B979EC800EB2BAA /* Info.plist */; };
 		42EDBFC61B980A6100F39E7F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42EDBFC31B980A6100F39E7F /* Info.plist */; };
-		42FDE5521BC6FF800056F3A6 /* moby-dick.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4246F40D1B111EAB00A2A96F /* moby-dick.epub */; settings = {ASSET_TAGS = (); }; };
-		42FDE5531BC6FF810056F3A6 /* moby-dick.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4246F40D1B111EAB00A2A96F /* moby-dick.epub */; settings = {ASSET_TAGS = (); }; };
+		42FDE5521BC6FF800056F3A6 /* moby-dick.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4246F40D1B111EAB00A2A96F /* moby-dick.epub */; };
+		42FDE5531BC6FF810056F3A6 /* moby-dick.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4246F40D1B111EAB00A2A96F /* moby-dick.epub */; };
 		42FDE5A11BC704BC0056F3A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FDE5A01BC704BC0056F3A6 /* main.m */; };
 		42FDE5A41BC704BC0056F3A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FDE5A31BC704BC0056F3A6 /* AppDelegate.m */; };
 		42FDE5AA1BC704BC0056F3A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42FDE5A81BC704BC0056F3A6 /* Main.storyboard */; };
 		42FDE5AC1BC704BC0056F3A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42FDE5AB1BC704BC0056F3A6 /* Assets.xcassets */; };
 		42FDE5AF1BC704BC0056F3A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42FDE5AD1BC704BC0056F3A6 /* LaunchScreen.storyboard */; };
-		42FDE5B41BC704D10056F3A6 /* NSError+QuickCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFD31B979EA100EB2BAA /* NSError+QuickCreation.m */; settings = {ASSET_TAGS = (); }; };
-		42FDE5B51BC704D10056F3A6 /* RBFileSystemSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFD61B979EA100EB2BAA /* RBFileSystemSupport.m */; settings = {ASSET_TAGS = (); }; };
-		42FDE5B61BC704D80056F3A6 /* RBParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC8A1BC1C4EA00480F1A /* RBParser.m */; settings = {ASSET_TAGS = (); }; };
-		42FDE5B71BC704DD0056F3A6 /* RBEPNavPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC761BC1C4DE00480F1A /* RBEPNavPoint.m */; settings = {ASSET_TAGS = (); }; };
-		42FDE5B81BC704DF0056F3A6 /* RBEpub.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC781BC1C4DE00480F1A /* RBEpub.m */; settings = {ASSET_TAGS = (); }; };
-		42FDE5B91BC704E20056F3A6 /* RBManifestElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC7C1BC1C4DE00480F1A /* RBManifestElement.m */; settings = {ASSET_TAGS = (); }; };
-		42FDE5BA1BC704E30056F3A6 /* RBSpineElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC7E1BC1C4DE00480F1A /* RBSpineElement.m */; settings = {ASSET_TAGS = (); }; };
+		42FDE5B41BC704D10056F3A6 /* NSError+QuickCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFD31B979EA100EB2BAA /* NSError+QuickCreation.m */; };
+		42FDE5B51BC704D10056F3A6 /* RBFileSystemSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFD61B979EA100EB2BAA /* RBFileSystemSupport.m */; };
+		42FDE5B61BC704D80056F3A6 /* RBParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC8A1BC1C4EA00480F1A /* RBParser.m */; };
+		42FDE5B71BC704DD0056F3A6 /* RBEPNavPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC761BC1C4DE00480F1A /* RBEPNavPoint.m */; };
+		42FDE5B81BC704DF0056F3A6 /* RBEpub.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC781BC1C4DE00480F1A /* RBEpub.m */; };
+		42FDE5B91BC704E20056F3A6 /* RBManifestElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC7C1BC1C4DE00480F1A /* RBManifestElement.m */; };
+		42FDE5BA1BC704E30056F3A6 /* RBSpineElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC7E1BC1C4DE00480F1A /* RBSpineElement.m */; };
 		B081CFC663F09C2F89CE4A87 /* libPods-ReactiveBeaver-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B09BCF4309F917F8B7B9B45 /* libPods-ReactiveBeaver-Demo.a */; };
 		C6A03E30C69F574B73BBC335 /* libPods-ReactiveBeaver.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E17AB6AA841E7592E38230 /* libPods-ReactiveBeaver.a */; };
 /* End PBXBuildFile section */
@@ -87,6 +88,8 @@
 		4266D4D11BC709DF0060F53C /* RBDBookListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBDBookListController.m; sourceTree = "<group>"; };
 		4266D4D31BC70A6C0060F53C /* RBDBookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBDBookCell.h; sourceTree = "<group>"; };
 		4266D4D41BC70A6C0060F53C /* RBDBookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBDBookCell.m; sourceTree = "<group>"; };
+		4299106C1BECE8B90028EA30 /* RBDDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBDDetailsController.h; sourceTree = "<group>"; };
+		4299106D1BECE8B90028EA30 /* RBDDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBDDetailsController.m; sourceTree = "<group>"; };
 		42E8FFD21B979EA100EB2BAA /* NSError+QuickCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSError+QuickCreation.h"; path = "ReactiveBeaver/Support/NSError+QuickCreation.h"; sourceTree = SOURCE_ROOT; };
 		42E8FFD31B979EA100EB2BAA /* NSError+QuickCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSError+QuickCreation.m"; path = "ReactiveBeaver/Support/NSError+QuickCreation.m"; sourceTree = SOURCE_ROOT; };
 		42E8FFD41B979EA100EB2BAA /* RBEpubNameConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBEpubNameConstants.h; path = ReactiveBeaver/Support/RBEpubNameConstants.h; sourceTree = SOURCE_ROOT; };
@@ -285,6 +288,8 @@
 				4266D4D11BC709DF0060F53C /* RBDBookListController.m */,
 				4266D4D31BC70A6C0060F53C /* RBDBookCell.h */,
 				4266D4D41BC70A6C0060F53C /* RBDBookCell.m */,
+				4299106C1BECE8B90028EA30 /* RBDDetailsController.h */,
+				4299106D1BECE8B90028EA30 /* RBDDetailsController.m */,
 			);
 			path = "ReactiveBeaver-Demo";
 			sourceTree = "<group>";
@@ -621,6 +626,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42FDE5B61BC704D80056F3A6 /* RBParser.m in Sources */,
+				4299106E1BECE8B90028EA30 /* RBDDetailsController.m in Sources */,
 				42FDE5A41BC704BC0056F3A6 /* AppDelegate.m in Sources */,
 				42FDE5B81BC704DF0056F3A6 /* RBEpub.m in Sources */,
 				42FDE5B71BC704DD0056F3A6 /* RBEPNavPoint.m in Sources */,

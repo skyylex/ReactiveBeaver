@@ -91,14 +91,18 @@
 #pragma mark - Triggers
 
 - (RACSignal *)parsingEndTrigger {
-    return [self.parsingStartEndSubject filter:^BOOL(NSNumber *value) {
-        return value != nil && value.boolValue == NO;
+    return [[self.parsingStartEndSubject filter:^BOOL(RACTuple *tuple) {
+        return tuple.first != nil && [tuple.first boolValue] == NO;
+    }] map:^id(RACTuple *tuple) {
+        return tuple.second;
     }];
 }
 
 - (RACSignal *)parsingStartTrigger {
-    return [self.parsingStartEndSubject filter:^BOOL(NSNumber *value) {
-        return value != nil && value.boolValue == YES;
+    return [[self.parsingStartEndSubject filter:^BOOL(RACTuple *tuple) {
+        return tuple.first != nil && [tuple.first boolValue] == YES;
+    }] map:^id(RACTuple *tuple) {
+        return tuple.second;
     }];
 }
 
