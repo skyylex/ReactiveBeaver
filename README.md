@@ -47,8 +47,9 @@ NSString *destinationPath = ... /// destination folder to unarchive
 
 /// Start of the actual parsing
 [[self.parser startCommand] execute:RACTuplePack(sourcePath, destinationPath)];
-
 ```
+
+There is an [Demo](https://github.com/skyylex/ReactiveBeaver/tree/master/ReactiveBeaver-Demo) application that is built upon RFP concept.
 
 ### License
 ##### Code
