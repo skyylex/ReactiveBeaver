@@ -1,15 +1,15 @@
 [![Build    Status](https://travis-ci.org/skyylex/ReactiveBeaver.svg?branch=master)](https://travis-ci.org/skyylex/ReactiveBeaver)
 
-# ReactiveBeaver (preparing first version)
+# ReactiveBeaver (preparing documentation)
 #### NOT released.
 ePub parser for iOS and OS X.
-Core parts are designed to be functional and are written in ReactiveCocoa.
+Core parts are designed to be reactive and are written in ReactiveCocoa.
 
 ### Main goals and principles
 
 - High tests coverage.
 - Performance optimization
-- Functional and non-functional usage.
+- RFP and non-RFP usage.
 - ePub 2 and 3 specification support.
 
 ### Usage
