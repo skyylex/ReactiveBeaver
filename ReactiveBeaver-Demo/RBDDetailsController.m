@@ -36,7 +36,7 @@ static const NSString *cellIdentifier = @"RBDBookCellId";
         }
             
         case DetailSectionManifestElements: {
-            headerTitle = @"Spine elements";
+            headerTitle = @"Manifest elements";
             break;
         }
             
