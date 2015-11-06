@@ -7,22 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		051C3AE252F0E8C978B32CCE /* (null) in Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (Weak, ); }; };
-		16A59D5DDC7A0BEC507950A3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB2059ABFD25DE7F6C3B17C3 /* libPods.a */; };
+		04F12670DAD1DD7EF05E2E5C /* libPods-ReactiveBeaverTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E175836EE1BEBEC137DBB83F /* libPods-ReactiveBeaverTests.a */; };
 		4206D1951B052C66007F227A /* ReactiveBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4206D1891B052C65007F227A /* ReactiveBeaver.framework */; };
-		4246F40E1B111EAB00A2A96F /* moby-dick.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4246F40D1B111EAB00A2A96F /* moby-dick.epub */; };
-		424EEC7F1BC1C4DE00480F1A /* RBEPNavPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC751BC1C4DE00480F1A /* RBEPNavPoint.h */; settings = {ASSET_TAGS = (); }; };
-		424EEC801BC1C4DE00480F1A /* RBEPNavPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC761BC1C4DE00480F1A /* RBEPNavPoint.m */; settings = {ASSET_TAGS = (); }; };
-		424EEC811BC1C4DE00480F1A /* RBEpub.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC771BC1C4DE00480F1A /* RBEpub.h */; settings = {ASSET_TAGS = (); }; };
-		424EEC821BC1C4DE00480F1A /* RBEpub.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC781BC1C4DE00480F1A /* RBEpub.m */; settings = {ASSET_TAGS = (); }; };
-		424EEC831BC1C4DE00480F1A /* RBManifest.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC791BC1C4DE00480F1A /* RBManifest.h */; settings = {ASSET_TAGS = (); }; };
-		424EEC841BC1C4DE00480F1A /* RBManifest.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC7A1BC1C4DE00480F1A /* RBManifest.m */; settings = {ASSET_TAGS = (); }; };
-		424EEC851BC1C4DE00480F1A /* RBManifestElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC7B1BC1C4DE00480F1A /* RBManifestElement.h */; settings = {ASSET_TAGS = (); }; };
-		424EEC861BC1C4DE00480F1A /* RBManifestElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC7C1BC1C4DE00480F1A /* RBManifestElement.m */; settings = {ASSET_TAGS = (); }; };
-		424EEC871BC1C4DE00480F1A /* RBSpineElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC7D1BC1C4DE00480F1A /* RBSpineElement.h */; settings = {ASSET_TAGS = (); }; };
-		424EEC881BC1C4DE00480F1A /* RBSpineElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC7E1BC1C4DE00480F1A /* RBSpineElement.m */; settings = {ASSET_TAGS = (); }; };
-		424EEC8B1BC1C4EA00480F1A /* RBParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC891BC1C4EA00480F1A /* RBParser.h */; settings = {ASSET_TAGS = (); }; };
-		424EEC8C1BC1C4EA00480F1A /* RBParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC8A1BC1C4EA00480F1A /* RBParser.m */; settings = {ASSET_TAGS = (); }; };
+		4208EBAE1BC7A512006B24C6 /* RBMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = 4208EBAC1BC7A512006B24C6 /* RBMetadata.h */; };
+		4208EBAF1BC7A512006B24C6 /* RBMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 4208EBAD1BC7A512006B24C6 /* RBMetadata.m */; };
+		4208EBB01BC7A512006B24C6 /* RBMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 4208EBAD1BC7A512006B24C6 /* RBMetadata.m */; };
+		423F4B5B1BC9AE7600BA072F /* RBFileSupportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EDBFC21B980A6100F39E7F /* RBFileSupportTests.m */; };
+		423F4B5C1BC9AE7900BA072F /* RBParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EDBFC11B980A6100F39E7F /* RBParserTests.m */; };
+		424EEC7F1BC1C4DE00480F1A /* RBEPNavPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC751BC1C4DE00480F1A /* RBEPNavPoint.h */; };
+		424EEC801BC1C4DE00480F1A /* RBEPNavPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC761BC1C4DE00480F1A /* RBEPNavPoint.m */; };
+		424EEC811BC1C4DE00480F1A /* RBEpub.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC771BC1C4DE00480F1A /* RBEpub.h */; };
+		424EEC821BC1C4DE00480F1A /* RBEpub.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC781BC1C4DE00480F1A /* RBEpub.m */; };
+		424EEC851BC1C4DE00480F1A /* RBManifestElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC7B1BC1C4DE00480F1A /* RBManifestElement.h */; };
+		424EEC861BC1C4DE00480F1A /* RBManifestElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC7C1BC1C4DE00480F1A /* RBManifestElement.m */; };
+		424EEC871BC1C4DE00480F1A /* RBSpineElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC7D1BC1C4DE00480F1A /* RBSpineElement.h */; };
+		424EEC881BC1C4DE00480F1A /* RBSpineElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC7E1BC1C4DE00480F1A /* RBSpineElement.m */; };
+		424EEC8B1BC1C4EA00480F1A /* RBParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC891BC1C4EA00480F1A /* RBParser.h */; };
+		424EEC8C1BC1C4EA00480F1A /* RBParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC8A1BC1C4EA00480F1A /* RBParser.m */; };
+		4266D4CF1BC707B40060F53C /* RBDBookListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4266D4CE1BC707B40060F53C /* RBDBookListViewModel.m */; };
+		4266D4D21BC709DF0060F53C /* RBDBookListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4266D4D11BC709DF0060F53C /* RBDBookListController.m */; };
+		4266D4D51BC70A6C0060F53C /* RBDBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4266D4D41BC70A6C0060F53C /* RBDBookCell.m */; };
+		4266D4D61BC7104A0060F53C /* moby-dick.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4246F40D1B111EAB00A2A96F /* moby-dick.epub */; };
+		4299106E1BECE8B90028EA30 /* RBDDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4299106D1BECE8B90028EA30 /* RBDDetailsController.m */; };
 		42E8FFD71B979EA100EB2BAA /* NSError+QuickCreation.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFD21B979EA100EB2BAA /* NSError+QuickCreation.h */; };
 		42E8FFD81B979EA100EB2BAA /* NSError+QuickCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFD31B979EA100EB2BAA /* NSError+QuickCreation.m */; };
 		42E8FFD91B979EA100EB2BAA /* RBEpubNameConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFD41B979EA100EB2BAA /* RBEpubNameConstants.h */; };
@@ -30,11 +36,23 @@
 		42E8FFDB1B979EA100EB2BAA /* RBFileSystemSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFD61B979EA100EB2BAA /* RBFileSystemSupport.m */; };
 		42E8FFF51B979EBC00EB2BAA /* ReactiveBeaver-Headers.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFF41B979EBC00EB2BAA /* ReactiveBeaver-Headers.h */; };
 		42E8FFF71B979EC800EB2BAA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42E8FFF61B979EC800EB2BAA /* Info.plist */; };
-		42EDBFC41B980A6100F39E7F /* RBParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EDBFC11B980A6100F39E7F /* RBParserTests.m */; };
-		42EDBFC51B980A6100F39E7F /* RBFileSupportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EDBFC21B980A6100F39E7F /* RBFileSupportTests.m */; };
 		42EDBFC61B980A6100F39E7F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42EDBFC31B980A6100F39E7F /* Info.plist */; };
-		C5AE02A8AE0D211442C6327C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB2059ABFD25DE7F6C3B17C3 /* libPods.a */; };
-		CACF2B75DD31F64E7B173E53 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		42FDE5521BC6FF800056F3A6 /* moby-dick.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4246F40D1B111EAB00A2A96F /* moby-dick.epub */; };
+		42FDE5531BC6FF810056F3A6 /* moby-dick.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4246F40D1B111EAB00A2A96F /* moby-dick.epub */; };
+		42FDE5A11BC704BC0056F3A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FDE5A01BC704BC0056F3A6 /* main.m */; };
+		42FDE5A41BC704BC0056F3A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FDE5A31BC704BC0056F3A6 /* AppDelegate.m */; };
+		42FDE5AA1BC704BC0056F3A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42FDE5A81BC704BC0056F3A6 /* Main.storyboard */; };
+		42FDE5AC1BC704BC0056F3A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42FDE5AB1BC704BC0056F3A6 /* Assets.xcassets */; };
+		42FDE5AF1BC704BC0056F3A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42FDE5AD1BC704BC0056F3A6 /* LaunchScreen.storyboard */; };
+		42FDE5B41BC704D10056F3A6 /* NSError+QuickCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFD31B979EA100EB2BAA /* NSError+QuickCreation.m */; };
+		42FDE5B51BC704D10056F3A6 /* RBFileSystemSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFD61B979EA100EB2BAA /* RBFileSystemSupport.m */; };
+		42FDE5B61BC704D80056F3A6 /* RBParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC8A1BC1C4EA00480F1A /* RBParser.m */; };
+		42FDE5B71BC704DD0056F3A6 /* RBEPNavPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC761BC1C4DE00480F1A /* RBEPNavPoint.m */; };
+		42FDE5B81BC704DF0056F3A6 /* RBEpub.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC781BC1C4DE00480F1A /* RBEpub.m */; };
+		42FDE5B91BC704E20056F3A6 /* RBManifestElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC7C1BC1C4DE00480F1A /* RBManifestElement.m */; };
+		42FDE5BA1BC704E30056F3A6 /* RBSpineElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC7E1BC1C4DE00480F1A /* RBSpineElement.m */; };
+		B081CFC663F09C2F89CE4A87 /* libPods-ReactiveBeaver-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B09BCF4309F917F8B7B9B45 /* libPods-ReactiveBeaver-Demo.a */; };
+		C6A03E30C69F574B73BBC335 /* libPods-ReactiveBeaver.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E17AB6AA841E7592E38230 /* libPods-ReactiveBeaver.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,21 +66,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2BABE405A4DACFB00D8ECB80 /* Pods-ReactiveBeaver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaver/Pods-ReactiveBeaver.debug.xcconfig"; sourceTree = "<group>"; };
 		4206D1891B052C65007F227A /* ReactiveBeaver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveBeaver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4206D1941B052C66007F227A /* ReactiveBeaverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveBeaverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4208EBAC1BC7A512006B24C6 /* RBMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBMetadata.h; path = "ReactiveBeaver/Core/Data Structures/RBMetadata.h"; sourceTree = SOURCE_ROOT; };
+		4208EBAD1BC7A512006B24C6 /* RBMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBMetadata.m; path = "ReactiveBeaver/Core/Data Structures/RBMetadata.m"; sourceTree = SOURCE_ROOT; };
 		4246F40D1B111EAB00A2A96F /* moby-dick.epub */ = {isa = PBXFileReference; lastKnownFileType = file; name = "moby-dick.epub"; path = "BookSources/moby-dick.epub"; sourceTree = SOURCE_ROOT; };
 		424EEC751BC1C4DE00480F1A /* RBEPNavPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBEPNavPoint.h; path = "ReactiveBeaver/Core/Data Structures/RBEPNavPoint.h"; sourceTree = SOURCE_ROOT; };
 		424EEC761BC1C4DE00480F1A /* RBEPNavPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBEPNavPoint.m; path = "ReactiveBeaver/Core/Data Structures/RBEPNavPoint.m"; sourceTree = SOURCE_ROOT; };
 		424EEC771BC1C4DE00480F1A /* RBEpub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBEpub.h; path = "ReactiveBeaver/Core/Data Structures/RBEpub.h"; sourceTree = SOURCE_ROOT; };
 		424EEC781BC1C4DE00480F1A /* RBEpub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBEpub.m; path = "ReactiveBeaver/Core/Data Structures/RBEpub.m"; sourceTree = SOURCE_ROOT; };
-		424EEC791BC1C4DE00480F1A /* RBManifest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBManifest.h; path = "ReactiveBeaver/Core/Data Structures/RBManifest.h"; sourceTree = SOURCE_ROOT; };
-		424EEC7A1BC1C4DE00480F1A /* RBManifest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBManifest.m; path = "ReactiveBeaver/Core/Data Structures/RBManifest.m"; sourceTree = SOURCE_ROOT; };
 		424EEC7B1BC1C4DE00480F1A /* RBManifestElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBManifestElement.h; path = "ReactiveBeaver/Core/Data Structures/RBManifestElement.h"; sourceTree = SOURCE_ROOT; };
 		424EEC7C1BC1C4DE00480F1A /* RBManifestElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBManifestElement.m; path = "ReactiveBeaver/Core/Data Structures/RBManifestElement.m"; sourceTree = SOURCE_ROOT; };
 		424EEC7D1BC1C4DE00480F1A /* RBSpineElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBSpineElement.h; path = "ReactiveBeaver/Core/Data Structures/RBSpineElement.h"; sourceTree = SOURCE_ROOT; };
 		424EEC7E1BC1C4DE00480F1A /* RBSpineElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBSpineElement.m; path = "ReactiveBeaver/Core/Data Structures/RBSpineElement.m"; sourceTree = SOURCE_ROOT; };
 		424EEC891BC1C4EA00480F1A /* RBParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBParser.h; path = ReactiveBeaver/Core/Workers/RBParser.h; sourceTree = SOURCE_ROOT; };
 		424EEC8A1BC1C4EA00480F1A /* RBParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBParser.m; path = ReactiveBeaver/Core/Workers/RBParser.m; sourceTree = SOURCE_ROOT; };
+		4266D4CD1BC707B40060F53C /* RBDBookListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBDBookListViewModel.h; sourceTree = "<group>"; };
+		4266D4CE1BC707B40060F53C /* RBDBookListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBDBookListViewModel.m; sourceTree = "<group>"; };
+		4266D4D01BC709DF0060F53C /* RBDBookListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBDBookListController.h; sourceTree = "<group>"; };
+		4266D4D11BC709DF0060F53C /* RBDBookListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBDBookListController.m; sourceTree = "<group>"; };
+		4266D4D31BC70A6C0060F53C /* RBDBookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBDBookCell.h; sourceTree = "<group>"; };
+		4266D4D41BC70A6C0060F53C /* RBDBookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBDBookCell.m; sourceTree = "<group>"; };
+		4299106C1BECE8B90028EA30 /* RBDDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBDDetailsController.h; sourceTree = "<group>"; };
+		4299106D1BECE8B90028EA30 /* RBDDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBDDetailsController.m; sourceTree = "<group>"; };
 		42E8FFD21B979EA100EB2BAA /* NSError+QuickCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSError+QuickCreation.h"; path = "ReactiveBeaver/Support/NSError+QuickCreation.h"; sourceTree = SOURCE_ROOT; };
 		42E8FFD31B979EA100EB2BAA /* NSError+QuickCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSError+QuickCreation.m"; path = "ReactiveBeaver/Support/NSError+QuickCreation.m"; sourceTree = SOURCE_ROOT; };
 		42E8FFD41B979EA100EB2BAA /* RBEpubNameConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBEpubNameConstants.h; path = ReactiveBeaver/Support/RBEpubNameConstants.h; sourceTree = SOURCE_ROOT; };
@@ -73,8 +100,24 @@
 		42EDBFC11B980A6100F39E7F /* RBParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBParserTests.m; path = ReactiveBeaverTests/RBParserTests.m; sourceTree = SOURCE_ROOT; };
 		42EDBFC21B980A6100F39E7F /* RBFileSupportTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBFileSupportTests.m; path = ReactiveBeaverTests/RBFileSupportTests.m; sourceTree = SOURCE_ROOT; };
 		42EDBFC31B980A6100F39E7F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ReactiveBeaverTests/Info.plist; sourceTree = SOURCE_ROOT; };
+		42FDE59D1BC704BC0056F3A6 /* ReactiveBeaver-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ReactiveBeaver-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42FDE5A01BC704BC0056F3A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		42FDE5A21BC704BC0056F3A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		42FDE5A31BC704BC0056F3A6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		42FDE5A91BC704BC0056F3A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		42FDE5AB1BC704BC0056F3A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42FDE5AE1BC704BC0056F3A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		42FDE5B01BC704BC0056F3A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B09BCF4309F917F8B7B9B45 /* libPods-ReactiveBeaver-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactiveBeaver-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BE47BC50BFB6C2547085D3C /* Pods-ReactiveBeaver-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaver-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaver-Demo/Pods-ReactiveBeaver-Demo.release.xcconfig"; sourceTree = "<group>"; };
+		93DCEF9FCBD47096B940B374 /* Pods-ReactiveBeaver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaver.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaver/Pods-ReactiveBeaver.release.xcconfig"; sourceTree = "<group>"; };
 		9B58439EBD17959E5550142A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BB2059ABFD25DE7F6C3B17C3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1BE962B5F19D18728DC9667 /* Pods-ReactiveBeaver-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaver-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaver-Demo/Pods-ReactiveBeaver-Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		C9E17AB6AA841E7592E38230 /* libPods-ReactiveBeaver.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactiveBeaver.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E175836EE1BEBEC137DBB83F /* libPods-ReactiveBeaverTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactiveBeaverTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E600B09F2E934CCB064A5446 /* Pods-ReactiveBeaverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaverTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaverTests/Pods-ReactiveBeaverTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EBAA7CE2A4E347940A70BB01 /* Pods-ReactiveBeaverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaverTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaverTests/Pods-ReactiveBeaverTests.release.xcconfig"; sourceTree = "<group>"; };
 		EE94A7BFF78DFD919687D00E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,7 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16A59D5DDC7A0BEC507950A3 /* libPods.a in Frameworks */,
+				C6A03E30C69F574B73BBC335 /* libPods-ReactiveBeaver.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,9 +135,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4206D1951B052C66007F227A /* ReactiveBeaver.framework in Frameworks */,
-				CACF2B75DD31F64E7B173E53 /* (null) in Frameworks */,
-				051C3AE252F0E8C978B32CCE /* (null) in Frameworks */,
-				C5AE02A8AE0D211442C6327C /* libPods.a in Frameworks */,
+				04F12670DAD1DD7EF05E2E5C /* libPods-ReactiveBeaverTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42FDE59A1BC704BC0056F3A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B081CFC663F09C2F89CE4A87 /* libPods-ReactiveBeaver-Demo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				BB2059ABFD25DE7F6C3B17C3 /* libPods.a */,
+				E175836EE1BEBEC137DBB83F /* libPods-ReactiveBeaverTests.a */,
+				C9E17AB6AA841E7592E38230 /* libPods-ReactiveBeaver.a */,
+				4B09BCF4309F917F8B7B9B45 /* libPods-ReactiveBeaver-Demo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -114,6 +166,7 @@
 			children = (
 				4206D18B1B052C65007F227A /* ReactiveBeaver */,
 				4206D1981B052C66007F227A /* ReactiveBeaverTests */,
+				42FDE59E1BC704BC0056F3A6 /* ReactiveBeaver-Demo */,
 				4206D18A1B052C65007F227A /* Products */,
 				D45A418EA2C2FD9CB2CA68B9 /* Pods */,
 				3494A54EC6AC34C98782A22D /* Frameworks */,
@@ -125,6 +178,7 @@
 			children = (
 				4206D1891B052C65007F227A /* ReactiveBeaver.framework */,
 				4206D1941B052C66007F227A /* ReactiveBeaverTests.xctest */,
+				42FDE59D1BC704BC0056F3A6 /* ReactiveBeaver-Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -185,12 +239,12 @@
 				424EEC761BC1C4DE00480F1A /* RBEPNavPoint.m */,
 				424EEC771BC1C4DE00480F1A /* RBEpub.h */,
 				424EEC781BC1C4DE00480F1A /* RBEpub.m */,
-				424EEC791BC1C4DE00480F1A /* RBManifest.h */,
-				424EEC7A1BC1C4DE00480F1A /* RBManifest.m */,
 				424EEC7B1BC1C4DE00480F1A /* RBManifestElement.h */,
 				424EEC7C1BC1C4DE00480F1A /* RBManifestElement.m */,
 				424EEC7D1BC1C4DE00480F1A /* RBSpineElement.h */,
 				424EEC7E1BC1C4DE00480F1A /* RBSpineElement.m */,
+				4208EBAC1BC7A512006B24C6 /* RBMetadata.h */,
+				4208EBAD1BC7A512006B24C6 /* RBMetadata.m */,
 			);
 			name = "Data structure";
 			path = "ReactiveBeaver/Core/Data Structures";
@@ -218,11 +272,47 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
+		42FDE59E1BC704BC0056F3A6 /* ReactiveBeaver-Demo */ = {
+			isa = PBXGroup;
+			children = (
+				42FDE5A21BC704BC0056F3A6 /* AppDelegate.h */,
+				42FDE5A31BC704BC0056F3A6 /* AppDelegate.m */,
+				42FDE5A81BC704BC0056F3A6 /* Main.storyboard */,
+				42FDE5AB1BC704BC0056F3A6 /* Assets.xcassets */,
+				42FDE5AD1BC704BC0056F3A6 /* LaunchScreen.storyboard */,
+				42FDE5B01BC704BC0056F3A6 /* Info.plist */,
+				42FDE59F1BC704BC0056F3A6 /* Supporting Files */,
+				4266D4CD1BC707B40060F53C /* RBDBookListViewModel.h */,
+				4266D4CE1BC707B40060F53C /* RBDBookListViewModel.m */,
+				4266D4D01BC709DF0060F53C /* RBDBookListController.h */,
+				4266D4D11BC709DF0060F53C /* RBDBookListController.m */,
+				4266D4D31BC70A6C0060F53C /* RBDBookCell.h */,
+				4266D4D41BC70A6C0060F53C /* RBDBookCell.m */,
+				4299106C1BECE8B90028EA30 /* RBDDetailsController.h */,
+				4299106D1BECE8B90028EA30 /* RBDDetailsController.m */,
+			);
+			path = "ReactiveBeaver-Demo";
+			sourceTree = "<group>";
+		};
+		42FDE59F1BC704BC0056F3A6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				42FDE5A01BC704BC0056F3A6 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		D45A418EA2C2FD9CB2CA68B9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				9B58439EBD17959E5550142A /* Pods.debug.xcconfig */,
 				EE94A7BFF78DFD919687D00E /* Pods.release.xcconfig */,
+				2BABE405A4DACFB00D8ECB80 /* Pods-ReactiveBeaver.debug.xcconfig */,
+				93DCEF9FCBD47096B940B374 /* Pods-ReactiveBeaver.release.xcconfig */,
+				C1BE962B5F19D18728DC9667 /* Pods-ReactiveBeaver-Demo.debug.xcconfig */,
+				7BE47BC50BFB6C2547085D3C /* Pods-ReactiveBeaver-Demo.release.xcconfig */,
+				E600B09F2E934CCB064A5446 /* Pods-ReactiveBeaverTests.debug.xcconfig */,
+				EBAA7CE2A4E347940A70BB01 /* Pods-ReactiveBeaverTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -239,11 +329,11 @@
 				424EEC871BC1C4DE00480F1A /* RBSpineElement.h in Headers */,
 				424EEC811BC1C4DE00480F1A /* RBEpub.h in Headers */,
 				42E8FFDA1B979EA100EB2BAA /* RBFileSystemSupport.h in Headers */,
+				4208EBAE1BC7A512006B24C6 /* RBMetadata.h in Headers */,
 				42E8FFF51B979EBC00EB2BAA /* ReactiveBeaver-Headers.h in Headers */,
 				42E8FFD71B979EA100EB2BAA /* NSError+QuickCreation.h in Headers */,
 				424EEC8B1BC1C4EA00480F1A /* RBParser.h in Headers */,
 				424EEC851BC1C4DE00480F1A /* RBManifestElement.h in Headers */,
-				424EEC831BC1C4DE00480F1A /* RBManifest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +369,7 @@
 				4206D1911B052C66007F227A /* Frameworks */,
 				4206D1921B052C66007F227A /* Resources */,
 				63E8F37EC485740750DC43AC /* Copy Pods Resources */,
+				B5C5BF3BFC945B8F6D3A8428 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -289,6 +380,26 @@
 			productName = SKEPParserTests;
 			productReference = 4206D1941B052C66007F227A /* ReactiveBeaverTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		42FDE59C1BC704BC0056F3A6 /* ReactiveBeaver-Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42FDE5B11BC704BC0056F3A6 /* Build configuration list for PBXNativeTarget "ReactiveBeaver-Demo" */;
+			buildPhases = (
+				979F073F80F7A42BEF34795A /* Check Pods Manifest.lock */,
+				42FDE5991BC704BC0056F3A6 /* Sources */,
+				42FDE59A1BC704BC0056F3A6 /* Frameworks */,
+				42FDE59B1BC704BC0056F3A6 /* Resources */,
+				A5C17C610E20B8C80EBD6C61 /* Embed Pods Frameworks */,
+				FCA9EA964DFB1E70E755179B /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ReactiveBeaver-Demo";
+			productName = "ReactiveBeaver-Demo";
+			productReference = 42FDE59D1BC704BC0056F3A6 /* ReactiveBeaver-Demo.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -305,6 +416,9 @@
 					4206D1931B052C66007F227A = {
 						CreatedOnToolsVersion = 6.3.1;
 					};
+					42FDE59C1BC704BC0056F3A6 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
 				};
 			};
 			buildConfigurationList = 4206D1831B052C65007F227A /* Build configuration list for PBXProject "ReactiveBeaver" */;
@@ -313,6 +427,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 4206D17F1B052C65007F227A;
 			productRefGroup = 4206D18A1B052C65007F227A /* Products */;
@@ -321,6 +436,7 @@
 			targets = (
 				4206D1881B052C65007F227A /* ReactiveBeaver */,
 				4206D1931B052C66007F227A /* ReactiveBeaverTests */,
+				42FDE59C1BC704BC0056F3A6 /* ReactiveBeaver-Demo */,
 			);
 		};
 /* End PBXProject section */
@@ -330,6 +446,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42FDE5521BC6FF800056F3A6 /* moby-dick.epub in Resources */,
 				42EDBFC61B980A6100F39E7F /* Info.plist in Resources */,
 				42E8FFF71B979EC800EB2BAA /* Info.plist in Resources */,
 			);
@@ -339,7 +456,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4246F40E1B111EAB00A2A96F /* moby-dick.epub in Resources */,
+				42FDE5531BC6FF810056F3A6 /* moby-dick.epub in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42FDE59B1BC704BC0056F3A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42FDE5AF1BC704BC0056F3A6 /* LaunchScreen.storyboard in Resources */,
+				42FDE5AC1BC704BC0056F3A6 /* Assets.xcassets in Resources */,
+				42FDE5AA1BC704BC0056F3A6 /* Main.storyboard in Resources */,
+				4266D4D61BC7104A0060F53C /* moby-dick.epub in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,7 +516,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveBeaverTests/Pods-ReactiveBeaverTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		726288DF846E48C342F7BD12 /* Copy Pods Resources */ = {
@@ -403,7 +531,67 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveBeaver/Pods-ReactiveBeaver-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		979F073F80F7A42BEF34795A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A5C17C610E20B8C80EBD6C61 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveBeaver-Demo/Pods-ReactiveBeaver-Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5C5BF3BFC945B8F6D3A8428 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveBeaverTests/Pods-ReactiveBeaverTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCA9EA964DFB1E70E755179B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveBeaver-Demo/Pods-ReactiveBeaver-Demo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -413,16 +601,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4208EBAF1BC7A512006B24C6 /* RBMetadata.m in Sources */,
 				42E8FFD81B979EA100EB2BAA /* NSError+QuickCreation.m in Sources */,
 				424EEC801BC1C4DE00480F1A /* RBEPNavPoint.m in Sources */,
 				424EEC8C1BC1C4EA00480F1A /* RBParser.m in Sources */,
-				424EEC841BC1C4DE00480F1A /* RBManifest.m in Sources */,
 				424EEC861BC1C4DE00480F1A /* RBManifestElement.m in Sources */,
-				42EDBFC41B980A6100F39E7F /* RBParserTests.m in Sources */,
 				424EEC821BC1C4DE00480F1A /* RBEpub.m in Sources */,
 				424EEC881BC1C4DE00480F1A /* RBSpineElement.m in Sources */,
 				42E8FFDB1B979EA100EB2BAA /* RBFileSystemSupport.m in Sources */,
-				42EDBFC51B980A6100F39E7F /* RBFileSupportTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +616,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				423F4B5C1BC9AE7900BA072F /* RBParserTests.m in Sources */,
+				423F4B5B1BC9AE7600BA072F /* RBFileSupportTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42FDE5991BC704BC0056F3A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42FDE5B61BC704D80056F3A6 /* RBParser.m in Sources */,
+				4299106E1BECE8B90028EA30 /* RBDDetailsController.m in Sources */,
+				42FDE5A41BC704BC0056F3A6 /* AppDelegate.m in Sources */,
+				42FDE5B81BC704DF0056F3A6 /* RBEpub.m in Sources */,
+				42FDE5B71BC704DD0056F3A6 /* RBEPNavPoint.m in Sources */,
+				4266D4D21BC709DF0060F53C /* RBDBookListController.m in Sources */,
+				4266D4CF1BC707B40060F53C /* RBDBookListViewModel.m in Sources */,
+				42FDE5B41BC704D10056F3A6 /* NSError+QuickCreation.m in Sources */,
+				42FDE5BA1BC704E30056F3A6 /* RBSpineElement.m in Sources */,
+				42FDE5B51BC704D10056F3A6 /* RBFileSystemSupport.m in Sources */,
+				42FDE5B91BC704E20056F3A6 /* RBManifestElement.m in Sources */,
+				42FDE5A11BC704BC0056F3A6 /* main.m in Sources */,
+				4266D4D51BC70A6C0060F53C /* RBDBookCell.m in Sources */,
+				4208EBB01BC7A512006B24C6 /* RBMetadata.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +651,25 @@
 			targetProxy = 4206D1961B052C66007F227A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		42FDE5A81BC704BC0056F3A6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42FDE5A91BC704BC0056F3A6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		42FDE5AD1BC704BC0056F3A6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42FDE5AE1BC704BC0056F3A6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4206D19D1B052C66007F227A /* Debug */ = {
@@ -481,7 +709,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -522,7 +750,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -534,7 +762,7 @@
 		};
 		4206D1A01B052C66007F227A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B58439EBD17959E5550142A /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 2BABE405A4DACFB00D8ECB80 /* Pods-ReactiveBeaver.debug.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -551,7 +779,7 @@
 		};
 		4206D1A11B052C66007F227A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE94A7BFF78DFD919687D00E /* Pods.release.xcconfig */;
+			baseConfigurationReference = 93DCEF9FCBD47096B940B374 /* Pods-ReactiveBeaver.release.xcconfig */;
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -568,7 +796,7 @@
 		};
 		4206D1A31B052C66007F227A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B58439EBD17959E5550142A /* Pods.debug.xcconfig */;
+			baseConfigurationReference = E600B09F2E934CCB064A5446 /* Pods-ReactiveBeaverTests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -586,7 +814,7 @@
 		};
 		4206D1A41B052C66007F227A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE94A7BFF78DFD919687D00E /* Pods.release.xcconfig */;
+			baseConfigurationReference = EBAA7CE2A4E347940A70BB01 /* Pods-ReactiveBeaverTests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -595,6 +823,34 @@
 				INFOPLIST_FILE = ReactiveBeaver/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = ReactiveBeaverTests;
+			};
+			name = Release;
+		};
+		42FDE5B21BC704BC0056F3A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1BE962B5F19D18728DC9667 /* Pods-ReactiveBeaver-Demo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				INFOPLIST_FILE = "ReactiveBeaver-Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "skyylex.com.ReactiveBeaver-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		42FDE5B31BC704BC0056F3A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BE47BC50BFB6C2547085D3C /* Pods-ReactiveBeaver-Demo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "ReactiveBeaver-Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "skyylex.com.ReactiveBeaver-Demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -624,6 +880,15 @@
 			buildConfigurations = (
 				4206D1A31B052C66007F227A /* Debug */,
 				4206D1A41B052C66007F227A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42FDE5B11BC704BC0056F3A6 /* Build configuration list for PBXNativeTarget "ReactiveBeaver-Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42FDE5B21BC704BC0056F3A6 /* Debug */,
+				42FDE5B31BC704BC0056F3A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

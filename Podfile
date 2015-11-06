@@ -1,10 +1,30 @@
-platform :ios, '7.0'
+platform :ios, '8.0'
 
-link_with 'ReactiveBeaver', 'ReactiveBeaverTests'
+target 'ReactiveBeaver-Demo' do
+  pod 'ReactiveCocoa', '~> 2.5'
+  pod 'Mantle'
+  pod 'CocoaLumberjack', '~> 2.0'
+  pod 'KissXML'
+  pod 'zipzap', '~> 8.0'
+  pod 'KSCrypto'
+  pod 'MBProgressHUD'
+end
 
-pod 'ReactiveCocoa', '~> 2.5'
-pod 'CocoaLumberjack', '~> 2.0'
-pod 'KissXML'
-pod 'Kiwi', '~> 2.3'
-pod 'zipzap', '~> 8.0'
-pod 'KSCrypto'
+target 'ReactiveBeaver' do
+  pod 'ReactiveCocoa', '~> 2.5'
+  pod 'Mantle'
+  pod 'CocoaLumberjack', '~> 2.0'
+  pod 'KissXML'
+  pod 'zipzap', '~> 8.0'
+  pod 'KSCrypto'
+end
+
+target 'ReactiveBeaverTests' do
+  pod 'Kiwi', '~> 2.3'
+  pod 'ReactiveCocoa', '~> 2.5'
+  pod 'Mantle'
+  pod 'CocoaLumberjack', '~> 2.0'
+  pod 'KissXML'
+  pod 'zipzap', '~> 8.0'
+  pod 'KSCrypto'
+end
