@@ -1,16 +1,55 @@
 [![Build    Status](https://travis-ci.org/skyylex/ReactiveBeaver.svg?branch=master)](https://travis-ci.org/skyylex/ReactiveBeaver)
 
-# ReactiveBeaver (preparing first version)
+# ReactiveBeaver (preparing documentation)
 #### NOT released.
 ePub parser for iOS and OS X.
-Core parts are designed to be functional and are written in ReactiveCocoa.
+Core parts are designed to be reactive and are written in ReactiveCocoa.
 
 ### Main goals and principles
 
 - High tests coverage.
 - Performance optimization
-- Functional and non-functional usage.
+- RFP and non-RFP usage.
 - ePub 2 and 3 specification support.
+
+### Usage
+#### Standard
+
+```objc
+
+NSString *soucePath = ... /// path of the .zip or .epub file
+NSString *destinationPath = ... /// destination folder to unarchive
+
+self.parser = [RBParser parserWithSourcePath:sourcePath destinationPath:destinationPath];
+[self.parser.startParsingWithCompletionBlock:^(RBEpub * _Nullable epub, NSError * _Nullable error) {
+  /// process data here
+}];
+
+```
+#### RFP
+This type of usage is built on the reactive-functional approach (based on the ReactiveCocoa 2.0 framework)
+
+```objc
+
+[[[self.parser startCommand].executionSignals
+  flattenMap:^(RACSignal *parsingSignal) {
+      return parsingSignal;
+  }]
+ subscribeNext:^(RBEpub *epub) {
+    /// do additional stuff with parsed epub data
+ }
+ error:^(NSError *error) {
+    /// process error
+ }];
+
+NSString *soucePath = ... /// path of the .zip or .epub file
+NSString *destinationPath = ... /// destination folder to unarchive
+
+/// Start of the actual parsing
+[[self.parser startCommand] execute:RACTuplePack(sourcePath, destinationPath)];
+```
+
+There is an [Demo](https://github.com/skyylex/ReactiveBeaver/tree/master/ReactiveBeaver-Demo) application that is built upon RFP concept.
 
 ### License
 ##### Code
