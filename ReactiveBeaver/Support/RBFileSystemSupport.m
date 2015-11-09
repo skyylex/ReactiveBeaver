@@ -7,9 +7,9 @@
 //
 
 #import "RBFileSystemSupport.h"
-#import <CocoaLumberjack.h>
+#import <CocoaLumberjack/CocoaLumberjack.h>
 #import <KSCrypto/KSSHA1Stream.h>
-#import <zipzap.h>
+#import <ZipZap/ZipZap.h>
 
 NSString *const RBFileSystemSupportErrorDomain = @"RBFileSystemSupportErrorDomain";
 
