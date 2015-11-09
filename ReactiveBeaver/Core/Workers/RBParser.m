@@ -221,12 +221,10 @@ static int ddLogLevel = DDLogLevelError;
                 [subscriber sendNext:spineElements.firstObject];
                 [subscriber sendCompleted];
             } else {
-                /// TODO: improve error code
-                [subscriber sendError:[NSError parserErrorWithCode:0]];
+                [subscriber sendError:[NSError parserErrorWithCode:RBSpineParseErrorNoSpineElements]];
             }
         } else {
-            /// TODO: improve error code
-            [subscriber sendError:[NSError parserErrorWithCode:0]];
+            [subscriber sendError:[NSError parserErrorWithCode:RBSpineParseErrorNoDocument]];
         }
         
         return nil;
@@ -240,8 +238,7 @@ static int ddLogLevel = DDLogLevelError;
                     [subscriber sendNext:spineElement];
                     [subscriber sendCompleted];
                 } else {
-                    /// TODO: improve error code
-                    [subscriber sendError:[NSError parserErrorWithCode:0]];
+                    [subscriber sendError:[NSError parserErrorWithCode:RBSpineParseErrorNoElementByIDRef]];
                 }
                 
                 return nil;
@@ -261,14 +258,14 @@ static int ddLogLevel = DDLogLevelError;
                 if (error == nil) {
                     [subscriber sendNext:document];
                     [subscriber sendCompleted];
+                } else {
+                    [subscriber sendError:error];
                 }
             } else {
-                /// TODO: improve error code
-                [subscriber sendError:[NSError parserErrorWithCode:0]];
+                [subscriber sendError:[NSError parserErrorWithCode:RBOPFParseErrorNoFileAtPath]];
             }
         } else {
-            /// TODO: improve error code
-            [subscriber sendError:[NSError parserErrorWithCode:0]];
+            [subscriber sendError:[NSError parserErrorWithCode:RBOPFParseErrorWrongArguments]];
         }
         
         return nil;

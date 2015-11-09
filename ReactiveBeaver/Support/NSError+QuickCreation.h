@@ -33,6 +33,17 @@ typedef NS_ENUM(NSUInteger, RBMetadataParseError) {
     RBMetadataParseErrorNoDocument = 251,
 };
 
+typedef NS_ENUM(NSUInteger, RBOPFParseError) {
+    RBOPFParseErrorNoSpineEle = 301,
+    RBOPFParseErrorWrongArguments = 302,
+};
+
+typedef NS_ENUM(NSUInteger, RBSpineParseError) {
+    RBSpineParseErrorNoSpineElements = 351,
+    RBSpineParseErrorNoDocument = 352,
+    RBSpineParseErrorNoElementByIDRef = 353,
+};
+
 @interface NSError (QuickCreation)
 
 + (instancetype)parserErrorWithCode:(NSInteger)code;
