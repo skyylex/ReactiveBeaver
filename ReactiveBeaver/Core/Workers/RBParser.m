@@ -43,7 +43,6 @@ static int ddLogLevel = DDLogLevelError;
     
     RBParser *parser = nil;
     
-    /// TODO: add validation of the source/destination paths
     BOOL validSourcePath = [[NSFileManager defaultManager] fileExistsAtPath:sourcePath];
     BOOL validDestinationPath = [[NSFileManager defaultManager] fileExistsAtPath:destinationPath];
     
@@ -52,6 +51,7 @@ static int ddLogLevel = DDLogLevelError;
         parser.sourcePath = sourcePath;
         parser.destinationPath = destinationPath;
     }
+    
     return parser;
 }
 
@@ -262,7 +262,7 @@ static int ddLogLevel = DDLogLevelError;
                     [subscriber sendError:error];
                 }
             } else {
-                [subscriber sendError:[NSError parserErrorWithCode:RBOPFParseErrorNoFileAtPath]];
+                [subscriber sendError:[NSError parserErrorWithCode:RBOPFParseErrorNoDocumentAtPath]];
             }
         } else {
             [subscriber sendError:[NSError parserErrorWithCode:RBOPFParseErrorWrongArguments]];

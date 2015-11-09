@@ -18,14 +18,14 @@ typedef void(^RBParserResultCompletion)(RBEpub * _Nullable epub, NSError * _Null
 /// @param sourcePath NSString path to the epub file (file should exist)
 /// @param destinationPath NSString path to the destination folder
 /// @return if both params points out to the valid file and folder - new parser instance will be returned, otherwise - nil
-+ (instancetype)parserWithSourcePath:(NSString *)sourcePath destinationPath:(NSString * )destinationPath;
++ (instancetype _Nonnull)parserWithSourcePath:(NSString *_Nonnull)sourcePath destinationPath:(NSString *_Nonnull)destinationPath;
 
 @end
 
 /// Default API
 @interface RBParser(StandartObjC)
 
-- (void)startParsingWithCompletionBlock:(RBParserResultCompletion)completion;
+- (void)startParsingWithCompletionBlock:(RBParserResultCompletion _Nonnull)completion;
 
 @end
 
@@ -34,6 +34,6 @@ typedef void(^RBParserResultCompletion)(RBEpub * _Nullable epub, NSError * _Null
 
 /// @note to begin actual parsing call execute: on returned RACComand object
 /// @return RACComand instance
-- (RACCommand *)startCommand;
+- (RACCommand *_Nonnull)startCommand;
 
 @end

@@ -34,7 +34,7 @@ typedef NS_ENUM(NSUInteger, RBMetadataParseError) {
 };
 
 typedef NS_ENUM(NSUInteger, RBOPFParseError) {
-    RBOPFParseErrorNoSpineEle = 301,
+    RBOPFParseErrorNoDocumentAtPath = 301,
     RBOPFParseErrorWrongArguments = 302,
 };
 
