@@ -1,6 +1,6 @@
 [![Build    Status](https://travis-ci.org/skyylex/ReactiveBeaver.svg?branch=master)](https://travis-ci.org/skyylex/ReactiveBeaver)
 
-# ReactiveBeaver (preparing documentation)
+# ReactiveBeaver (paused development)
 #### NOT released.
 ePub parser for iOS and OS X.
 Core parts are designed to be reactive and are written in ReactiveCocoa.
