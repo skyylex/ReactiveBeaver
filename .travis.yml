@@ -5,10 +5,6 @@ language: objective-c
 env:
   global: 
     - FRAMEWORK_NAME=<THIS_IS_A_PLACEHOLDER_REPLACE_ME>
-before_install:
-  - brew update
-  - brew outdated carthage || brew upgrade carthage
-  - brew install carthage
 script:
   - ci/build
 
