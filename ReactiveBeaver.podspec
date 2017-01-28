@@ -132,7 +132,7 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
-  s.dependency "ReactiveObjC", "~> 2.5"
+  s.dependency "ReactiveObjC", "~> 2.0"
   s.dependency "Mantle", "~> 2.0"
   s.dependency "CocoaLumberjack", "~> 2.0"
   s.dependency "KissXML", "~> 5.0"
