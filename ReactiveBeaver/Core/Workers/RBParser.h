@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveObjC/ReactiveObjC.h>
 #import "RBEpub.h"
 
 typedef void(^RBParserResultCompletion)(RBEpub * _Nullable epub, NSError * _Nullable error);

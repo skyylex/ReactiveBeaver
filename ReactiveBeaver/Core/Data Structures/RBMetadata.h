@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Mantle/Mantle.h>
 
-@interface RBMetadata
+@interface RBMetadata: MTLModel
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *creator;

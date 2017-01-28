@@ -1,0 +1,6 @@
+github "ReactiveCocoa/ReactiveObjC"
+github "Mantle/Mantle"
+github "pixelglow/ZipZap"
+github "CocoaLumberjack/CocoaLumberjack"
+github "skyylex/KissXML"
+github "jerolimov/NSHash"

@@ -8,7 +8,8 @@
 
 #import "RBFileSystemSupport.h"
 #import <CocoaLumberjack/CocoaLumberjack.h>
-#import <KSCrypto/KSSHA1Stream.h>
+#import <ReactiveObjC/ReactiveObjC.h>
+#import <ReactiveObjC/RACStream.h>
 #import <ZipZap/ZipZap.h>
 
 NSString *const RBFileSystemSupportErrorDomain = @"RBFileSystemSupportErrorDomain";
@@ -85,8 +86,8 @@ NSString *const RBFileSystemSupportErrorDomain = @"RBFileSystemSupportErrorDomai
         }
         return nil;
     }];
-    
-    return [needToCreateFolderTrigger flattenMap:^RACStream *(NSNumber *exist) {
+
+    return [needToCreateFolderTrigger flattenMap:^__kindof RACSignal * _Nullable(NSNumber *_Nullable exist) {
         RACSignal *resultSignal = nil;
         if (exist.boolValue == YES) {
             resultSignal = [RACSignal return:@YES];
@@ -110,6 +111,7 @@ NSString *const RBFileSystemSupportErrorDomain = @"RBFileSystemSupportErrorDomai
         }
         
         return resultSignal;
+
     }];
 }
 
@@ -132,7 +134,7 @@ NSString *const RBFileSystemSupportErrorDomain = @"RBFileSystemSupportErrorDomai
         NSData *bookData = [NSData dataWithContentsOfURL:bookURL];
         NSString *resultTempPath = nil;
         if (bookData != nil) {
-            NSString *sha1String = [bookData ks_SHA1DigestString];
+            NSString *sha1String = [NSString stringWithFormat:@"%ld", [bookData hash]];
             NSString *epubFilePath = [NSTemporaryDirectory() stringByAppendingPathComponent:sha1String];
             BOOL savingResult = [bookData writeToFile:epubFilePath atomically:YES];
             if (savingResult == YES) {

@@ -8,10 +8,10 @@
 
 #import "RBParser.h"
 
-#import "zipzap.h"
-#import <DDXML.h>
-#import "CocoaLumberjack.h"
-#import "KSSHA1Stream.h"
+#import <ZipZap/ZipZap.h>
+#import <ReactiveObjC/ReactiveObjC.h>
+#import <CocoaLumberjack/CocoaLumberjack.h>
+#import <KissXML/KissXML.h>
 
 #import "RBFileSystemSupport.h"
 #import "RBEpubNameConstants.h"
@@ -20,7 +20,7 @@
 #import "RBEpub.h"
 #import "RBManifestElement.h"
 #import "RBSpineElement.h"
-
+#import <Mantle/Mantle.h>
 
 static int ddLogLevel = DDLogLevelError;
 
@@ -83,12 +83,12 @@ static int ddLogLevel = DDLogLevelError;
         @weakify(self);
         _startParsingCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(RACTuple *paths) {
             @strongify(self);
-            return [[self unarchiveEpubToDestinationFolder:paths] flattenMap:^RACStream *(NSString *epubDigest) {
+            return [[self unarchiveEpubToDestinationFolder:paths] flattenMap:^__kindof RACStream *(NSString *epubDigest) {
                 @strongify(self);
                 NSString *destinationPath = paths.second;
-                return [[self containerXMLParsed:destinationPath] flattenMap:^RACStream *(NSString *opfFilePath) {
+                return [[self containerXMLParsed:destinationPath] flattenMap:^__kindof RACStream *(NSString *opfFilePath) {
                     @strongify(self);
-                    return [[self contentOPFFileParsed:opfFilePath] flattenMap:^RACStream *(NSDictionary *collectedInfo) {
+                    return [[self contentOPFFileParsed:opfFilePath] flattenMap:^__kindof RACStream *(NSDictionary *collectedInfo) {
                         
                         RBEpub *epub = [RBEpub new];
                         epub.sha1 = epubDigest;
@@ -128,8 +128,8 @@ static int ddLogLevel = DDLogLevelError;
         return nil;
     }];
     
-    return [manifestSectionSignal flattenMap:^RACStream *(DDXMLElement *manifestElement) {
-        return [manifestElement.children.rac_sequence.signal flattenMap:^RACStream *(id xmlObject) {
+    return [manifestSectionSignal flattenMap:^__kindof RACStream *(DDXMLElement *manifestElement) {
+        return [manifestElement.children.rac_sequence.signal flattenMap:^__kindof RACStream *(id xmlObject) {
             return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
                 RBManifestElement *manifestElement = nil;
                 if ([xmlObject isKindOfClass:[DDXMLElement class]]) {
@@ -168,8 +168,8 @@ static int ddLogLevel = DDLogLevelError;
         [subscriber sendCompleted];
         
         return nil;
-    }] flattenMap:^RACStream *(DDXMLElement *metadataElement) {
-        return [[[metadataElement.children.rac_sequence.signal flattenMap:^RACStream *(id xmlObject) {
+    }] flattenMap:^__kindof RACStream *(DDXMLElement *metadataElement) {
+        return [[[metadataElement.children.rac_sequence.signal flattenMap:^__kindof RACStream *(id xmlObject) {
             NSDictionary *metaDataPart = nil;
             if ([xmlObject isKindOfClass:[DDXMLElement class]]) {
                 DDXMLElement *element = (DDXMLElement *)xmlObject;
@@ -181,7 +181,7 @@ static int ddLogLevel = DDLogLevelError;
             return [RACSignal return:metaDataPart];
         }] filter:^BOOL(id value) {
             return value != nil;
-        }].collect flattenMap:^RACStream *(NSArray *metaParts) {
+        }].collect flattenMap:^__kindof RACStream *(NSArray *metaParts) {
             return [metaParts.rac_sequence.signal aggregateWithStart:[NSDictionary dictionary] reduce:^id(NSDictionary *currentMetadata, NSDictionary *nextPath) {
                 NSMutableDictionary *mutableMetadata = currentMetadata.mutableCopy;
                 NSDictionary *result = currentMetadata;
@@ -228,8 +228,8 @@ static int ddLogLevel = DDLogLevelError;
         }
         
         return nil;
-    }] flattenMap:^RACStream *(DDXMLElement *element) {
-        return [element.children.rac_sequence.signal flattenMap:^RACStream *(DDXMLElement *spineItem) {
+    }] flattenMap:^__kindof RACStream *(DDXMLElement *element) {
+        return [element.children.rac_sequence.signal flattenMap:^__kindof RACStream *(DDXMLElement *spineItem) {
             return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
                 RBSpineElement *spineElement = [RBSpineElement new];
                 DDXMLNode *idRefNode = [spineItem attributeForName:SpineElementIDRefKey];
@@ -269,12 +269,12 @@ static int ddLogLevel = DDLogLevelError;
         }
         
         return nil;
-    }] flattenMap:^RACStream *(DDXMLDocument *document) {
+    }] flattenMap:^__kindof RACStream *(DDXMLDocument *document) {
         @strongify(self);
         RACSignal *manifestParsedTrigger = [self parseManifest:document];
         RACSignal *spineParsedTrigger = [self parseSpine:document];
         RACSignal *metadataParsedTrigger = [self parseMetadata:document];
-        RACSignal *collectedInfoTrigger = [[[metadataParsedTrigger flattenMap:^RACStream *(NSDictionary *metadataInfo) {
+        RACSignal *collectedInfoTrigger = [[[metadataParsedTrigger flattenMap:^__kindof RACStream *(NSDictionary *metadataInfo) {
             
             return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
                 NSError *error = nil;
@@ -288,14 +288,14 @@ static int ddLogLevel = DDLogLevelError;
                 
                 return nil;
             }];
-        }] flattenMap:^RACStream *(NSDictionary *collectedInfo) {
-            return [spineParsedTrigger flattenMap:^RACStream *(NSArray *spineElements) {
+        }] flattenMap:^__kindof RACStream *(NSDictionary *collectedInfo) {
+            return [spineParsedTrigger flattenMap:^__kindof RACStream *(NSArray *spineElements) {
                 NSMutableDictionary *collectedInfoMutable = collectedInfo.mutableCopy;
                 [collectedInfoMutable setObject:spineElements forKey:RBEpubContentOPFSpineElement];
                 return [RACSignal return:collectedInfoMutable.copy];
             }];
-        }] flattenMap:^RACStream *(NSDictionary *collectedInfo) {
-            return [manifestParsedTrigger flattenMap:^RACStream *(NSArray *manifestElements) {
+        }] flattenMap:^__kindof RACStream *(NSDictionary *collectedInfo) {
+            return [manifestParsedTrigger flattenMap:^__kindof RACStream *(NSArray *manifestElements) {
                 NSMutableDictionary *collectedInfoMutable = collectedInfo.mutableCopy;
                 [collectedInfoMutable setObject:manifestElements forKey:RBEpubContentOPFManifestElement];
                 return [RACSignal return:collectedInfoMutable.copy];
@@ -367,7 +367,7 @@ static int ddLogLevel = DDLogLevelError;
 
 - (RACSignal *)unarchiveEpubToDestinationFolder:(RACTuple *)paths {
     RACSignal *validationSignal = [self validateInputForStartParsing:paths];
-    return [[validationSignal flattenMap:^RACStream *(NSNumber *validationSuccess) {
+    return [[validationSignal flattenMap:^__kindof RACStream *(NSNumber *validationSuccess) {
         RACSignal *resultSignal = nil;
         if (validationSuccess.boolValue == YES) {
             NSString *sourceFile = paths.first;
@@ -379,10 +379,10 @@ static int ddLogLevel = DDLogLevelError;
         }
         
         return resultSignal;
-    }] flattenMap:^RACStream *(NSString *tempFolderEpubPath) {
+    }] flattenMap:^__kindof RACStream *(NSString *tempFolderEpubPath) {
         NSString *destinationPath = paths.second;
         NSData *epubRawData = [NSData dataWithContentsOfFile:tempFolderEpubPath];
-        NSString *epubDigest = [NSData ks_stringFromSHA1Digest:epubRawData];
+        NSString *epubDigest = [NSString stringWithFormat:@"%ld", epubRawData.hash];
         return [[RBFileSystemSupport unarchiveFile:tempFolderEpubPath toDestinationFolder:destinationPath] map:^id(id _) {
             return epubDigest;
         }];
