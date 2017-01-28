@@ -1,4 +1,5 @@
 language: objective-c
 osx_image: xcode8.2
 script:
-    - xcodebuild clean build -sdk iphonesimulator10.1 -workspace ReactiveBeaver.xcworkspace -scheme ReactiveBeaveriOS CODE_SIGNING_REQUIRED=NO
+	- carthage update
+    - xcodebuild clean build -sdk iphonesimulator10.2 -project ReactiveBeaver.xcodeproj -scheme ReactiveBeaveriOS CODE_SIGNING_REQUIRED=NO
