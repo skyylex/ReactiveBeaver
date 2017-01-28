@@ -229,7 +229,8 @@ static int ddLogLevel = DDLogLevelError;
         
         return nil;
     }] flattenMap:^__kindof RACStream *(DDXMLElement *element) {
-        return [element.children.rac_sequence.signal flattenMap:^__kindof RACStream *(DDXMLElement *spineItem) {
+        return [element.children.rac_sequence.signal flattenMap:^__kindof RACStream *(DDXMLNode *value) {
+            DDXMLElement *spineItem = (DDXMLElement *)value;
             return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
                 RBSpineElement *spineElement = [RBSpineElement new];
                 DDXMLNode *idRefNode = [spineItem attributeForName:SpineElementIDRefKey];
