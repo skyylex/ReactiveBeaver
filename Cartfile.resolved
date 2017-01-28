@@ -1,6 +1,5 @@
 github "CocoaLumberjack/CocoaLumberjack" "3.0.0"
 github "skyylex/KissXML" "5.0.5"
 github "Mantle/Mantle" "2.1.0"
-github "jerolimov/NSHash" "1.1.0"
 github "ReactiveCocoa/ReactiveObjC" "2.1.2"
 github "pixelglow/ZipZap" "8.1.2"

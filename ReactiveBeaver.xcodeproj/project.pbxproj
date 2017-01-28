@@ -29,7 +29,6 @@
 		42B0BA671BED1095002C7B85 /* ReactiveBeaveriOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B0BA661BED1095002C7B85 /* ReactiveBeaveriOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42FDE5531BC6FF810056F3A6 /* moby-dick.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4246F40D1B111EAB00A2A96F /* moby-dick.epub */; };
 		942436741E3D0A9900D99F82 /* ZipZap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9424366E1E3D0A9900D99F82 /* ZipZap.framework */; };
-		942436751E3D0A9900D99F82 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9424366F1E3D0A9900D99F82 /* Result.framework */; };
 		942436761E3D0A9900D99F82 /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942436701E3D0A9900D99F82 /* KissXML.framework */; };
 		942436771E3D0A9900D99F82 /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942436711E3D0A9900D99F82 /* CocoaLumberjack.framework */; };
 		942436791E3D0A9900D99F82 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942436731E3D0A9900D99F82 /* Mantle.framework */; };
@@ -145,7 +144,6 @@
 			files = (
 				9424367B1E3D0D7100D99F82 /* ReactiveObjC.framework in Frameworks */,
 				942436741E3D0A9900D99F82 /* ZipZap.framework in Frameworks */,
-				942436751E3D0A9900D99F82 /* Result.framework in Frameworks */,
 				942436761E3D0A9900D99F82 /* KissXML.framework in Frameworks */,
 				942436771E3D0A9900D99F82 /* CocoaLumberjack.framework in Frameworks */,
 				942436791E3D0A9900D99F82 /* Mantle.framework in Frameworks */,
