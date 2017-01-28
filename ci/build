@@ -1,0 +1,4 @@
+#!/bin/bash
+
+carthage bootstrap --platform iOS
+xcodebuild clean build -sdk iphonesimulator10.2 -project ReactiveBeaver.xcodeproj -scheme ReactiveBeaveriOS CODE_SIGNING_REQUIRED=NO

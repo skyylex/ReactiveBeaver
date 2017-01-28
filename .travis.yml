@@ -8,7 +8,10 @@ env:
 before_install:
   - brew update
   - brew outdated carthage || brew upgrade carthage
-before_script:
-  - carthage bootstrap --platform iOS 
+  - brew install carthage
 script:
-  - xcodebuild clean build -sdk iphonesimulator10.2 -project ReactiveBeaver.xcodeproj -scheme ReactiveBeaveriOS CODE_SIGNING_REQUIRED=NO
+  - ci/build
+
+
+
+
