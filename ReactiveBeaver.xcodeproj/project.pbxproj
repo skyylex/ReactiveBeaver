@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2422732CCA676A0AEC57E32E /* libPods-ReactiveBeaverTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ADE52D7F4376C24B56768DB /* libPods-ReactiveBeaverTests.a */; };
 		423F4B5B1BC9AE7600BA072F /* RBFileSupportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EDBFC21B980A6100F39E7F /* RBFileSupportTests.m */; };
 		423F4B5C1BC9AE7900BA072F /* RBParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EDBFC11B980A6100F39E7F /* RBParserTests.m */; };
 		429910771BECFFCF0028EA30 /* ReactiveBeaver-OSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 429910761BECFFCF0028EA30 /* ReactiveBeaver-OSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -41,6 +40,12 @@
 		942436851E3D1EEA00D99F82 /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9424367F1E3D1EEA00D99F82 /* CocoaLumberjack.framework */; };
 		942436861E3D1EEA00D99F82 /* ReactiveObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942436801E3D1EEA00D99F82 /* ReactiveObjC.framework */; };
 		942436871E3D1EEA00D99F82 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942436811E3D1EEA00D99F82 /* Mantle.framework */; };
+		942436881E3D230800D99F82 /* ZipZap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9424366E1E3D0A9900D99F82 /* ZipZap.framework */; };
+		942436891E3D230800D99F82 /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942436701E3D0A9900D99F82 /* KissXML.framework */; };
+		9424368A1E3D230800D99F82 /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942436711E3D0A9900D99F82 /* CocoaLumberjack.framework */; };
+		9424368B1E3D230800D99F82 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9424366F1E3D0A9900D99F82 /* Result.framework */; };
+		9424368C1E3D230800D99F82 /* ReactiveObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9424367A1E3D0D7100D99F82 /* ReactiveObjC.framework */; };
+		9424368D1E3D230800D99F82 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942436731E3D0A9900D99F82 /* Mantle.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,7 +117,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2422732CCA676A0AEC57E32E /* libPods-ReactiveBeaverTests.a in Frameworks */,
+				942436881E3D230800D99F82 /* ZipZap.framework in Frameworks */,
+				942436891E3D230800D99F82 /* KissXML.framework in Frameworks */,
+				9424368A1E3D230800D99F82 /* CocoaLumberjack.framework in Frameworks */,
+				9424368B1E3D230800D99F82 /* Result.framework in Frameworks */,
+				9424368C1E3D230800D99F82 /* ReactiveObjC.framework in Frameworks */,
+				9424368D1E3D230800D99F82 /* Mantle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,12 +356,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4206D1A21B052C66007F227A /* Build configuration list for PBXNativeTarget "ReactiveBeaverTests" */;
 			buildPhases = (
-				2537988F9CC134A41A0277E4 /* Check Pods Manifest.lock */,
 				4206D1901B052C66007F227A /* Sources */,
 				4206D1911B052C66007F227A /* Frameworks */,
 				4206D1921B052C66007F227A /* Resources */,
-				63E8F37EC485740750DC43AC /* Copy Pods Resources */,
-				B5C5BF3BFC945B8F6D3A8428 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -407,6 +414,7 @@
 				TargetAttributes = {
 					4206D1931B052C66007F227A = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = P923C5RGDV;
 					};
 					429910731BECFFCF0028EA30 = {
 						CreatedOnToolsVersion = 7.1;
@@ -446,54 +454,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2537988F9CC134A41A0277E4 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		63E8F37EC485740750DC43AC /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveBeaverTests/Pods-ReactiveBeaverTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B5C5BF3BFC945B8F6D3A8428 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveBeaverTests/Pods-ReactiveBeaverTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4206D1901B052C66007F227A /* Sources */ = {
@@ -632,14 +592,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E600B09F2E934CCB064A5446 /* Pods-ReactiveBeaverTests.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				DEVELOPMENT_TEAM = P923C5RGDV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = ReactiveBeaver/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = ReactiveBeaverTests;
@@ -650,10 +614,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EBAA7CE2A4E347940A70BB01 /* Pods-ReactiveBeaverTests.release.xcconfig */;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				DEVELOPMENT_TEAM = P923C5RGDV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = ReactiveBeaver/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = ReactiveBeaverTests;
