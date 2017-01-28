@@ -1,13 +1,6 @@
 language: objective-c
 osx_image: xcode8.2
 
-language: objective-c
-env:
-  global: 
-    - FRAMEWORK_NAME=<THIS_IS_A_PLACEHOLDER_REPLACE_ME>
-script:
-  - ci/build
-
-
-
-
+xcode_workspace: ReactiveBeaver.xcworkspace # path to your xcodeproj folder
+xcode_scheme: ReactiveBeaveriOS
+xcode_sdk: iphonesimulator10.2
