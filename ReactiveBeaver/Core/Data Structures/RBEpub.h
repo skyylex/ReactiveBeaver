@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "RBMetadata.h"
-#import "MTLModel.h"
 
 /// TODO: rewrite to apply MTLModel
 @interface RBEpub : NSObject

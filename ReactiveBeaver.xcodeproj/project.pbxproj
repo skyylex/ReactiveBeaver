@@ -8,16 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1127E2BD4EC3801F94E691A9 /* libPods-ReactiveBeaveriOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C481FD805AE9DFFF0D7BE08 /* libPods-ReactiveBeaveriOS.a */; };
-		19BBF7DCDCE26AC998C0B762 /* libPods-ReactiveBeaverOSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BEF66CBC270A39694575E68 /* libPods-ReactiveBeaverOSX.a */; };
 		2422732CCA676A0AEC57E32E /* libPods-ReactiveBeaverTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ADE52D7F4376C24B56768DB /* libPods-ReactiveBeaverTests.a */; };
-		4208EBB01BC7A512006B24C6 /* RBMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 4208EBAD1BC7A512006B24C6 /* RBMetadata.m */; };
 		423F4B5B1BC9AE7600BA072F /* RBFileSupportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EDBFC21B980A6100F39E7F /* RBFileSupportTests.m */; };
 		423F4B5C1BC9AE7900BA072F /* RBParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EDBFC11B980A6100F39E7F /* RBParserTests.m */; };
-		4266D4CF1BC707B40060F53C /* RBDBookListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4266D4CE1BC707B40060F53C /* RBDBookListViewModel.m */; };
-		4266D4D21BC709DF0060F53C /* RBDBookListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4266D4D11BC709DF0060F53C /* RBDBookListController.m */; };
-		4266D4D51BC70A6C0060F53C /* RBDBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4266D4D41BC70A6C0060F53C /* RBDBookCell.m */; };
-		4266D4D61BC7104A0060F53C /* moby-dick.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4246F40D1B111EAB00A2A96F /* moby-dick.epub */; };
-		4299106E1BECE8B90028EA30 /* RBDDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4299106D1BECE8B90028EA30 /* RBDDetailsController.m */; };
 		429910771BECFFCF0028EA30 /* ReactiveBeaver-OSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 429910761BECFFCF0028EA30 /* ReactiveBeaver-OSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4299107D1BED01770028EA30 /* NSError+QuickCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFD31B979EA100EB2BAA /* NSError+QuickCreation.m */; };
 		429910801BED01770028EA30 /* RBFileSystemSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFD61B979EA100EB2BAA /* RBFileSystemSupport.m */; };
@@ -37,19 +30,6 @@
 		42AE5F211BED119F0095C853 /* RBMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 4208EBAD1BC7A512006B24C6 /* RBMetadata.m */; };
 		42B0BA671BED1095002C7B85 /* ReactiveBeaveriOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B0BA661BED1095002C7B85 /* ReactiveBeaveriOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		42FDE5531BC6FF810056F3A6 /* moby-dick.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4246F40D1B111EAB00A2A96F /* moby-dick.epub */; };
-		42FDE5A11BC704BC0056F3A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FDE5A01BC704BC0056F3A6 /* main.m */; };
-		42FDE5A41BC704BC0056F3A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42FDE5A31BC704BC0056F3A6 /* AppDelegate.m */; };
-		42FDE5AA1BC704BC0056F3A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42FDE5A81BC704BC0056F3A6 /* Main.storyboard */; };
-		42FDE5AC1BC704BC0056F3A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42FDE5AB1BC704BC0056F3A6 /* Assets.xcassets */; };
-		42FDE5AF1BC704BC0056F3A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42FDE5AD1BC704BC0056F3A6 /* LaunchScreen.storyboard */; };
-		42FDE5B41BC704D10056F3A6 /* NSError+QuickCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFD31B979EA100EB2BAA /* NSError+QuickCreation.m */; };
-		42FDE5B51BC704D10056F3A6 /* RBFileSystemSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFD61B979EA100EB2BAA /* RBFileSystemSupport.m */; };
-		42FDE5B61BC704D80056F3A6 /* RBParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC8A1BC1C4EA00480F1A /* RBParser.m */; };
-		42FDE5B71BC704DD0056F3A6 /* RBEPNavPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC761BC1C4DE00480F1A /* RBEPNavPoint.m */; };
-		42FDE5B81BC704DF0056F3A6 /* RBEpub.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC781BC1C4DE00480F1A /* RBEpub.m */; };
-		42FDE5B91BC704E20056F3A6 /* RBManifestElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC7C1BC1C4DE00480F1A /* RBManifestElement.m */; };
-		42FDE5BA1BC704E30056F3A6 /* RBSpineElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC7E1BC1C4DE00480F1A /* RBSpineElement.m */; };
-		AF9CF2874EE65531B041424C /* libPods-ReactiveBeaver-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E31947C1BAA532DBE8EF68E /* libPods-ReactiveBeaver-Demo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,14 +49,6 @@
 		424EEC7E1BC1C4DE00480F1A /* RBSpineElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBSpineElement.m; path = "ReactiveBeaver/Core/Data Structures/RBSpineElement.m"; sourceTree = SOURCE_ROOT; };
 		424EEC891BC1C4EA00480F1A /* RBParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBParser.h; path = ReactiveBeaver/Core/Workers/RBParser.h; sourceTree = SOURCE_ROOT; };
 		424EEC8A1BC1C4EA00480F1A /* RBParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBParser.m; path = ReactiveBeaver/Core/Workers/RBParser.m; sourceTree = SOURCE_ROOT; };
-		4266D4CD1BC707B40060F53C /* RBDBookListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBDBookListViewModel.h; sourceTree = "<group>"; };
-		4266D4CE1BC707B40060F53C /* RBDBookListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBDBookListViewModel.m; sourceTree = "<group>"; };
-		4266D4D01BC709DF0060F53C /* RBDBookListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBDBookListController.h; sourceTree = "<group>"; };
-		4266D4D11BC709DF0060F53C /* RBDBookListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBDBookListController.m; sourceTree = "<group>"; };
-		4266D4D31BC70A6C0060F53C /* RBDBookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBDBookCell.h; sourceTree = "<group>"; };
-		4266D4D41BC70A6C0060F53C /* RBDBookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBDBookCell.m; sourceTree = "<group>"; };
-		4299106C1BECE8B90028EA30 /* RBDDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBDDetailsController.h; sourceTree = "<group>"; };
-		4299106D1BECE8B90028EA30 /* RBDDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBDDetailsController.m; sourceTree = "<group>"; };
 		429910741BECFFCF0028EA30 /* ReactiveBeaverOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveBeaverOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		429910761BECFFCF0028EA30 /* ReactiveBeaver-OSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReactiveBeaver-OSX.h"; sourceTree = "<group>"; };
 		429910781BECFFCF0028EA30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,14 +65,6 @@
 		42EDBFC11B980A6100F39E7F /* RBParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBParserTests.m; path = ReactiveBeaverTests/RBParserTests.m; sourceTree = SOURCE_ROOT; };
 		42EDBFC21B980A6100F39E7F /* RBFileSupportTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBFileSupportTests.m; path = ReactiveBeaverTests/RBFileSupportTests.m; sourceTree = SOURCE_ROOT; };
 		42EDBFC31B980A6100F39E7F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ReactiveBeaverTests/Info.plist; sourceTree = SOURCE_ROOT; };
-		42FDE59D1BC704BC0056F3A6 /* ReactiveBeaver-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ReactiveBeaver-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		42FDE5A01BC704BC0056F3A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		42FDE5A21BC704BC0056F3A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		42FDE5A31BC704BC0056F3A6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		42FDE5A91BC704BC0056F3A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		42FDE5AB1BC704BC0056F3A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		42FDE5AE1BC704BC0056F3A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		42FDE5B01BC704BC0056F3A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5ADE52D7F4376C24B56768DB /* libPods-ReactiveBeaverTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactiveBeaverTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA57677DA70034DAD988795 /* Pods-ReactiveBeaveriOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaveriOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaveriOS/Pods-ReactiveBeaveriOS.release.xcconfig"; sourceTree = "<group>"; };
 		7BE47BC50BFB6C2547085D3C /* Pods-ReactiveBeaver-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaver-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaver-Demo/Pods-ReactiveBeaver-Demo.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,7 +96,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19BBF7DCDCE26AC998C0B762 /* libPods-ReactiveBeaverOSX.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,14 +104,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1127E2BD4EC3801F94E691A9 /* libPods-ReactiveBeaveriOS.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		42FDE59A1BC704BC0056F3A6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AF9CF2874EE65531B041424C /* libPods-ReactiveBeaver-Demo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,7 +128,6 @@
 			children = (
 				4206D18B1B052C65007F227A /* ReactiveBeaver */,
 				4206D1981B052C66007F227A /* ReactiveBeaverTests */,
-				42FDE59E1BC704BC0056F3A6 /* ReactiveBeaver-Demo */,
 				429910751BECFFCF0028EA30 /* ReactiveBeaver-OSX */,
 				42B0BA651BED1095002C7B85 /* ReactiveBeaveriOS */,
 				4206D18A1B052C65007F227A /* Products */,
@@ -186,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				4206D1941B052C66007F227A /* ReactiveBeaverTests.xctest */,
-				42FDE59D1BC704BC0056F3A6 /* ReactiveBeaver-Demo.app */,
 				429910741BECFFCF0028EA30 /* ReactiveBeaverOSX.framework */,
 				42B0BA641BED1095002C7B85 /* ReactiveBeaveriOS.framework */,
 			);
@@ -300,36 +253,6 @@
 			path = ReactiveBeaveriOS;
 			sourceTree = "<group>";
 		};
-		42FDE59E1BC704BC0056F3A6 /* ReactiveBeaver-Demo */ = {
-			isa = PBXGroup;
-			children = (
-				42FDE5A21BC704BC0056F3A6 /* AppDelegate.h */,
-				42FDE5A31BC704BC0056F3A6 /* AppDelegate.m */,
-				42FDE5A81BC704BC0056F3A6 /* Main.storyboard */,
-				42FDE5AB1BC704BC0056F3A6 /* Assets.xcassets */,
-				42FDE5AD1BC704BC0056F3A6 /* LaunchScreen.storyboard */,
-				42FDE5B01BC704BC0056F3A6 /* Info.plist */,
-				42FDE59F1BC704BC0056F3A6 /* Supporting Files */,
-				4266D4CD1BC707B40060F53C /* RBDBookListViewModel.h */,
-				4266D4CE1BC707B40060F53C /* RBDBookListViewModel.m */,
-				4266D4D01BC709DF0060F53C /* RBDBookListController.h */,
-				4266D4D11BC709DF0060F53C /* RBDBookListController.m */,
-				4266D4D31BC70A6C0060F53C /* RBDBookCell.h */,
-				4266D4D41BC70A6C0060F53C /* RBDBookCell.m */,
-				4299106C1BECE8B90028EA30 /* RBDDetailsController.h */,
-				4299106D1BECE8B90028EA30 /* RBDDetailsController.m */,
-			);
-			path = "ReactiveBeaver-Demo";
-			sourceTree = "<group>";
-		};
-		42FDE59F1BC704BC0056F3A6 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				42FDE5A01BC704BC0056F3A6 /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		D45A418EA2C2FD9CB2CA68B9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,12 +318,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4299107B1BECFFCF0028EA30 /* Build configuration list for PBXNativeTarget "ReactiveBeaverOSX" */;
 			buildPhases = (
-				FAFE730B49BA715E6EA76B4F /* Check Pods Manifest.lock */,
 				4299106F1BECFFCF0028EA30 /* Sources */,
 				429910701BECFFCF0028EA30 /* Frameworks */,
 				429910711BECFFCF0028EA30 /* Headers */,
-				429910721BECFFCF0028EA30 /* Resources */,
-				A8F6E677BCFE9C57EB8069DC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -415,12 +335,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42B0BA691BED1095002C7B85 /* Build configuration list for PBXNativeTarget "ReactiveBeaveriOS" */;
 			buildPhases = (
-				CBF29C5A41BB24E3A02474BB /* Check Pods Manifest.lock */,
 				42B0BA5F1BED1095002C7B85 /* Sources */,
 				42B0BA601BED1095002C7B85 /* Frameworks */,
 				42B0BA611BED1095002C7B85 /* Headers */,
-				42B0BA621BED1095002C7B85 /* Resources */,
-				6EF237BCCC29E1876EFD0CA2 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -430,26 +347,6 @@
 			productName = ReactiveBeaveriOS;
 			productReference = 42B0BA641BED1095002C7B85 /* ReactiveBeaveriOS.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		42FDE59C1BC704BC0056F3A6 /* ReactiveBeaver-Demo */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 42FDE5B11BC704BC0056F3A6 /* Build configuration list for PBXNativeTarget "ReactiveBeaver-Demo" */;
-			buildPhases = (
-				979F073F80F7A42BEF34795A /* Check Pods Manifest.lock */,
-				42FDE5991BC704BC0056F3A6 /* Sources */,
-				42FDE59A1BC704BC0056F3A6 /* Frameworks */,
-				42FDE59B1BC704BC0056F3A6 /* Resources */,
-				A5C17C610E20B8C80EBD6C61 /* Embed Pods Frameworks */,
-				FCA9EA964DFB1E70E755179B /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "ReactiveBeaver-Demo";
-			productName = "ReactiveBeaver-Demo";
-			productReference = 42FDE59D1BC704BC0056F3A6 /* ReactiveBeaver-Demo.app */;
-			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -469,9 +366,6 @@
 					42B0BA631BED1095002C7B85 = {
 						CreatedOnToolsVersion = 7.1;
 					};
-					42FDE59C1BC704BC0056F3A6 = {
-						CreatedOnToolsVersion = 7.0.1;
-					};
 				};
 			};
 			buildConfigurationList = 4206D1831B052C65007F227A /* Build configuration list for PBXProject "ReactiveBeaver" */;
@@ -490,7 +384,6 @@
 				42B0BA631BED1095002C7B85 /* ReactiveBeaveriOS */,
 				429910731BECFFCF0028EA30 /* ReactiveBeaverOSX */,
 				4206D1931B052C66007F227A /* ReactiveBeaverTests */,
-				42FDE59C1BC704BC0056F3A6 /* ReactiveBeaver-Demo */,
 			);
 		};
 /* End PBXProject section */
@@ -501,31 +394,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				42FDE5531BC6FF810056F3A6 /* moby-dick.epub in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		429910721BECFFCF0028EA30 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		42B0BA621BED1095002C7B85 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		42FDE59B1BC704BC0056F3A6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				42FDE5AF1BC704BC0056F3A6 /* LaunchScreen.storyboard in Resources */,
-				42FDE5AC1BC704BC0056F3A6 /* Assets.xcassets in Resources */,
-				42FDE5AA1BC704BC0056F3A6 /* Main.storyboard in Resources */,
-				4266D4D61BC7104A0060F53C /* moby-dick.epub in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,66 +430,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveBeaverTests/Pods-ReactiveBeaverTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6EF237BCCC29E1876EFD0CA2 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveBeaveriOS/Pods-ReactiveBeaveriOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		979F073F80F7A42BEF34795A /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		A5C17C610E20B8C80EBD6C61 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveBeaver-Demo/Pods-ReactiveBeaver-Demo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A8F6E677BCFE9C57EB8069DC /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveBeaverOSX/Pods-ReactiveBeaverOSX-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B5C5BF3BFC945B8F6D3A8428 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -635,51 +443,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveBeaverTests/Pods-ReactiveBeaverTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CBF29C5A41BB24E3A02474BB /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		FAFE730B49BA715E6EA76B4F /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		FCA9EA964DFB1E70E755179B /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveBeaver-Demo/Pods-ReactiveBeaver-Demo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -724,47 +487,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		42FDE5991BC704BC0056F3A6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				42FDE5B61BC704D80056F3A6 /* RBParser.m in Sources */,
-				4299106E1BECE8B90028EA30 /* RBDDetailsController.m in Sources */,
-				42FDE5A41BC704BC0056F3A6 /* AppDelegate.m in Sources */,
-				42FDE5B81BC704DF0056F3A6 /* RBEpub.m in Sources */,
-				42FDE5B71BC704DD0056F3A6 /* RBEPNavPoint.m in Sources */,
-				4266D4D21BC709DF0060F53C /* RBDBookListController.m in Sources */,
-				4266D4CF1BC707B40060F53C /* RBDBookListViewModel.m in Sources */,
-				42FDE5B41BC704D10056F3A6 /* NSError+QuickCreation.m in Sources */,
-				42FDE5BA1BC704E30056F3A6 /* RBSpineElement.m in Sources */,
-				42FDE5B51BC704D10056F3A6 /* RBFileSystemSupport.m in Sources */,
-				42FDE5B91BC704E20056F3A6 /* RBManifestElement.m in Sources */,
-				42FDE5A11BC704BC0056F3A6 /* main.m in Sources */,
-				4266D4D51BC70A6C0060F53C /* RBDBookCell.m in Sources */,
-				4208EBB01BC7A512006B24C6 /* RBMetadata.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		42FDE5A81BC704BC0056F3A6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				42FDE5A91BC704BC0056F3A6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		42FDE5AD1BC704BC0056F3A6 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				42FDE5AE1BC704BC0056F3A6 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4206D19D1B052C66007F227A /* Debug */ = {
@@ -973,34 +696,6 @@
 			};
 			name = Release;
 		};
-		42FDE5B21BC704BC0056F3A6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1BE962B5F19D18728DC9667 /* Pods-ReactiveBeaver-Demo.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_TESTABILITY = YES;
-				INFOPLIST_FILE = "ReactiveBeaver-Demo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "skyylex.com.ReactiveBeaver-Demo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		42FDE5B31BC704BC0056F3A6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7BE47BC50BFB6C2547085D3C /* Pods-ReactiveBeaver-Demo.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "ReactiveBeaver-Demo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "skyylex.com.ReactiveBeaver-Demo";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1036,15 +731,6 @@
 			buildConfigurations = (
 				42B0BA6A1BED1095002C7B85 /* Debug */,
 				42B0BA6B1BED1095002C7B85 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		42FDE5B11BC704BC0056F3A6 /* Build configuration list for PBXNativeTarget "ReactiveBeaver-Demo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				42FDE5B21BC704BC0056F3A6 /* Debug */,
-				42FDE5B31BC704BC0056F3A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

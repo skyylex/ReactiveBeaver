@@ -8,10 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "MTLJSONAdapter.h"
-#import "MTLModel.h"
-
-@interface RBMetadata : MTLModel<MTLJSONSerializing>
+@interface RBMetadata
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *creator;
