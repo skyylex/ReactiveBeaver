@@ -699,6 +699,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)/**",
 					"$(PROJECT_DIR)/Carthage/Build/iOS/**",
+					"$(SRCROOT)/Carthage/build/iOS/**",
 				);
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = ReactiveBeaveriOS/Info.plist;
@@ -725,6 +726,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)/**",
 					"$(PROJECT_DIR)/Carthage/Build/iOS/**",
+					"$(SRCROOT)/Carthage/build/iOS/**",
 				);
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = ReactiveBeaveriOS/Info.plist;
