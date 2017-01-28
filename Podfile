@@ -1,11 +1,5 @@
 inhibit_all_warnings!
 
-target 'ReactiveBeaver-Demo' do
-  platform :ios, '8.0'
-  pod 'ReactiveBeaver', :path => './ReactiveBeaver.podspec'
-  pod 'MBProgressHUD'
-end
-
 target 'ReactiveBeaveriOS' do
   platform :ios, '8.0'
   pod 'ReactiveCocoa', '~> 2.5'
