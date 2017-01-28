@@ -1,5 +1,4 @@
 language: objective-c
 osx_image: xcode8.2
-xcode_workspace: ReactiveBeaver.xcworkspace
-xcode_scheme: ReactiveBeaveriOS
-xcode_sdk: iphonesimulator10.1
+script:
+    - xcodebuild clean build -sdk iphonesimulator10.1 -workspace ReactiveBeaver.xcworkspace -scheme ReactiveBeaveriOS CODE_SIGNING_REQUIRED=NO
