@@ -1,7 +1,4 @@
 language: objective-c
 osx_image: xcode8.2
-
-xcode_workspace: ReactiveBeaver.xcworkspace # path to your xcodeproj folder
-xcode_scheme: ReactiveBeaveriOS
 xcode_sdk: iphonesimulator10.2
 install: ./ci/build
