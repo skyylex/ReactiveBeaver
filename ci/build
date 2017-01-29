@@ -1,4 +1,4 @@
 #!/bin/bash
 
 carthage bootstrap --platform iOS
-xcodebuild clean build -sdk iphonesimulator10.2 -workspace ReactiveBeaver.xcworkspace -scheme ReactiveBeaveriOS CODE_SIGNING_REQUIRED=NO
+xcodebuild clean build -sdk iphonesimulator10.2 -project ReactiveBeaver.xcodeproj -scheme ReactiveBeaveriOS CODE_SIGNING_REQUIRED=NO -verbose -configuration RELEASE
