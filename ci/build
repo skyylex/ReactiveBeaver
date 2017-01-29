@@ -1,5 +1,4 @@
 #!/bin/bash
 
-# carthage bootstrap --platform iOS
-pod install
+carthage bootstrap --platform iOS
 xcodebuild clean build -sdk iphonesimulator10.2 -workspace ReactiveBeaver.xcworkspace -scheme ReactiveBeaveriOS CODE_SIGNING_REQUIRED=NO
