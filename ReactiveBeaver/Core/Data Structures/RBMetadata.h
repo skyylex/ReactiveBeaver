@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Mantle/Mantle.h>
 
-@interface RBMetadata: MTLModel
+@interface RBMetadata: MTLModel <MTLJSONSerializing>
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *creator;
