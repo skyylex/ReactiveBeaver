@@ -6,11 +6,12 @@
 //  Copyright (c) 2015 skyylex. All rights reserved.
 //
 
-#import "Kiwi.h"
+#import <Kiwi/Kiwi.h>
+#import <KissXML/KissXML.h>
+
 #import "RBParser.h"
 #import "RBFileSystemSupport.h"
 #import "RBEpubNameConstants.h"
-#import "DDXML.h"
 #import "NSError+QuickCreation.h"
 
 static NSString *const RBParserTestBookSource1 = @"moby-dick";

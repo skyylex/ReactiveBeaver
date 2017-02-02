@@ -367,17 +367,16 @@ static int ddLogLevel = DDLogLevelError;
 #pragma mark - Unarchive
 
 - (RACSignal *)unarchiveEpubToDestinationFolder:(RACTuple *)paths {
-    RACSignal *validationSignal = [self validateInputForStartParsing:paths];
-    return [[validationSignal flattenMap:^__kindof RACStream *(NSNumber *validationSuccess) {
-        RACSignal *resultSignal = nil;
-        if (validationSuccess.boolValue == YES) {
-            NSString *sourceFile = paths.first;
-            resultSignal = [RBFileSystemSupport saveFileURLDataToTheTempFolder:sourceFile];
-        }
-        else {
-            /// TODO: undefined what to return if validation failed
-            resultSignal = [RACSignal return:@NO];
-        }
+    NSError *error = [self validatePaths:paths];
+    if (error) {
+        DDLogError(@"Validation failed: %@", error);
+        return [RACSignal error:error];
+    }
+    
+    
+    return [[[RACSignal return:@(YES)] flattenMap:^__kindof RACStream *(NSNumber *_) {
+        NSString *sourceFile = paths.first;
+        RACSignal *resultSignal = [RBFileSystemSupport saveFileURLDataToTheTempFolder:sourceFile];
         
         return resultSignal;
     }] flattenMap:^__kindof RACStream *(NSString *tempFolderEpubPath) {
@@ -392,45 +391,40 @@ static int ddLogLevel = DDLogLevelError;
 
 #pragma mark - Validation
 
-- (RACSignal *)validateInputForStartParsing:(RACTuple *)startParsingInput {
-    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        NSError *error = nil;
-        if ([startParsingInput isKindOfClass:[RACTuple class]]) {
-            NSString *sourcePath = startParsingInput.first;
-            NSString *destinationPath = startParsingInput.second;
-            
-            BOOL validSourceClass = [sourcePath isKindOfClass:[NSString class]];
-            BOOL validDestinationClass = [destinationPath isKindOfClass:[NSString class]];
-            if (validSourceClass == YES && validDestinationClass == YES) {
-                BOOL sourcePathIsDirectory = NO;
-                BOOL destinationPathIsDirectory = NO;
-                BOOL sourcePathExist = [[NSFileManager defaultManager] fileExistsAtPath:sourcePath isDirectory:&sourcePathIsDirectory];
-                if (sourcePathExist == YES && sourcePathIsDirectory == NO) {
-                    BOOL destinationPathExist = [[NSFileManager defaultManager] fileExistsAtPath:destinationPath isDirectory:&destinationPathIsDirectory];
-                    if (destinationPathExist == YES && destinationPathIsDirectory == YES) {
-                        [subscriber sendNext:@YES];
-                        [subscriber sendCompleted];
-                    } else if (destinationPathExist == NO) {
-                        error = [NSError parserErrorWithCode:RBParserErrorCodeIncorrectDestinationPath];
-                    } else if (destinationPathExist == YES && destinationPathIsDirectory == NO) {
-                        error = [NSError parserErrorWithCode:RBParserErrorCodeIncorrectDestinationPath];
-                    }
-                } else {
-                    error = [NSError parserErrorWithCode:RBParserErrorCodeNoSourceFilePath];
-                }
-            } else {
-                error = [NSError parserErrorWithCode:RBParserErrorCodeInputParamsValidation];
+- (NSError *)validatePaths:(RACTuple *)tuple {
+    NSError *error = nil;
+    NSError *brokenInput = [NSError parserErrorWithCode:RBParserErrorCodeInputParamsValidation];
+    
+    if (tuple == nil) { return brokenInput; }
+    if ([tuple isKindOfClass:[RACTuple class]] == NO) { return brokenInput; }
+    
+    NSString *sourcePath = tuple.first;
+    NSString *destinationPath = tuple.second;
+    
+    BOOL validSourceClass = [sourcePath isKindOfClass:[NSString class]];
+    BOOL validDestinationClass = [destinationPath isKindOfClass:[NSString class]];
+    
+    
+    if (validSourceClass == YES && validDestinationClass == YES) {
+        BOOL sourcePathIsDirectory = NO;
+        BOOL destinationPathIsDirectory = NO;
+        BOOL sourcePathExist = [[NSFileManager defaultManager] fileExistsAtPath:sourcePath isDirectory:&sourcePathIsDirectory];
+        if (sourcePathExist == YES && sourcePathIsDirectory == NO) {
+            BOOL destinationPathExist = [[NSFileManager defaultManager] fileExistsAtPath:destinationPath
+                                                                             isDirectory:&destinationPathIsDirectory];
+             if (destinationPathExist == NO) {
+                error = [NSError parserErrorWithCode:RBParserErrorCodeIncorrectDestinationPath];
+            } else if (destinationPathExist == YES && destinationPathIsDirectory == NO) {
+                error = [NSError parserErrorWithCode:RBParserErrorCodeIncorrectDestinationPath];
             }
         } else {
-            error = [NSError parserErrorWithCode:RBParserErrorCodeInputParamsValidation];
+            error = [NSError parserErrorWithCode:RBParserErrorCodeNoSourceFilePath];
         }
-        
-        if (error != nil) {
-            [subscriber sendError:error];
-        }
-        
-        return nil;
-    }];
+    } else {
+        error = [NSError parserErrorWithCode:RBParserErrorCodeInputParamsValidation];
+    }
+    
+    return error;
 }
 
 @end

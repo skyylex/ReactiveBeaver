@@ -16,4 +16,9 @@ FOUNDATION_EXPORT const unsigned char ReactiveBeaver_OSXVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <ReactiveBeaver_OSX/PublicHeader.h>
 
-
+#import "RBParser.h"
+#import "RBEpub.h"
+#import "RBMetadata.h"
+#import "RBEPNavPoint.h"
+#import "RBSpineElement.h"
+#import "RBManifestElement.h"

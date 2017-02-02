@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 skyylex. All rights reserved.
 //
 
-#import "Kiwi.h"
+#import <Kiwi/Kiwi.h>
 #import "RBFileSystemSupport.h"
 
 static NSString *const RBFileSystemSupportTestFolderName = @"SKFileSystemSupportTestFolderName";

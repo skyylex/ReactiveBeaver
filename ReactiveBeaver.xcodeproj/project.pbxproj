@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		423F4B5B1BC9AE7600BA072F /* RBFileSupportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EDBFC21B980A6100F39E7F /* RBFileSupportTests.m */; };
-		423F4B5C1BC9AE7900BA072F /* RBParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EDBFC11B980A6100F39E7F /* RBParserTests.m */; };
 		429910771BECFFCF0028EA30 /* ReactiveBeaver-OSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 429910761BECFFCF0028EA30 /* ReactiveBeaver-OSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4299107D1BED01770028EA30 /* NSError+QuickCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFD31B979EA100EB2BAA /* NSError+QuickCreation.m */; };
 		429910801BED01770028EA30 /* RBFileSystemSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFD61B979EA100EB2BAA /* RBFileSystemSupport.m */; };
@@ -27,30 +25,70 @@
 		42AE5F1F1BED119F0095C853 /* RBSpineElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC7E1BC1C4DE00480F1A /* RBSpineElement.m */; };
 		42AE5F211BED119F0095C853 /* RBMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 4208EBAD1BC7A512006B24C6 /* RBMetadata.m */; };
 		42B0BA671BED1095002C7B85 /* ReactiveBeaveriOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 42B0BA661BED1095002C7B85 /* ReactiveBeaveriOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		42FDE5531BC6FF810056F3A6 /* moby-dick.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4246F40D1B111EAB00A2A96F /* moby-dick.epub */; };
 		942436741E3D0A9900D99F82 /* ZipZap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9424366E1E3D0A9900D99F82 /* ZipZap.framework */; };
 		942436761E3D0A9900D99F82 /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942436701E3D0A9900D99F82 /* KissXML.framework */; };
 		942436771E3D0A9900D99F82 /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942436711E3D0A9900D99F82 /* CocoaLumberjack.framework */; };
 		942436791E3D0A9900D99F82 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942436731E3D0A9900D99F82 /* Mantle.framework */; };
 		9424367B1E3D0D7100D99F82 /* ReactiveObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9424367A1E3D0D7100D99F82 /* ReactiveObjC.framework */; };
 		942436821E3D1EEA00D99F82 /* ZipZap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9424367C1E3D1EEA00D99F82 /* ZipZap.framework */; };
-		942436831E3D1EEA00D99F82 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9424367D1E3D1EEA00D99F82 /* Result.framework */; };
 		942436841E3D1EEA00D99F82 /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9424367E1E3D1EEA00D99F82 /* KissXML.framework */; };
 		942436851E3D1EEA00D99F82 /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9424367F1E3D1EEA00D99F82 /* CocoaLumberjack.framework */; };
 		942436861E3D1EEA00D99F82 /* ReactiveObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942436801E3D1EEA00D99F82 /* ReactiveObjC.framework */; };
 		942436871E3D1EEA00D99F82 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942436811E3D1EEA00D99F82 /* Mantle.framework */; };
-		942436881E3D230800D99F82 /* ZipZap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9424366E1E3D0A9900D99F82 /* ZipZap.framework */; };
-		942436891E3D230800D99F82 /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942436701E3D0A9900D99F82 /* KissXML.framework */; };
-		9424368A1E3D230800D99F82 /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942436711E3D0A9900D99F82 /* CocoaLumberjack.framework */; };
-		9424368B1E3D230800D99F82 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9424366F1E3D0A9900D99F82 /* Result.framework */; };
-		9424368C1E3D230800D99F82 /* ReactiveObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9424367A1E3D0D7100D99F82 /* ReactiveObjC.framework */; };
-		9424368D1E3D230800D99F82 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942436731E3D0A9900D99F82 /* Mantle.framework */; };
+		944D4A531E43B6EF00EAF20D /* NSError+QuickCreation.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFD31B979EA100EB2BAA /* NSError+QuickCreation.m */; };
+		944D4A561E43B6EF00EAF20D /* RBFileSystemSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E8FFD61B979EA100EB2BAA /* RBFileSystemSupport.m */; };
+		944D4A581E43B6EF00EAF20D /* RBParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC8A1BC1C4EA00480F1A /* RBParser.m */; };
+		944D4A5A1E43B6EF00EAF20D /* RBEPNavPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC761BC1C4DE00480F1A /* RBEPNavPoint.m */; };
+		944D4A5C1E43B6EF00EAF20D /* RBEpub.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC781BC1C4DE00480F1A /* RBEpub.m */; };
+		944D4A5E1E43B6EF00EAF20D /* RBManifestElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC7C1BC1C4DE00480F1A /* RBManifestElement.m */; };
+		944D4A601E43B6EF00EAF20D /* RBSpineElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 424EEC7E1BC1C4DE00480F1A /* RBSpineElement.m */; };
+		944D4A621E43B6EF00EAF20D /* RBMetadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 4208EBAD1BC7A512006B24C6 /* RBMetadata.m */; };
+		944D4A631E43B74800EAF20D /* ZipZap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9424367C1E3D1EEA00D99F82 /* ZipZap.framework */; };
+		944D4A641E43B74800EAF20D /* ReactiveObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942436801E3D1EEA00D99F82 /* ReactiveObjC.framework */; };
+		944D4A651E43B74800EAF20D /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 942436811E3D1EEA00D99F82 /* Mantle.framework */; };
+		944D4A661E43B74800EAF20D /* Kiwi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9403E5CE1E43A5E10069CBD5 /* Kiwi.framework */; };
+		944D4A671E43B74800EAF20D /* KissXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9424367E1E3D1EEA00D99F82 /* KissXML.framework */; };
+		944D4A681E43B74800EAF20D /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9424367F1E3D1EEA00D99F82 /* CocoaLumberjack.framework */; };
+		944D4A691E43B76B00EAF20D /* Kiwi.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9403E5CE1E43A5E10069CBD5 /* Kiwi.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		944D4A6A1E43B76B00EAF20D /* ZipZap.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9424367C1E3D1EEA00D99F82 /* ZipZap.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		944D4A6B1E43B76B00EAF20D /* KissXML.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9424367E1E3D1EEA00D99F82 /* KissXML.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		944D4A6C1E43B76B00EAF20D /* CocoaLumberjack.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9424367F1E3D1EEA00D99F82 /* CocoaLumberjack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		944D4A6D1E43B76B00EAF20D /* ReactiveObjC.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 942436801E3D1EEA00D99F82 /* ReactiveObjC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		944D4A6E1E43B76B00EAF20D /* Mantle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 942436811E3D1EEA00D99F82 /* Mantle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		944D4A761E43B7B000EAF20D /* RBFileSupportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 944D4A741E43B7B000EAF20D /* RBFileSupportTests.m */; };
+		944D4A771E43B7B000EAF20D /* RBParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 944D4A751E43B7B000EAF20D /* RBParserTests.m */; };
+		9469F3481E43A93700306C89 /* moby-dick.epub in Resources */ = {isa = PBXBuildFile; fileRef = 4246F40D1B111EAB00A2A96F /* moby-dick.epub */; };
+		9485BCB41E43B6260087700F /* NSError+QuickCreation.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFD21B979EA100EB2BAA /* NSError+QuickCreation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9485BCB51E43B6260087700F /* RBEpubNameConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFD41B979EA100EB2BAA /* RBEpubNameConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9485BCB61E43B6260087700F /* RBFileSystemSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E8FFD51B979EA100EB2BAA /* RBFileSystemSupport.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9485BCB71E43B6260087700F /* RBParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC891BC1C4EA00480F1A /* RBParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9485BCB81E43B6260087700F /* RBEPNavPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC751BC1C4DE00480F1A /* RBEPNavPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9485BCB91E43B6260087700F /* RBEpub.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC771BC1C4DE00480F1A /* RBEpub.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9485BCBA1E43B6260087700F /* RBManifestElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC7B1BC1C4DE00480F1A /* RBManifestElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9485BCBB1E43B6260087700F /* RBSpineElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 424EEC7D1BC1C4DE00480F1A /* RBSpineElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9485BCBC1E43B6260087700F /* RBMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = 4208EBAC1BC7A512006B24C6 /* RBMetadata.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		944B0E811E43ABE20088EC34 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				944D4A691E43B76B00EAF20D /* Kiwi.framework in CopyFiles */,
+				944D4A6A1E43B76B00EAF20D /* ZipZap.framework in CopyFiles */,
+				944D4A6B1E43B76B00EAF20D /* KissXML.framework in CopyFiles */,
+				944D4A6C1E43B76B00EAF20D /* CocoaLumberjack.framework in CopyFiles */,
+				944D4A6D1E43B76B00EAF20D /* ReactiveObjC.framework in CopyFiles */,
+				944D4A6E1E43B76B00EAF20D /* Mantle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		0C481FD805AE9DFFF0D7BE08 /* libPods-ReactiveBeaveriOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactiveBeaveriOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BABE405A4DACFB00D8ECB80 /* Pods-ReactiveBeaver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaver/Pods-ReactiveBeaver.debug.xcconfig"; sourceTree = "<group>"; };
-		4206D1941B052C66007F227A /* ReactiveBeaverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveBeaverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4208EBAC1BC7A512006B24C6 /* RBMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBMetadata.h; path = "ReactiveBeaver/Core/Data Structures/RBMetadata.h"; sourceTree = SOURCE_ROOT; };
 		4208EBAD1BC7A512006B24C6 /* RBMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBMetadata.m; path = "ReactiveBeaver/Core/Data Structures/RBMetadata.m"; sourceTree = SOURCE_ROOT; };
 		4246F40D1B111EAB00A2A96F /* moby-dick.epub */ = {isa = PBXFileReference; lastKnownFileType = file; name = "moby-dick.epub"; path = "BookSources/moby-dick.epub"; sourceTree = SOURCE_ROOT; };
@@ -77,34 +115,28 @@
 		42E8FFD61B979EA100EB2BAA /* RBFileSystemSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBFileSystemSupport.m; path = ReactiveBeaver/Support/RBFileSystemSupport.m; sourceTree = SOURCE_ROOT; };
 		42E8FFF41B979EBC00EB2BAA /* ReactiveBeaver-Headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ReactiveBeaver-Headers.h"; path = "ReactiveBeaver/ReactiveBeaver-Headers.h"; sourceTree = SOURCE_ROOT; };
 		42E8FFF61B979EC800EB2BAA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ReactiveBeaver/Info.plist; sourceTree = SOURCE_ROOT; };
-		42EDBFC11B980A6100F39E7F /* RBParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBParserTests.m; path = ReactiveBeaverTests/RBParserTests.m; sourceTree = SOURCE_ROOT; };
-		42EDBFC21B980A6100F39E7F /* RBFileSupportTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBFileSupportTests.m; path = ReactiveBeaverTests/RBFileSupportTests.m; sourceTree = SOURCE_ROOT; };
-		42EDBFC31B980A6100F39E7F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ReactiveBeaverTests/Info.plist; sourceTree = SOURCE_ROOT; };
-		5ADE52D7F4376C24B56768DB /* libPods-ReactiveBeaverTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactiveBeaverTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA57677DA70034DAD988795 /* Pods-ReactiveBeaveriOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaveriOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaveriOS/Pods-ReactiveBeaveriOS.release.xcconfig"; sourceTree = "<group>"; };
 		7BE47BC50BFB6C2547085D3C /* Pods-ReactiveBeaver-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaver-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaver-Demo/Pods-ReactiveBeaver-Demo.release.xcconfig"; sourceTree = "<group>"; };
-		8BEF66CBC270A39694575E68 /* libPods-ReactiveBeaverOSX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactiveBeaverOSX.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93DCEF9FCBD47096B940B374 /* Pods-ReactiveBeaver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaver.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaver/Pods-ReactiveBeaver.release.xcconfig"; sourceTree = "<group>"; };
+		9403E5CE1E43A5E10069CBD5 /* Kiwi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kiwi.framework; path = Carthage/Build/Mac/Kiwi.framework; sourceTree = "<group>"; };
 		9424366E1E3D0A9900D99F82 /* ZipZap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZipZap.framework; path = Carthage/Build/iOS/ZipZap.framework; sourceTree = "<group>"; };
-		9424366F1E3D0A9900D99F82 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		942436701E3D0A9900D99F82 /* KissXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KissXML.framework; path = Carthage/Build/iOS/KissXML.framework; sourceTree = "<group>"; };
 		942436711E3D0A9900D99F82 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = Carthage/Build/iOS/CocoaLumberjack.framework; sourceTree = "<group>"; };
-		942436721E3D0A9900D99F82 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		942436731E3D0A9900D99F82 /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mantle.framework; path = Carthage/Build/iOS/Mantle.framework; sourceTree = "<group>"; };
 		9424367A1E3D0D7100D99F82 /* ReactiveObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveObjC.framework; path = Carthage/Build/iOS/ReactiveObjC.framework; sourceTree = "<group>"; };
 		9424367C1E3D1EEA00D99F82 /* ZipZap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZipZap.framework; path = Carthage/Build/Mac/ZipZap.framework; sourceTree = "<group>"; };
-		9424367D1E3D1EEA00D99F82 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		9424367E1E3D1EEA00D99F82 /* KissXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KissXML.framework; path = Carthage/Build/Mac/KissXML.framework; sourceTree = "<group>"; };
 		9424367F1E3D1EEA00D99F82 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = Carthage/Build/Mac/CocoaLumberjack.framework; sourceTree = "<group>"; };
 		942436801E3D1EEA00D99F82 /* ReactiveObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveObjC.framework; path = Carthage/Build/Mac/ReactiveObjC.framework; sourceTree = "<group>"; };
 		942436811E3D1EEA00D99F82 /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mantle.framework; path = Carthage/Build/Mac/Mantle.framework; sourceTree = "<group>"; };
+		944D4A741E43B7B000EAF20D /* RBFileSupportTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBFileSupportTests.m; sourceTree = "<group>"; };
+		944D4A751E43B7B000EAF20D /* RBParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBParserTests.m; sourceTree = "<group>"; };
+		9469F33C1E43A92000306C89 /* ReactiveBeaverOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveBeaverOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9469F3401E43A92000306C89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B58439EBD17959E5550142A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		9E31947C1BAA532DBE8EF68E /* libPods-ReactiveBeaver-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactiveBeaver-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5E35529D63B3B1D970F2495 /* Pods-ReactiveBeaverOSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaverOSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaverOSX/Pods-ReactiveBeaverOSX.release.xcconfig"; sourceTree = "<group>"; };
-		BB2059ABFD25DE7F6C3B17C3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB42D3E7AC72FC083917A987 /* Pods-ReactiveBeaverOSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaverOSX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaverOSX/Pods-ReactiveBeaverOSX.debug.xcconfig"; sourceTree = "<group>"; };
 		C1BE962B5F19D18728DC9667 /* Pods-ReactiveBeaver-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaver-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaver-Demo/Pods-ReactiveBeaver-Demo.debug.xcconfig"; sourceTree = "<group>"; };
-		C9E17AB6AA841E7592E38230 /* libPods-ReactiveBeaver.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactiveBeaver.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E600B09F2E934CCB064A5446 /* Pods-ReactiveBeaverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaverTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaverTests/Pods-ReactiveBeaverTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EBAA7CE2A4E347940A70BB01 /* Pods-ReactiveBeaverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaverTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaverTests/Pods-ReactiveBeaverTests.release.xcconfig"; sourceTree = "<group>"; };
 		EC74E05285CB683679CAE5AC /* Pods-ReactiveBeaveriOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaveriOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaveriOS/Pods-ReactiveBeaveriOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -112,25 +144,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4206D1911B052C66007F227A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				942436881E3D230800D99F82 /* ZipZap.framework in Frameworks */,
-				942436891E3D230800D99F82 /* KissXML.framework in Frameworks */,
-				9424368A1E3D230800D99F82 /* CocoaLumberjack.framework in Frameworks */,
-				9424368B1E3D230800D99F82 /* Result.framework in Frameworks */,
-				9424368C1E3D230800D99F82 /* ReactiveObjC.framework in Frameworks */,
-				9424368D1E3D230800D99F82 /* Mantle.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		429910701BECFFCF0028EA30 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				942436821E3D1EEA00D99F82 /* ZipZap.framework in Frameworks */,
-				942436831E3D1EEA00D99F82 /* Result.framework in Frameworks */,
 				942436841E3D1EEA00D99F82 /* KissXML.framework in Frameworks */,
 				942436851E3D1EEA00D99F82 /* CocoaLumberjack.framework in Frameworks */,
 				942436861E3D1EEA00D99F82 /* ReactiveObjC.framework in Frameworks */,
@@ -150,31 +168,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9469F3391E43A92000306C89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				944D4A631E43B74800EAF20D /* ZipZap.framework in Frameworks */,
+				944D4A641E43B74800EAF20D /* ReactiveObjC.framework in Frameworks */,
+				944D4A651E43B74800EAF20D /* Mantle.framework in Frameworks */,
+				944D4A661E43B74800EAF20D /* Kiwi.framework in Frameworks */,
+				944D4A671E43B74800EAF20D /* KissXML.framework in Frameworks */,
+				944D4A681E43B74800EAF20D /* CocoaLumberjack.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		3494A54EC6AC34C98782A22D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9403E5CE1E43A5E10069CBD5 /* Kiwi.framework */,
 				9424367C1E3D1EEA00D99F82 /* ZipZap.framework */,
-				9424367D1E3D1EEA00D99F82 /* Result.framework */,
 				9424367E1E3D1EEA00D99F82 /* KissXML.framework */,
 				9424367F1E3D1EEA00D99F82 /* CocoaLumberjack.framework */,
 				942436801E3D1EEA00D99F82 /* ReactiveObjC.framework */,
 				942436811E3D1EEA00D99F82 /* Mantle.framework */,
 				9424367A1E3D0D7100D99F82 /* ReactiveObjC.framework */,
 				9424366E1E3D0A9900D99F82 /* ZipZap.framework */,
-				9424366F1E3D0A9900D99F82 /* Result.framework */,
 				942436701E3D0A9900D99F82 /* KissXML.framework */,
 				942436711E3D0A9900D99F82 /* CocoaLumberjack.framework */,
-				942436721E3D0A9900D99F82 /* ReactiveCocoa.framework */,
 				942436731E3D0A9900D99F82 /* Mantle.framework */,
-				BB2059ABFD25DE7F6C3B17C3 /* libPods.a */,
-				C9E17AB6AA841E7592E38230 /* libPods-ReactiveBeaver.a */,
-				9E31947C1BAA532DBE8EF68E /* libPods-ReactiveBeaver-Demo.a */,
-				8BEF66CBC270A39694575E68 /* libPods-ReactiveBeaverOSX.a */,
-				5ADE52D7F4376C24B56768DB /* libPods-ReactiveBeaverTests.a */,
-				0C481FD805AE9DFFF0D7BE08 /* libPods-ReactiveBeaveriOS.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -183,9 +206,9 @@
 			isa = PBXGroup;
 			children = (
 				4206D18B1B052C65007F227A /* ReactiveBeaver */,
-				4206D1981B052C66007F227A /* ReactiveBeaverTests */,
 				429910751BECFFCF0028EA30 /* ReactiveBeaver-OSX */,
 				42B0BA651BED1095002C7B85 /* ReactiveBeaveriOS */,
+				9469F33D1E43A92000306C89 /* ReactiveBeaverOSXTests */,
 				4206D18A1B052C65007F227A /* Products */,
 				D45A418EA2C2FD9CB2CA68B9 /* Pods */,
 				3494A54EC6AC34C98782A22D /* Frameworks */,
@@ -195,9 +218,9 @@
 		4206D18A1B052C65007F227A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4206D1941B052C66007F227A /* ReactiveBeaverTests.xctest */,
 				429910741BECFFCF0028EA30 /* ReactiveBeaverOSX.framework */,
 				42B0BA641BED1095002C7B85 /* ReactiveBeaveriOS.framework */,
+				9469F33C1E43A92000306C89 /* ReactiveBeaverOSXTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -218,26 +241,6 @@
 			children = (
 				42E8FFF61B979EC800EB2BAA /* Info.plist */,
 				42E8FFF41B979EBC00EB2BAA /* ReactiveBeaver-Headers.h */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		4206D1981B052C66007F227A /* ReactiveBeaverTests */ = {
-			isa = PBXGroup;
-			children = (
-				4206D1991B052C66007F227A /* Supporting Files */,
-			);
-			name = ReactiveBeaverTests;
-			path = SKEPParserTests;
-			sourceTree = "<group>";
-		};
-		4206D1991B052C66007F227A /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				42EDBFC11B980A6100F39E7F /* RBParserTests.m */,
-				42EDBFC21B980A6100F39E7F /* RBFileSupportTests.m */,
-				42EDBFC31B980A6100F39E7F /* Info.plist */,
-				4246F40D1B111EAB00A2A96F /* moby-dick.epub */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -309,6 +312,17 @@
 			path = ReactiveBeaveriOS;
 			sourceTree = "<group>";
 		};
+		9469F33D1E43A92000306C89 /* ReactiveBeaverOSXTests */ = {
+			isa = PBXGroup;
+			children = (
+				944D4A741E43B7B000EAF20D /* RBFileSupportTests.m */,
+				944D4A751E43B7B000EAF20D /* RBParserTests.m */,
+				4246F40D1B111EAB00A2A96F /* moby-dick.epub */,
+				9469F3401E43A92000306C89 /* Info.plist */,
+			);
+			path = ReactiveBeaverOSXTests;
+			sourceTree = "<group>";
+		};
 		D45A418EA2C2FD9CB2CA68B9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +350,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				429910771BECFFCF0028EA30 /* ReactiveBeaver-OSX.h in Headers */,
+				9485BCB41E43B6260087700F /* NSError+QuickCreation.h in Headers */,
+				9485BCB51E43B6260087700F /* RBEpubNameConstants.h in Headers */,
+				9485BCB61E43B6260087700F /* RBFileSystemSupport.h in Headers */,
+				9485BCB71E43B6260087700F /* RBParser.h in Headers */,
+				9485BCB81E43B6260087700F /* RBEPNavPoint.h in Headers */,
+				9485BCB91E43B6260087700F /* RBEpub.h in Headers */,
+				9485BCBA1E43B6260087700F /* RBManifestElement.h in Headers */,
+				9485BCBB1E43B6260087700F /* RBSpineElement.h in Headers */,
+				9485BCBC1E43B6260087700F /* RBMetadata.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,30 +373,13 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		4206D1931B052C66007F227A /* ReactiveBeaverTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4206D1A21B052C66007F227A /* Build configuration list for PBXNativeTarget "ReactiveBeaverTests" */;
-			buildPhases = (
-				4206D1901B052C66007F227A /* Sources */,
-				4206D1911B052C66007F227A /* Frameworks */,
-				4206D1921B052C66007F227A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ReactiveBeaverTests;
-			productName = SKEPParserTests;
-			productReference = 4206D1941B052C66007F227A /* ReactiveBeaverTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		429910731BECFFCF0028EA30 /* ReactiveBeaverOSX */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4299107B1BECFFCF0028EA30 /* Build configuration list for PBXNativeTarget "ReactiveBeaverOSX" */;
 			buildPhases = (
+				429910711BECFFCF0028EA30 /* Headers */,
 				4299106F1BECFFCF0028EA30 /* Sources */,
 				429910701BECFFCF0028EA30 /* Frameworks */,
-				429910711BECFFCF0028EA30 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -401,6 +407,24 @@
 			productReference = 42B0BA641BED1095002C7B85 /* ReactiveBeaveriOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		9469F33B1E43A92000306C89 /* ReactiveBeaverOSXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9469F3441E43A92000306C89 /* Build configuration list for PBXNativeTarget "ReactiveBeaverOSXTests" */;
+			buildPhases = (
+				9469F3381E43A92000306C89 /* Sources */,
+				9469F3391E43A92000306C89 /* Frameworks */,
+				9469F33A1E43A92000306C89 /* Resources */,
+				944B0E811E43ABE20088EC34 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReactiveBeaverOSXTests;
+			productName = ReactiveBeaverOSXTests;
+			productReference = 9469F33C1E43A92000306C89 /* ReactiveBeaverOSXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -410,15 +434,16 @@
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = skyylex;
 				TargetAttributes = {
-					4206D1931B052C66007F227A = {
-						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = P923C5RGDV;
-					};
 					429910731BECFFCF0028EA30 = {
 						CreatedOnToolsVersion = 7.1;
 					};
 					42B0BA631BED1095002C7B85 = {
 						CreatedOnToolsVersion = 7.1;
+					};
+					9469F33B1E43A92000306C89 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = C75AH6FF93;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -437,32 +462,23 @@
 			targets = (
 				42B0BA631BED1095002C7B85 /* ReactiveBeaveriOS */,
 				429910731BECFFCF0028EA30 /* ReactiveBeaverOSX */,
-				4206D1931B052C66007F227A /* ReactiveBeaverTests */,
+				9469F33B1E43A92000306C89 /* ReactiveBeaverOSXTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4206D1921B052C66007F227A /* Resources */ = {
+		9469F33A1E43A92000306C89 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42FDE5531BC6FF810056F3A6 /* moby-dick.epub in Resources */,
+				9469F3481E43A93700306C89 /* moby-dick.epub in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4206D1901B052C66007F227A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				423F4B5C1BC9AE7900BA072F /* RBParserTests.m in Sources */,
-				423F4B5B1BC9AE7600BA072F /* RBFileSupportTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4299106F1BECFFCF0028EA30 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -490,6 +506,23 @@
 				42AE5F1D1BED119F0095C853 /* RBManifestElement.m in Sources */,
 				42AE5F1F1BED119F0095C853 /* RBSpineElement.m in Sources */,
 				42AE5F211BED119F0095C853 /* RBMetadata.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9469F3381E43A92000306C89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				944D4A531E43B6EF00EAF20D /* NSError+QuickCreation.m in Sources */,
+				944D4A561E43B6EF00EAF20D /* RBFileSystemSupport.m in Sources */,
+				944D4A581E43B6EF00EAF20D /* RBParser.m in Sources */,
+				944D4A5A1E43B6EF00EAF20D /* RBEPNavPoint.m in Sources */,
+				944D4A5C1E43B6EF00EAF20D /* RBEpub.m in Sources */,
+				944D4A5E1E43B6EF00EAF20D /* RBManifestElement.m in Sources */,
+				944D4A771E43B7B000EAF20D /* RBParserTests.m in Sources */,
+				944D4A601E43B6EF00EAF20D /* RBSpineElement.m in Sources */,
+				944D4A621E43B6EF00EAF20D /* RBMetadata.m in Sources */,
+				944D4A761E43B7B000EAF20D /* RBFileSupportTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,46 +616,6 @@
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		4206D1A31B052C66007F227A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E600B09F2E934CCB064A5446 /* Pods-ReactiveBeaverTests.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
-				DEVELOPMENT_TEAM = P923C5RGDV;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
-				INFOPLIST_FILE = ReactiveBeaver/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = ReactiveBeaverTests;
-			};
-			name = Debug;
-		};
-		4206D1A41B052C66007F227A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EBAA7CE2A4E347940A70BB01 /* Pods-ReactiveBeaverTests.release.xcconfig */;
-			buildSettings = {
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
-				DEVELOPMENT_TEAM = P923C5RGDV;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
-				INFOPLIST_FILE = ReactiveBeaver/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = ReactiveBeaverTests;
 			};
 			name = Release;
 		};
@@ -741,6 +734,58 @@
 			};
 			name = Release;
 		};
+		9469F3451E43A92000306C89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = C75AH6FF93;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
+				INFOPLIST_FILE = ReactiveBeaverOSXTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "skyylex-team.ReactiveBeaverOSXTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9469F3461E43A92000306C89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = C75AH6FF93;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
+				INFOPLIST_FILE = ReactiveBeaverOSXTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "skyylex-team.ReactiveBeaverOSXTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -749,15 +794,6 @@
 			buildConfigurations = (
 				4206D19D1B052C66007F227A /* Debug */,
 				4206D19E1B052C66007F227A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4206D1A21B052C66007F227A /* Build configuration list for PBXNativeTarget "ReactiveBeaverTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4206D1A31B052C66007F227A /* Debug */,
-				4206D1A41B052C66007F227A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -776,6 +812,15 @@
 			buildConfigurations = (
 				42B0BA6A1BED1095002C7B85 /* Debug */,
 				42B0BA6B1BED1095002C7B85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9469F3441E43A92000306C89 /* Build configuration list for PBXNativeTarget "ReactiveBeaverOSXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9469F3451E43A92000306C89 /* Debug */,
+				9469F3461E43A92000306C89 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
