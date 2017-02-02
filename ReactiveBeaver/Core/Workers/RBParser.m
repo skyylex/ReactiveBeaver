@@ -383,7 +383,9 @@ static int ddLogLevel = DDLogLevelError;
         NSString *destinationPath = paths.second;
         NSData *epubRawData = [NSData dataWithContentsOfFile:tempFolderEpubPath];
         NSString *epubDigest = [NSString stringWithFormat:@"%ld", epubRawData.hash];
-        return [[RBFileSystemSupport unarchiveFile:tempFolderEpubPath toDestinationFolder:destinationPath] map:^id(id _) {
+        RACSignal *unarchive = [RBFileSystemSupport unarchiveFile:tempFolderEpubPath
+                                              toDestinationFolder:destinationPath];
+        return [unarchive map:^id(id _) {
             return epubDigest;
         }];
     }];

@@ -115,9 +115,13 @@ NSString *const RBFileSystemSupportErrorDomain = @"RBFileSystemSupportErrorDomai
     }];
 }
 
-+ (void)createDirectory:(NSString *)directoryPath {
-    NSParameterAssert(directoryPath);
++ (NSError *)createDirectoryWithIntermediate:(NSURL *)directoryURL {
+    NSParameterAssert(directoryURL);
 
+    NSError *error = nil;
+    [[NSFileManager defaultManager] createDirectoryAtURL:directoryURL withIntermediateDirectories:YES attributes:nil error:&error];
+    
+    return error;
 }
 
 + (NSString *)applicationSupportDirectory {
@@ -168,7 +172,7 @@ NSString *const RBFileSystemSupportErrorDomain = @"RBFileSystemSupportErrorDomai
             NSError *error = nil;
             if (entry.fileMode & S_IFDIR) {
                 // check if directory bit is set
-                [[NSFileManager defaultManager] createDirectoryAtURL:targetPath withIntermediateDirectories:YES attributes:nil error:&error];
+                error = [RBFileSystemSupport createDirectoryWithIntermediate:targetPath];
                 if (error != nil) {
                     resultError = error;
                     break;
@@ -177,7 +181,8 @@ NSString *const RBFileSystemSupportErrorDomain = @"RBFileSystemSupportErrorDomai
                 // Some archives don't have a separate entry for each directory
                 // and just include the directory's name in the filename.
                 // Make sure that directory exists before writing a file into it.
-                [[NSFileManager defaultManager] createDirectoryAtURL:[targetPath URLByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:&error];
+                NSURL *directoryURL = [targetPath URLByDeletingLastPathComponent];
+                error = [RBFileSystemSupport createDirectoryWithIntermediate:directoryURL];
                 if (error == nil) {
                     [[entry newDataWithError:&error] writeToURL:targetPath atomically:NO];
                     if (error != nil) {
