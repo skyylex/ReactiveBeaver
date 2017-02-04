@@ -5,8 +5,6 @@
 ePub parser for iOS and OS X.
 Core parts are designed to be reactive and are written in ReactiveCocoa.
 
-### Main goals and principles
-
 ### Usage
 #### Standard
 
