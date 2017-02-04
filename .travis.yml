@@ -1,6 +1,7 @@
 language: objective-c
 osx_image: xcode8.1
 before_install: true
+install: true
 branches:
   only:
     - master
