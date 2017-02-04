@@ -4,7 +4,6 @@ install:
   - brew update
   - brew outdated carthage || brew upgrade carthage
   - carthage update --platform mac
-  - carthage update --platform ios
 branches:
   only:
     - master
