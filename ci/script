@@ -10,11 +10,6 @@
 BUILD_DIRECTORY="build"
 CONFIGURATION=Release
 
-if [[ -z $TRAVIS_XCODE_WORKSPACE ]]; then
-    echo "Error: \$TRAVIS_XCODE_WORKSPACE is not set."
-    exit 1
-fi
-
 if [[ -z $TRAVIS_XCODE_SCHEME ]]; then
     echo "Error: \$TRAVIS_XCODE_SCHEME is not set!"
     exit 1
