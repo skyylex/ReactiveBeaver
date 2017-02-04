@@ -13,12 +13,12 @@ matrix:
     - xcode_scheme: ReactiveBeaverOSX
       env:
         - XCODE_SDK=macosx
-        - XCODE_ACTION="build test"
+        - XCODE_ACTION="build"
         - XCODE_DESTINATION="arch=x86_64"
-    - xcode_scheme: ReactiveBeaverOSXiOS
+    - xcode_scheme: ReactiveBeaveriOS
       env:
         - XCODE_SDK=iphonesimulator
-        - XCODE_ACTION="build-for-testing test-without-building"
+        - XCODE_ACTION="build"
         - XCODE_DESTINATION="platform=iOS Simulator,name=iPhone 6s"
     - script:
         - brew update

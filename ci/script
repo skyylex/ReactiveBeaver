@@ -1,12 +1,5 @@
 #!/bin/bash
 
-# carthage bootstrap --platform iOS
-# xcodebuild clean build -sdk iphonesimulator10.2 -project ReactiveBeaver.xcodeproj -scheme ReactiveBeaveriOS CODE_SIGNING_REQUIRED=NO -verbose -configuration RELEASE | xcpretty
-# xcodebuild clean build -project ReactiveBeaver.xcodeproj -scheme ReactiveBeaverOSX CODE_SIGNING_REQUIRED=NO -verbose -configuration RELEASE | xcpretty
-# xcodebuild test -project ReactiveBeaver.xcodeproj -scheme ReactiveBeaverOSXTests -verbose | xcpretty
-
-#!/bin/bash
-
 BUILD_DIRECTORY="build"
 CONFIGURATION=Release
 
