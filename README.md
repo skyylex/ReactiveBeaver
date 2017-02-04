@@ -7,11 +7,6 @@ Core parts are designed to be reactive and are written in ReactiveCocoa.
 
 ### Main goals and principles
 
-- High tests coverage.
-- Performance optimization
-- RFP and non-RFP usage.
-- ePub 2 and 3 specification support.
-
 ### Usage
 #### Standard
 
