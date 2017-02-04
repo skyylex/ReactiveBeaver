@@ -20,5 +20,5 @@ matrix:
     - xcode_scheme: ReactiveBeaverOSXTests
       env:
         - XCODE_SDK=macosx
-        - XCODE_ACTION="build test"
+        - XCODE_ACTION="test"
         - XCODE_DESTINATION="arch=x86_64"
