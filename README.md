@@ -1,7 +1,9 @@
 [![Build    Status](https://travis-ci.org/skyylex/ReactiveBeaver.svg?branch=master)](https://travis-ci.org/skyylex/ReactiveBeaver)
 
-# ReactiveBeaver (paused development)
-#### NOT released.
+# ReactiveBeaver
+
+A personal project to taste ReactiveCocoa (ReactiveObjc) for a parsing problem. The project is NOT production-ready.
+
 ePub parser for iOS and OS X.
 Core parts are designed to be reactive and are written in ReactiveCocoa.
 
@@ -42,8 +44,6 @@ NSString *destinationPath = ... /// destination folder to unarchive
 [[self.parser startCommand] execute:RACTuplePack(sourcePath, destinationPath)];
 ```
 
-There is an [Demo](https://github.com/skyylex/ReactiveBeaver/tree/master/ReactiveBeaver-Demo) application that is built upon RFP concept.
-
 ### License
 ##### Code
 ReactiveBeaver code is available under the MIT license. See LICENSE for details.
@@ -52,9 +52,6 @@ ReactiveBeaver code is available under the MIT license. See LICENSE for details.
 All sources and compile tools were get from https://github.com/IDPF/epub3-samples
 Books are used only for testing purpose.
 > Unless specified otherwise in the samples table, all samples are licensed under CC-BY-SA 3.0
-
-### Collaboration
-Will be glad to see pull requests, suggestions or any other help. My contacts are listed at the bottom
 
 ### Contacts
 yury.lapitsky@gmail.com
