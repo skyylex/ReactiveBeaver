@@ -1,0 +1,6 @@
+github "CocoaLumberjack/CocoaLumberjack" "3.6.0"
+github "Mantle/Mantle" "2.1.0"
+github "ReactiveCocoa/ReactiveObjC" "3.1.1"
+github "kiwi-bdd/Kiwi" "v3.0.0"
+github "pixelglow/ZipZap" "8.1.2"
+github "skyylex/KissXML" "5.0.5"
