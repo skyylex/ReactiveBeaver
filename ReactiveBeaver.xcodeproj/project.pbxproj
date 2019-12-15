@@ -88,7 +88,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2BABE405A4DACFB00D8ECB80 /* Pods-ReactiveBeaver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaver/Pods-ReactiveBeaver.debug.xcconfig"; sourceTree = "<group>"; };
 		4208EBAC1BC7A512006B24C6 /* RBMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBMetadata.h; path = "ReactiveBeaver/Core/Data Structures/RBMetadata.h"; sourceTree = SOURCE_ROOT; };
 		4208EBAD1BC7A512006B24C6 /* RBMetadata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBMetadata.m; path = "ReactiveBeaver/Core/Data Structures/RBMetadata.m"; sourceTree = SOURCE_ROOT; };
 		4246F40D1B111EAB00A2A96F /* moby-dick.epub */ = {isa = PBXFileReference; lastKnownFileType = file; name = "moby-dick.epub"; path = "BookSources/moby-dick.epub"; sourceTree = SOURCE_ROOT; };
@@ -115,9 +114,6 @@
 		42E8FFD61B979EA100EB2BAA /* RBFileSystemSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBFileSystemSupport.m; path = ReactiveBeaver/Support/RBFileSystemSupport.m; sourceTree = SOURCE_ROOT; };
 		42E8FFF41B979EBC00EB2BAA /* ReactiveBeaver-Headers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ReactiveBeaver-Headers.h"; path = "ReactiveBeaver/ReactiveBeaver-Headers.h"; sourceTree = SOURCE_ROOT; };
 		42E8FFF61B979EC800EB2BAA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ReactiveBeaver/Info.plist; sourceTree = SOURCE_ROOT; };
-		5DA57677DA70034DAD988795 /* Pods-ReactiveBeaveriOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaveriOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaveriOS/Pods-ReactiveBeaveriOS.release.xcconfig"; sourceTree = "<group>"; };
-		7BE47BC50BFB6C2547085D3C /* Pods-ReactiveBeaver-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaver-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaver-Demo/Pods-ReactiveBeaver-Demo.release.xcconfig"; sourceTree = "<group>"; };
-		93DCEF9FCBD47096B940B374 /* Pods-ReactiveBeaver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaver.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaver/Pods-ReactiveBeaver.release.xcconfig"; sourceTree = "<group>"; };
 		9403E5CE1E43A5E10069CBD5 /* Kiwi.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kiwi.framework; path = Carthage/Build/Mac/Kiwi.framework; sourceTree = "<group>"; };
 		9424366E1E3D0A9900D99F82 /* ZipZap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZipZap.framework; path = Carthage/Build/iOS/ZipZap.framework; sourceTree = "<group>"; };
 		942436701E3D0A9900D99F82 /* KissXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KissXML.framework; path = Carthage/Build/iOS/KissXML.framework; sourceTree = "<group>"; };
@@ -133,14 +129,6 @@
 		944D4A751E43B7B000EAF20D /* RBParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBParserTests.m; sourceTree = "<group>"; };
 		9469F33C1E43A92000306C89 /* ReactiveBeaverOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveBeaverOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9469F3401E43A92000306C89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9B58439EBD17959E5550142A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		A5E35529D63B3B1D970F2495 /* Pods-ReactiveBeaverOSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaverOSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaverOSX/Pods-ReactiveBeaverOSX.release.xcconfig"; sourceTree = "<group>"; };
-		BB42D3E7AC72FC083917A987 /* Pods-ReactiveBeaverOSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaverOSX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaverOSX/Pods-ReactiveBeaverOSX.debug.xcconfig"; sourceTree = "<group>"; };
-		C1BE962B5F19D18728DC9667 /* Pods-ReactiveBeaver-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaver-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaver-Demo/Pods-ReactiveBeaver-Demo.debug.xcconfig"; sourceTree = "<group>"; };
-		E600B09F2E934CCB064A5446 /* Pods-ReactiveBeaverTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaverTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaverTests/Pods-ReactiveBeaverTests.debug.xcconfig"; sourceTree = "<group>"; };
-		EBAA7CE2A4E347940A70BB01 /* Pods-ReactiveBeaverTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaverTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaverTests/Pods-ReactiveBeaverTests.release.xcconfig"; sourceTree = "<group>"; };
-		EC74E05285CB683679CAE5AC /* Pods-ReactiveBeaveriOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveBeaveriOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveBeaveriOS/Pods-ReactiveBeaveriOS.debug.xcconfig"; sourceTree = "<group>"; };
-		EE94A7BFF78DFD919687D00E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,7 +198,6 @@
 				42B0BA651BED1095002C7B85 /* ReactiveBeaveriOS */,
 				9469F33D1E43A92000306C89 /* ReactiveBeaverOSXTests */,
 				4206D18A1B052C65007F227A /* Products */,
-				D45A418EA2C2FD9CB2CA68B9 /* Pods */,
 				3494A54EC6AC34C98782A22D /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -323,25 +310,6 @@
 			path = ReactiveBeaverOSXTests;
 			sourceTree = "<group>";
 		};
-		D45A418EA2C2FD9CB2CA68B9 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				9B58439EBD17959E5550142A /* Pods.debug.xcconfig */,
-				EE94A7BFF78DFD919687D00E /* Pods.release.xcconfig */,
-				2BABE405A4DACFB00D8ECB80 /* Pods-ReactiveBeaver.debug.xcconfig */,
-				93DCEF9FCBD47096B940B374 /* Pods-ReactiveBeaver.release.xcconfig */,
-				C1BE962B5F19D18728DC9667 /* Pods-ReactiveBeaver-Demo.debug.xcconfig */,
-				7BE47BC50BFB6C2547085D3C /* Pods-ReactiveBeaver-Demo.release.xcconfig */,
-				E600B09F2E934CCB064A5446 /* Pods-ReactiveBeaverTests.debug.xcconfig */,
-				EBAA7CE2A4E347940A70BB01 /* Pods-ReactiveBeaverTests.release.xcconfig */,
-				BB42D3E7AC72FC083917A987 /* Pods-ReactiveBeaverOSX.debug.xcconfig */,
-				A5E35529D63B3B1D970F2495 /* Pods-ReactiveBeaverOSX.release.xcconfig */,
-				EC74E05285CB683679CAE5AC /* Pods-ReactiveBeaveriOS.debug.xcconfig */,
-				5DA57677DA70034DAD988795 /* Pods-ReactiveBeaveriOS.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -452,6 +420,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -531,7 +500,6 @@
 /* Begin XCBuildConfiguration section */
 		4206D19D1B052C66007F227A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B58439EBD17959E5550142A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -579,7 +547,6 @@
 		};
 		4206D19E1B052C66007F227A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE94A7BFF78DFD919687D00E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -621,7 +588,6 @@
 		};
 		429910791BECFFCF0028EA30 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB42D3E7AC72FC083917A987 /* Pods-ReactiveBeaverOSX.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -651,7 +617,6 @@
 		};
 		4299107A1BECFFCF0028EA30 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A5E35529D63B3B1D970F2495 /* Pods-ReactiveBeaverOSX.release.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -679,7 +644,6 @@
 		};
 		42B0BA6A1BED1095002C7B85 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EC74E05285CB683679CAE5AC /* Pods-ReactiveBeaveriOS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
@@ -709,7 +673,6 @@
 		};
 		42B0BA6B1BED1095002C7B85 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5DA57677DA70034DAD988795 /* Pods-ReactiveBeaveriOS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
