@@ -3,7 +3,7 @@ osx_image: xcode11.2
 install: 
   - brew update
   - brew outdated carthage || brew upgrade carthage
-  - carthage update --platform mac,ios
+  - carthage update --platform mac
 branches:
   only:
     - master
